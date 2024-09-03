@@ -1,4 +1,3 @@
 # cyan
 ¯\_(ツ)_/¯
-
-  npm run dev
+npm run dev
