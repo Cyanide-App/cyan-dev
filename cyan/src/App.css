@@ -1,29 +1,84 @@
+*{
+  font-family: "JetBrains Mono", monospace;
+
+}
 .layout {
-  width: 98vw;
-  height: 98vh;
+  margin-left: 15vw;
+  margin-right: 15vw;
+
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+
+  width: 70vw;
+  height: 90vh;
   display: grid;
   grid:
-    "header header" 0.3fr
-    "navbar animation" auto
-    / 0.2fr 0.8fr;
-  gap: 20px ;
+    "header header" 0.6fr
+    "navbar animation" 1fr
+    / 0.3fr 1fr;
+  gap: 20px;
 
+}
+
+.header {
+  grid-area: header;
+  outline: 1px solid white;
+}
+
+.navbar {
+  grid-area: navbar;
+  outline: 1px solid white;
+}
+
+.animation {
+  grid-area: animation;
+  outline: 1px solid white;
+}
+
+.title {
+  font-weight: 300;
+
+  position: absolute;
+  transform: translate(15px, -35px);
+  padding-left: 5px;
+  padding-right: 5px;
+  background-color: rgb(0, 0, 0);
+}
+
+.hero{
+  align-items: center;
+  margin-top: 50px;
+  margin-left: 15px;
+  
+
+}
+
+.hero-title{
+  font-size: 50px;
+  /* font-weight: 200; */
+  
+
+}
+
+.splash-text{
+  font-weight: 200;
+  font-style: italic;
+  margin-top: -40px;
+  color: rgb(194, 194, 194);
+}
+
+.ascii{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  align-content: stretch;
-
-}
-
-.header { grid-area: header;
-  outline: 1px solid white;
-}
-.hero-text{
-  font-size: 100px;
-}
-.navbar { grid-area: navbar;
-  outline: 1px solid white;
-
-}
-.animation { grid-area: animation;
-  outline: 1px solid white;
-
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  color: white;
+  font-family: monospace;
+  font-size: 10px;
+  line-height: 1.5;
+  overflow: hidden;
+  white-space: pre;
 }
