@@ -1,29 +1,25 @@
-.container {
-  display: grid; 
-  /* gap: 1em 1em;  */
-  grid-template-areas: 
-    "Hero Hero"
-    "Navbar Animation"; 
-  width: 100%; 
-  height: 100%; 
+.layout {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid:
+    "header header" 0.3fr
+    "navbar animation" auto
+    / auto 0.8fr;
+  gap: 20px ;
+
+  justify-content: stretch;
+  align-content: stretch;
 }
 
-.Hero { grid-area: Hero; 
+.header { grid-area: header;
   outline: 1px solid white;
-  height: 30vh;
+}
+.navbar { grid-area: navbar;
+  outline: 1px solid white;
 
 }
-
-.Navbar { grid-area: Navbar; 
+.animation { grid-area: animation;
   outline: 1px solid white;
-  width: 30vw;
-  height: 70vh;
-
-}
-
-.Animation { grid-area: Animation; 
-  outline: 1px solid white;
-  width: 70vw;
-  height: 70vh;
 
 }
