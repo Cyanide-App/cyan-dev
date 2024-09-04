@@ -1,19 +1,23 @@
 .layout {
-  width: 100vw;
-  height: 100vh;
+  width: 98vw;
+  height: 98vh;
   display: grid;
   grid:
     "header header" 0.3fr
     "navbar animation" auto
-    / auto 0.8fr;
+    / 0.2fr 0.8fr;
   gap: 20px ;
 
-  justify-content: stretch;
+  justify-content: center;
   align-content: stretch;
+
 }
 
 .header { grid-area: header;
   outline: 1px solid white;
+}
+.hero-text{
+  font-size: 100px;
 }
 .navbar { grid-area: navbar;
   outline: 1px solid white;
