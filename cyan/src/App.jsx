@@ -35,8 +35,17 @@ const AsciiArtAnimation = () => {
     0.001,0.01,0.1,1
   ]
 
+  var text_list = [
+    "   .:-=+*#%@",
+    "cyλncyλncyλncyλncyλncyλncyλncyλncyλncyλncyλncyλncyλncyλncyλncyλncyλncyλncyλncyλncyλncyλn",
+    "1627d4t3987ebr24tb9r40s949m2034u",
+    "█▓▒░ ",
+  ]
+
   const randomIndexA = Math.floor(Math.random() * timeA_config.length);
   const randomIndexB = Math.floor(Math.random() * timeB_config.length);
+  const randomIndexText = Math.floor(Math.random() * text_list.length);
+
 
   timeA = timeA_config[randomIndexA]
   timeB = timeB_config[randomIndexB]
@@ -47,7 +56,7 @@ const AsciiArtAnimation = () => {
   const M = 100; // Width of the ASCII art
   const height = 10;
   const T = []; // Array to hold lines of ASCII art
-  const A = "   .:-=+*#%@".split(''); // ASCII characters for different brightness levels
+  const A = text_list[randomIndexText].split(''); // ASCII characters for different brightness levels
   let z, P;
 
   // Helper functions

@@ -81,4 +81,6 @@
   line-height: 1.5;
   overflow: hidden;
   white-space: pre;
+  text-shadow: 0 0 10px white;
+
 }
