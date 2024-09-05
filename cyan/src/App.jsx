@@ -37,9 +37,12 @@ const AsciiArtAnimation = () => {
 
   var text_list = [
     "   .:-=+*#%@",
-    "cyλncyλncyλncyλncyλncyλncyλncyλncyλncyλncyλncyλncyλncyλncyλncyλncyλncyλncyλncyλncyλncyλn",
     "1627d4t3987ebr24tb9r40s949m2034u",
     "█▓▒░ ",
+    " `.-':_,^=;><+!rc*/z?sLTv)J7(|Fi{C}fI31tlu[neoZ5Yxjya]2ESwqkP6h9d4VpOGbUAKXHm8RD#$Bg0MNWQ%&@",
+    "$$$XXXXXXXxxxxxxx=======+++++++;;;;;;;:::::::........           ......",
+    "⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏"
+    
   ]
 
   const randomIndexA = Math.floor(Math.random() * timeA_config.length);
