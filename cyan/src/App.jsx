@@ -143,6 +143,10 @@ export default function App() {
 
       <div className="navbar">
         <h4 className="title">:navbar</h4>
+              <div className="chat">
+        <a href="./Chat.jsx" className="chat-link">Chat</a>
+      </div>
+        
       </div>
 
       {/* <div className="animation">
@@ -154,4 +158,16 @@ export default function App() {
     </section>
   );
 }
+
+// import WidgetBot from '@widgetbot/react-embed'
+// import './App.css'
+
+// const App = () => (
+//   <WidgetBot
+//     server="1281065607688880180"
+//     channel="1281065607688880183"
+//   />
+// )
+
+// export default App
 

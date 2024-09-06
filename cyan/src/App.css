@@ -133,3 +133,13 @@
 .search-input::placeholder {
   color: rgba(255, 255, 255, 0.5);
 }
+
+
+iframe[src*="widgetbot"] { 
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 50%;
+  border: none;
+}
