@@ -1,19 +1,15 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Search } from 'lucide-react';
+
 import './App.css';
 
 function SplashText() {
   const [text, setText] = useState('');
-
-  const splashTexts = [
-    1,
-    2,
-    3,
-    4,
-  ];
+  const splashTexts = [1, 2, 3, 4];
 
   useEffect(() => {
     const randomIndex = Math.floor(Math.random() * splashTexts.length);
-    setText(splashTexts[randomIndex]);
+    setText(splashTexts[randomIndex].toString());
   }, []);
 
   return <h4 className="splash-text">{text}</h4>;
@@ -56,8 +52,8 @@ const AsciiArtAnimation = () => {
 
 
   // ASCII art configuration
-  const M = 100; // Width of the ASCII art
-  const height = 10;
+  const M = 210; // Width of the ASCII art
+  const height = 25;
   const T = []; // Array to hold lines of ASCII art
   const A = text_list[randomIndexText].split(''); // ASCII characters for different brightness levels
   let z, P;
@@ -124,16 +120,24 @@ const AsciiArtAnimation = () => {
     <div class="ascii" ref={containerRef}/>
   );
 };
-
-function App() {
+export default function App() {
   return (
     <section className="layout">
       <div className="header">
-        <h4 className="title">:header</h4>
+      <AsciiArtAnimation />
 
+        <h4 className="title">:header</h4>
         <div className="hero">
           <h1 className="hero-title">cyλn</h1>
           <SplashText />
+        </div>
+      </div>
+
+      <div className="search-bar">
+        <h4 className="title">:search</h4>
+        <div className="search-input-wrapper">
+          <Search className="search-icon" />
+          <input type="text" placeholder="Search with Google or Enter Address" className="search-input" />
         </div>
       </div>
 
@@ -141,12 +145,13 @@ function App() {
         <h4 className="title">:navbar</h4>
       </div>
 
-      <div className="animation">
+      {/* <div className="animation">
         <h4 className="title">:animation</h4>
         <AsciiArtAnimation />
-      </div>
+      </div> */}
+
+      
     </section>
   );
 }
 
-export default App;
