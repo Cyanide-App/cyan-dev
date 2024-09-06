@@ -1,7 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { HashRouter, Routes, Route, NavLink } from 'react-router-dom';
 import { Search } from 'lucide-react';
 
+import Chat from './Chat';
+
 import './App.css';
+
+
 
 function SplashText() {
   const [text, setText] = useState('');
@@ -52,8 +57,8 @@ const AsciiArtAnimation = () => {
 
 
   // ASCII art configuration
-  const M = 210; // Width of the ASCII art
-  const height = 25;
+  const M = window.innerWidth/10; // Width of the ASCII art
+  const height = window.innerHeight/45;
   const T = []; // Array to hold lines of ASCII art
   const A = text_list[randomIndexText].split(''); // ASCII characters for different brightness levels
   let z, P;
@@ -143,11 +148,27 @@ export default function App() {
 
       <div className="navbar">
         <h4 className="title">:navbar</h4>
-              <div className="chat">
-        <a href="./Chat.jsx" className="chat-link">Chat</a>
-      </div>
+        <>
+        <HashRouter>
+          <nav>
+            <ul>
+              <li>
+                <NavLink to="/Chat">Chat</NavLink> 
+              </li>
+            </ul>
+          </nav>
+
+          <Routes>
+            <Route path="/Chat" element={<Chat />} />
+          </Routes>
+        </HashRouter>
+      </>
         
       </div>
+
+      <section> 
+
+    </section>
 
       {/* <div className="animation">
         <h4 className="title">:animation</h4>
