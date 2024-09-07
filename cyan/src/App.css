@@ -24,17 +24,17 @@
 
 .header {
   grid-area: header;
-  outline: 1px solid white;
+  outline: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 .navbar {
   grid-area: navbar;
-  outline: 1px solid white;
+  outline: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 .animation {
   grid-area: animation;
-  outline: 1px solid white;
+  outline: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 .title {
@@ -42,18 +42,17 @@
 
   position: absolute;
   transform: translate(15px, -35px);
-  padding-left: 5px;
-  padding-right: 5px;
+
   background-color: rgb(0, 0, 0);
 }
 
 .hero{
-  justify-content: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 25%;
-  /* margin-left: 15px; */
+  justify-content: center;
+  width: 100%;
+  height: 100%;
   
 
 }
@@ -89,7 +88,7 @@
   white-space: pre;
   /* text-shadow: 0 0 10px white; */
   position: absolute;
-  top: -5%;
+  top: 0%;
   left: 0;
   z-index: -1; /* Place the animation behind other elements */
 
@@ -98,7 +97,7 @@
 
 .search-bar {
   grid-area: search;
-  outline: 1px solid white;
+  outline: 1px solid rgba(255, 255, 255, 0.5);
   position: relative;
   display: flex;
   align-items: center;
@@ -143,3 +142,35 @@ iframe[src*="widgetbot"] {
   height: 50%;
   border: none;
 }
+
+.frame {
+  position: relative;
+}
+
+.corner-icon {
+  position: absolute;
+  width: 1.5rem;
+  height: 1.5rem;
+  color: white;
+}
+
+.top-left {
+  top: -12px;
+  left: -12px;
+}
+
+.top-right {
+  top: -12px;
+  right: -12px;
+}
+
+.bottom-left {
+  bottom: -12px;
+  left: -12px;
+}
+
+.bottom-right {
+  bottom: -12px;
+  right: -12px;
+}
+

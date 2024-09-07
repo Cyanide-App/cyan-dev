@@ -1,12 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { HashRouter, Routes, Route, NavLink } from 'react-router-dom';
-import { Search } from 'lucide-react';
-
+import { Search, Plus } from 'lucide-react';
 import Chat from './Chat';
-
 import './App.css';
-
-
 
 function SplashText() {
   const [text, setText] = useState('');
@@ -125,12 +121,16 @@ const AsciiArtAnimation = () => {
     <div class="ascii" ref={containerRef}/>
   );
 };
+
 export default function App() {
   return (
     <section className="layout">
-      <div className="header">
-      <AsciiArtAnimation />
-
+      <div className="header frame">
+        <Plus strokeWidth={1.5} className="corner-icon top-left" />
+        <Plus strokeWidth={1.5} className="corner-icon top-right" />
+        <Plus strokeWidth={1.5} className="corner-icon bottom-left" />
+        <Plus strokeWidth={1.5} className="corner-icon bottom-right" />
+        <AsciiArtAnimation />
         <h4 className="title">:header</h4>
         <div className="hero">
           <h1 className="hero-title">cyλn</h1>
@@ -138,7 +138,11 @@ export default function App() {
         </div>
       </div>
 
-      <div className="search-bar">
+      <div className="search-bar frame">
+        <Plus strokeWidth={1.5} className="corner-icon top-left" />
+        <Plus strokeWidth={1.5} className="corner-icon top-right" />
+        <Plus strokeWidth={1.5} className="corner-icon bottom-left" />
+        <Plus strokeWidth={1.5} className="corner-icon bottom-right" />
         <h4 className="title">:search</h4>
         <div className="search-input-wrapper">
           <Search className="search-icon" />
@@ -146,9 +150,12 @@ export default function App() {
         </div>
       </div>
 
-      <div className="navbar">
+      <div className="navbar frame">
+        <Plus strokeWidth={1.5} className="corner-icon top-left" />
+        <Plus strokeWidth={1.5} className="corner-icon top-right" />
+        <Plus strokeWidth={1.5} className="corner-icon bottom-left" />
+        <Plus strokeWidth={1.5} className="corner-icon bottom-right" />
         <h4 className="title">:navbar</h4>
-        <>
         <HashRouter>
           <nav>
             <ul>
@@ -162,33 +169,9 @@ export default function App() {
             <Route path="/Chat" element={<Chat />} />
           </Routes>
         </HashRouter>
-      </>
-        
       </div>
 
-      <section> 
-
-    </section>
-
-      {/* <div className="animation">
-        <h4 className="title">:animation</h4>
-        <AsciiArtAnimation />
-      </div> */}
-
-      
+      <section></section>
     </section>
   );
 }
-
-// import WidgetBot from '@widgetbot/react-embed'
-// import './App.css'
-
-// const App = () => (
-//   <WidgetBot
-//     server="1281065607688880180"
-//     channel="1281065607688880183"
-//   />
-// )
-
-// export default App
-
