@@ -156,6 +156,7 @@ export default function App() {
         <Plus strokeWidth={1.5} className="corner-icon bottom-left" />
         <Plus strokeWidth={1.5} className="corner-icon bottom-right" />
         <h4 className="title">:navbar</h4>
+        <>
         <HashRouter>
           <nav>
             <ul>
@@ -169,6 +170,7 @@ export default function App() {
             <Route path="/Chat" element={<Chat />} />
           </Routes>
         </HashRouter>
+      </>
       </div>
 
       <section></section>

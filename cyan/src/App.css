@@ -2,6 +2,9 @@
   font-family: "JetBrains Mono", monospace;
 
 }
+
+
+
 .layout {
   margin-left: 15vw;
   margin-right: 15vw;
@@ -149,28 +152,28 @@ iframe[src*="widgetbot"] {
 
 .corner-icon {
   position: absolute;
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1rem;
+  height: 1rem;
   color: white;
 }
 
 .top-left {
-  top: -12px;
-  left: -12px;
+  top: -8.5px;
+  left: -8.5px;
 }
 
 .top-right {
-  top: -12px;
-  right: -12px;
+  top: -8.5px;
+  right: -8.5px;
 }
 
 .bottom-left {
-  bottom: -12px;
-  left: -12px;
+  bottom: -8.5px;
+  left: -8.5px;
 }
 
 .bottom-right {
-  bottom: -12px;
-  right: -12px;
+  bottom: -8.5px;
+  right: -8.5px;
 }
 
