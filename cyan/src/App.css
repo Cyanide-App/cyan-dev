@@ -1,9 +1,14 @@
 *{
+  text-decoration: none;
+
   font-family: "JetBrains Mono", monospace;
 
 }
 
+ul, ol {
+  list-style-type: none;
 
+}
 
 .layout {
   margin-left: 15vw;
@@ -27,17 +32,26 @@
 
 .header {
   grid-area: header;
-  outline: 1px solid rgba(255, 255, 255, 0.5);
+  outline: 1px solid rgba(255, 255, 255, 0.4);
 }
 
 .navbar {
+  position: relative;
   grid-area: navbar;
-  outline: 1px solid rgba(255, 255, 255, 0.5);
+  outline: 1px solid rgba(255, 255, 255, 0.4);
 }
 
 .animation {
   grid-area: animation;
-  outline: 1px solid rgba(255, 255, 255, 0.5);
+  outline: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.search-bar {
+  grid-area: search;
+  outline: 1px solid rgba(255, 255, 255, 0.4);
+  display: flex;
+  align-items: center;
+  padding: 10px;
 }
 
 .title {
@@ -83,7 +97,7 @@
   width: 100%;
   height: 100%;
   background-color: black;
-  color: rgba(255, 255, 255, 0.171);
+  color: rgba(255, 255, 255, 0.364);
   font-family: monospace;
   font-size: 10px;
   line-height: 1.5;
@@ -93,18 +107,8 @@
   position: absolute;
   top: 0%;
   left: 0;
-  z-index: -1; /* Place the animation behind other elements */
+  z-index: -1; 
 
-}
-
-
-.search-bar {
-  grid-area: search;
-  outline: 1px solid rgba(255, 255, 255, 0.5);
-  position: relative;
-  display: flex;
-  align-items: center;
-  padding: 10px;
 }
 
 .search-input-wrapper {
@@ -136,6 +140,10 @@
   color: rgba(255, 255, 255, 0.5);
 }
 
+ul{
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+}
 
 iframe[src*="widgetbot"] { 
   position: absolute;
@@ -146,11 +154,22 @@ iframe[src*="widgetbot"] {
   border: none;
 }
 
+
+
+.nav-link{
+  color: white;
+}
+
+.nav-link:hover{
+  background-color: blue;
+
+}
 .frame {
   position: relative;
 }
 
 .corner-icon {
+  
   position: absolute;
   width: 1rem;
   height: 1rem;

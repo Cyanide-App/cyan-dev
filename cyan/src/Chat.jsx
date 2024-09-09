@@ -1,4 +1,5 @@
 import WidgetBot from '@widgetbot/react-embed'
+import './chat.css'
 
 const Chat = () => (
   <WidgetBot

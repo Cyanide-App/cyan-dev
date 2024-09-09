@@ -4,7 +4,9 @@ import { Search, Plus } from 'lucide-react';
 import Chat from './Chat';
 import './App.css';
 
+
 function SplashText() {
+
   const [text, setText] = useState('');
   const splashTexts = [1, 2, 3, 4];
 
@@ -150,7 +152,7 @@ export default function App() {
         </div>
       </div>
 
-      <div className="navbar frame">
+      <div className="navbar">
         <Plus strokeWidth={1.5} className="corner-icon top-left" />
         <Plus strokeWidth={1.5} className="corner-icon top-right" />
         <Plus strokeWidth={1.5} className="corner-icon bottom-left" />
@@ -161,19 +163,26 @@ export default function App() {
           <nav>
             <ul>
               <li>
-                <NavLink to="/Chat">Chat</NavLink> 
+                |<NavLink className="nav-link" to="/Games"> Games </NavLink>| 
+                <NavLink className="nav-link" to="/Chat"
+  onClick={(e) => {
+    // e.preventDefault();
+    document.querySelector('.navbar').style.position = 'unset';
+  }}> Chat </NavLink> |
+
+                <NavLink className="nav-link" to="/Settings"> Settings </NavLink>| 
+
               </li>
             </ul>
           </nav>
 
-          <Routes>
-            <Route path="/Chat" element={<Chat />} />
-          </Routes>
-        </HashRouter>
+            <Routes>
+              <Route path="/Chat" element={<Chat />} />
+            </Routes>
+          </HashRouter>
       </>
       </div>
 
-      <section></section>
     </section>
   );
 }
