@@ -190,7 +190,7 @@
 
 import React, { useState } from 'react';
 
-function ProxyApp() {
+function App() {
   const [url, setUrl] = useState('');
   const [proxiedContent, setProxiedContent] = useState('');
 
@@ -223,4 +223,4 @@ function ProxyApp() {
   );
 }
 
-export default ProxyApp;
+export default App;
