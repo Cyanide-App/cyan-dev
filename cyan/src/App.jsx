@@ -1,11 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { HashRouter, Routes, Route, NavLink } from 'react-router-dom';
 import { Search, Plus } from 'lucide-react';
-import Chat from '../Chat/Chat';
-import Games from '../Games/Games';
-
+import Chat from './Chat';
 import './App.css';
-
 
 
 function SplashText() {
@@ -127,48 +124,9 @@ const AsciiArtAnimation = () => {
   );
 };
 
-const MainContent = () => {
-  return (
-    <div className="main-content">
-      <Routes>
-        <Route path="/Chat" element={<Chat />} />
-        <Route path="/Games" element={<Games />} />
-      </Routes>
-    </div>
-  );
-};
 export default function App() {
-  React.useEffect(() => {
-    // Event listener for Enter key press
-    document.getElementById("urlInput").addEventListener("keydown", function (event) {
-      if (event.key ===
- "Enter") {
-        event.preventDefault();
-        document.getElementById("searchButton").click();
-      }
-    });
-
-    // Event listener for search button click
-    document.getElementById("searchButton").onclick = function (event) {
-      event.preventDefault();
-
-      let url = document.getElementById("urlInput").value;
-      let searchUrl = "https://www.google.com/search?q=";
-
-      if (!url.includes(".")) {
-        url = searchUrl + encodeURIComponent(url);
-      } else {
-        if (!url.startsWith("http://") && !url.startsWith("https://")) {
-          url = "https://" + url;
-        }
-      }
-
-      document.getElementById('iframeWindow').src =  url; 
-    };
-  }, []); // Empty dependency array ensures this runs once after component mounts
   return (
-    <HashRouter>
-      <section className="layout">
+    <section className="layout">
       <div className="header frame">
         <Plus strokeWidth={1.5} className="corner-icon top-left" />
         <Plus strokeWidth={1.5} className="corner-icon top-right" />
@@ -193,35 +151,38 @@ export default function App() {
           <input type="text" placeholder="Search with Google or Enter Address" className="search-input" />
         </div>
       </div>
-        <div className="navbar">
-          <Plus strokeWidth={1.5} className="corner-icon top-left" />
-          <Plus strokeWidth={1.5} className="corner-icon top-right" />
-          <Plus strokeWidth={1.5} className="corner-icon bottom-left" />
-          <Plus strokeWidth={1.5} className="corner-icon bottom-right" />
-          <h4 className="title">:navbar</h4>
+
+      <div className="navbar">
+        <Plus strokeWidth={1.5} className="corner-icon top-left" />
+        <Plus strokeWidth={1.5} className="corner-icon top-right" />
+        <Plus strokeWidth={1.5} className="corner-icon bottom-left" />
+        <Plus strokeWidth={1.5} className="corner-icon bottom-right" />
+        <h4 className="title">:navbar</h4>
+        <>
+        <HashRouter>
           <nav>
             <ul>
               <li>
                 |<NavLink className="nav-link" to="/Games"> Games </NavLink>| 
-                <NavLink className="nav-link" to="/Chat"> Chat </NavLink> |
+                <NavLink className="nav-link" to="/Chat"
+  onClick={(e) => {
+    // e.preventDefault();
+    document.querySelector('.navbar').style.position = 'unset';
+  }}> Chat </NavLink> |
+
+                <NavLink className="nav-link" to="/Settings"> Settings </NavLink>| 
+
               </li>
             </ul>
           </nav>
-        </div>
 
-        
+            <Routes>
+              <Route path="/Chat" element={<Chat />} />
+            </Routes>
+          </HashRouter>
+      </>
+      </div>
 
-        <MainContent />
-
-        <input type="text" id="urlInput" placeholder="Enter URL here"></input>
-        <button id="searchButton">Search Text</button>
-
-        <iframe id="iframeWindow" class="iframeWindow"></iframe>
-      </section>
-      
-    </HashRouter>
-    
+    </section>
   );
-
-  
 }
