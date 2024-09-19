@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { HashRouter, Routes, Route, NavLink } from 'react-router-dom';
 import { Search, Plus } from 'lucide-react';
 import Chat from './Chat';
+import SearchProxy from './Search';
 import './App.css';
 
 
@@ -51,6 +52,7 @@ const AsciiArtAnimation = () => {
 
   timeA = timeA_config[randomIndexA]
   timeB = timeB_config[randomIndexB]
+  
 
 
 
@@ -120,13 +122,15 @@ const AsciiArtAnimation = () => {
   }, []);
 
   return (
-    <div class="ascii" ref={containerRef}/>
+    <div className="ascii" ref={containerRef}/>
   );
 };
 
 export default function App() {
   return (
     <section className="layout">
+      
+      <SearchProxy />
       <div className="header frame">
         <Plus strokeWidth={1.5} className="corner-icon top-left" />
         <Plus strokeWidth={1.5} className="corner-icon top-right" />
