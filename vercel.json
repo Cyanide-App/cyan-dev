@@ -1,12 +1,12 @@
 {
     "version": 2,
-    "devCommand": "node dist/index.js",
+    "devCommand": "node index.js",
     "builds": [{
         "src": "dist/index.js",
         "use": "@vercel/node"
     }],
     "routes": [{
         "src": "/(.*)",
-        "dest": "dist/index.js"
+        "dest": "index.js"
     }]
   }
