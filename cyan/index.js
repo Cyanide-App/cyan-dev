@@ -32,11 +32,11 @@ server.on('upgrade', (req, socket, head) => {
 })
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(process.cwd(), 'cyan/index.html'));
+    res.sendFile(path.join(process.cwd(), '/index.html'));
 });
 
 app.get('/index', (req, res) => {
-    res.sendFile(path.join(process.cwd(), 'cyan/index.html'));
+    res.sendFile(path.join(process.cwd(), '/index.html'));
 });
 
 /* add your own extra urls like this:
