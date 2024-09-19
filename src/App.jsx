@@ -21,6 +21,7 @@ function SplashText() {
 
 const AsciiArtAnimation = () => {
 
+  console.log("help me")
 
   const containerRef = useRef(null);
 
