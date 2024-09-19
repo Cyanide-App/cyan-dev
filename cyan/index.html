@@ -1,18 +1,6 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <script src="/uv/uv.bundle.js"></script>
-    <script src="/uv/uv.config.js"></script>
-
-    <script>
-    if ("serviceWorker" in navigator) {
-        window.addEventListener("load", () => {
-            navigator.serviceWorker.register("/uv/sw.js", {
-                scope: __uv$config.prefix,
-            });
-        });
-    }
-    </script>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -24,13 +12,6 @@
   <body>
     <div id="root"></div>
     
-      <input type="text" id="urlInput" placeholder="Enter URL here">
-      <button id="searchButton">Search Text</button>
-
-      <iframe id="iframeWindow" class="iframeWindow"></iframe>
-  
     <script type="module" src="/src/main.jsx"></script>
   </body>
-  <script src="example.js"></script>
-
 </html>
