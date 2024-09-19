@@ -7,7 +7,7 @@ import { hostname } from "node:os";
 
 const server = http.createServer();
 const app = express(server);
-const __dirname = process.cwd();
+const __dirname = ''
 
 const bareServer = createBareServer('/b/');
 
