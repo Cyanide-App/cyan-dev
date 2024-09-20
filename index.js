@@ -3,49 +3,51 @@ import http from 'node:http';
 import { createBareServer } from '@tomphttp/bare-server-node';
 import cors from 'cors';
 import path from "path";
-import { hostname } from "node:os"
+import { hostname } from "node:os";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const server = http.createServer();
 const app = express(server);
-const __dirname = process.cwd();
+
 const bareServer = createBareServer('/b/');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(path.join(__dirname, 'static'))); // Serve static files from the React static directory
 app.use(cors());
 
 server.on('request', (req, res) => {
     if (bareServer.shouldRoute(req)) {
-        bareServer.routeRequest(req, res)
+        bareServer.routeRequest(req, res);
     } else {
-        app(req, res)
+        app(req, res);
     }
-})
+});
 
 server.on('upgrade', (req, socket, head) => {
     if (bareServer.shouldRoute(req)) {
-        bareServer.routeUpgrade(req, socket, head)
+        bareServer.routeUpgrade(req, socket, head);
     } else {
-        socket.end()
+        socket.end();
     }
-})
+});
 
+// Handle requests for the root URL and serve the React app
 app.get('/', (req, res) => {
-    res.sendFile(path.join(process.cwd(), '/index.html'));
+    res.sendFile(path.join(__dirname, 'static', 'index.html'));
 });
 
 app.get('/index', (req, res) => {
-    res.sendFile(path.join(process.cwd(), '/index.html'));
+    res.sendFile(path.join(__dirname, 'static', 'index.html'));
 });
 
-/* add your own extra urls like this:
-
-app.get('/pathOnYourSite', (req, res) => {
-    res.sendFile(path.join(process.cwd(), '/linkToItInYourSource'));
+// Handle all other routes and serve the React app
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'static', 'index.html'));
 });
-
-*/
 
 const PORT = 3000;
 server.on('listening', () => {
@@ -55,12 +57,11 @@ server.on('listening', () => {
     console.log(`\thttp://localhost:${address.port}`);
     console.log(`\thttp://${hostname()}:${address.port}`);
     console.log(
-        `\thttp://${address.family === "IPv6" ? `[${address.address}]` : address.address
-        }:${address.port}`
+        `\thttp://${address.family === "IPv6" ? `[${address.address}]` : address.address}:${address.port}`
     );
-})
+});
 
-server.listen({ port: PORT, })
+server.listen({ port: PORT });
 
 process.on("SIGINT", shutdown);
 process.on("SIGTERM", shutdown);
