@@ -131,7 +131,7 @@ export default function App() {
   return (
     <section className="layout">
       
-      {/* <SearchProxy /> */}
+      <SearchProxy />
       <div className="header frame">
         <Plus strokeWidth={1.5} className="corner-icon top-left" />
         <Plus strokeWidth={1.5} className="corner-icon top-right" />
