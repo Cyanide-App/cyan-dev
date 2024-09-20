@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { HashRouter, Routes, Route, NavLink } from 'react-router-dom';
+import { HashRouter, Routes, Route, NavLink, useNavigate, useLocation } from 'react-router-dom';
 import { Search, Plus } from 'lucide-react';
 import Chat from './Chat';
-import SearchProxy from './Search';
 import './App.css';
 
 
@@ -21,7 +20,7 @@ function SplashText() {
 
 const AsciiArtAnimation = () => {
 
-  console.log("help me")
+
 
   const containerRef = useRef(null);
 
@@ -127,11 +126,101 @@ const AsciiArtAnimation = () => {
   );
 };
 
+function SearchBar() {
+  const urlInputRef = useRef(null);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/uv/sw.js', {
+          scope: window.__uv$config.prefix,
+        });
+      });
+    }
+
+    const handleKeyDown = (event) => {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        document.getElementById("searchButton").click();
+      }
+    };
+
+    const handleClick = (event) => {
+      event.preventDefault();
+  
+      let url = urlInputRef.current.value;
+      let searchUrl = "https://www.google.com/search?q=";
+  
+      if (!url.includes(".")) {
+        url = searchUrl + encodeURIComponent(url);
+      } else {
+        if (!url.startsWith("http://") && !url.startsWith("https://")) {
+          url = "https://" + url;
+        }
+      }
+  
+      const encodedUrl = window.__uv$config.encodeUrl(url);
+      navigate(`/search?url=${encodeURIComponent(encodedUrl)}`);
+    };
+
+    const urlInput = document.getElementById("urlInput");
+    const searchButton = document.getElementById("searchButton");
+
+    if (urlInput) {
+      urlInput.addEventListener("keydown", handleKeyDown);
+    }
+
+    if (searchButton) {
+      searchButton.onclick = handleClick;
+    }
+
+    return () => {
+      if (urlInput) {
+        urlInput.removeEventListener("keydown", handleKeyDown);
+      }
+      if (searchButton) {
+        
+        searchButton.onclick = null;
+      }
+    };
+  }, []);
+
+  return (
+<div className='search-input-wrapper'>
+      <Search className="search-icon" />
+      <input type="text" id="urlInput" placeholder="Search with google or enter adresss" ref={urlInputRef} />
+      <button id="searchButton">Search Text</button>
+
+
+    </div>
+  );
+}
+
+function SearchResult() {
+  const iframeWindowRef = useRef(null);
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const encodedUrl = searchParams.get('url');
+
+  useEffect(() => {
+    if (encodedUrl) {
+      iframeWindowRef.current.src = window.__uv$config.prefix + decodeURIComponent(encodedUrl);
+    }
+  }, [encodedUrl]);
+
+  return (
+    <iframe id="iframeWindow" className="iframeWindow" title="Website Frame" ref={iframeWindowRef} />
+  );
+}
+
+
 export default function App() {
   return (
+    <HashRouter>
+
     <section className="layout">
       
-      <SearchProxy />
       <div className="header frame">
         <Plus strokeWidth={1.5} className="corner-icon top-left" />
         <Plus strokeWidth={1.5} className="corner-icon top-right" />
@@ -151,10 +240,12 @@ export default function App() {
         <Plus strokeWidth={1.5} className="corner-icon bottom-left" />
         <Plus strokeWidth={1.5} className="corner-icon bottom-right" />
         <h4 className="title">:search</h4>
-        <div className="search-input-wrapper">
+        <SearchBar />
+
+        {/* <div className="search-input-wrapper">
           <Search className="search-icon" />
           <input type="text" placeholder="Search with Google or Enter Address" className="search-input" />
-        </div>
+        </div> */}
       </div>
 
       <div className="navbar">
@@ -163,8 +254,7 @@ export default function App() {
         <Plus strokeWidth={1.5} className="corner-icon bottom-left" />
         <Plus strokeWidth={1.5} className="corner-icon bottom-right" />
         <h4 className="title">:navbar</h4>
-        <>
-        <HashRouter>
+        
           <nav>
             <ul>
               <li>
@@ -183,11 +273,15 @@ export default function App() {
 
             <Routes>
               <Route path="/Chat" element={<Chat />} />
+              <Route path="/search" element={<SearchResult />} />
+
+              
             </Routes>
-          </HashRouter>
-      </>
+
       </div>
 
     </section>
+    </HashRouter>
+
   );
 }
