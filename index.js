@@ -32,17 +32,17 @@ server.on('upgrade', (req, socket, head) => {
 })
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(process.cwd(), '/index.html'));
+    res.sendFile(path.join(__dirname, 'dist/index.html'));
 });
 
 app.get('/index', (req, res) => {
-    res.sendFile(path.join(process.cwd(), '/index.html'));
+    res.sendFile(path.join(__dirname, 'dist/index.html'));
 });
 
 /* add your own extra urls like this:
 
 app.get('/pathOnYourSite', (req, res) => {
-    res.sendFile(path.join(process.cwd(), '/linkToItInYourSource'));
+    res.sendFile(path.join(__dirname, '/linkToItInYourSource'));
 });
 
 */
