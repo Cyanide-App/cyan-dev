@@ -12,7 +12,10 @@ const bareServer = createBareServer('/b/');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(__dirname + '/public'));
+
+// Serve static files from the React build directory
+const buildPath = path.join(__dirname, 'dist'); // Update if your build directory is different
+app.use(express.static(buildPath)); 
 app.use(cors());
 
 server.on('request', (req, res) => {
@@ -20,6 +23,7 @@ server.on('request', (req, res) => {
         bareServer.routeRequest(req, res)
     } else {
         app(req, res)
+
     }
 })
 
@@ -31,21 +35,10 @@ server.on('upgrade', (req, socket, head) => {
     }
 })
 
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
+// Handle any other routes with the React app
+app.get('*', (req, res) => {
+    res.sendFile(path.join(buildPath, 'index.html'));
 });
-
-app.get('/index', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
-});
-
-/* add your own extra urls like this:
-
-app.get('/pathOnYourSite', (req, res) => {
-    res.sendFile(path.join(__dirname, '/linkToItInYourSource'));
-});
-
-*/
 
 const PORT = 3000;
 server.on('listening', () => {
@@ -65,7 +58,8 @@ server.listen({ port: PORT, })
 process.on("SIGINT", shutdown);
 process.on("SIGTERM", shutdown);
 
-function shutdown() {
+function
+shutdown() {
     console.log("SIGTERM signal received: closing HTTP server");
     server.close();
     bareServer.close();
