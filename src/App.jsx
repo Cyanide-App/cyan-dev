@@ -150,7 +150,7 @@ function SearchBar() {
       event.preventDefault();
   
       let url = urlInputRef.current.value;
-      let searchUrl = "https://www.google.com/search?q=";
+      let searchUrl = "https://search.brave.com/search?q=";
   
       if (!url.includes(".")) {
         url = searchUrl + encodeURIComponent(url);
