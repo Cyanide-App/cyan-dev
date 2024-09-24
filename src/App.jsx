@@ -2,7 +2,14 @@ import React, { useState, useEffect, useRef } from 'react';
 import { HashRouter, Routes, Route, NavLink, useNavigate, useLocation } from 'react-router-dom';
 import { Search, Plus } from 'lucide-react';
 import Chat from './Chat';
+import Games from './Games';
 import './App.css';
+import { Form } from "react-router-dom";
+
+
+// import {NavigationContainer} from '@react-navigation/native';
+
+
 
 
 function SplashText() {
@@ -150,7 +157,7 @@ function SearchBar() {
       event.preventDefault();
   
       let url = urlInputRef.current.value;
-      let searchUrl = "https://search.brave.com/search?q=";
+      let searchUrl = "https://www.google.com/search?q=";
   
       if (!url.includes(".")) {
         url = searchUrl + encodeURIComponent(url);
@@ -214,13 +221,13 @@ function SearchResult() {
   );
 }
 
-
 export default function App() {
-  return (
-    <HashRouter>
 
-    <section className="layout">
-      
+
+  return (
+      <section className="layout">
+
+          <> 
       <div className="header frame">
         <Plus strokeWidth={1.5} className="corner-icon top-left" />
         <Plus strokeWidth={1.5} className="corner-icon top-right" />
@@ -248,40 +255,26 @@ export default function App() {
         </div> */}
       </div>
 
-      <div className="navbar">
-        <Plus strokeWidth={1.5} className="corner-icon top-left" />
+            <div className="navbar">
+            <Plus strokeWidth={1.5} className="corner-icon top-left" />
         <Plus strokeWidth={1.5} className="corner-icon top-right" />
         <Plus strokeWidth={1.5} className="corner-icon bottom-left" />
         <Plus strokeWidth={1.5} className="corner-icon bottom-right" />
         <h4 className="title">:navbar</h4>
+              <nav>
+                <ul>
+                  <li>
+                    
+                    <NavLink className="nav-link" to="games"> Games </NavLink> | 
+                    <NavLink className="nav-link" to="/Chat"> Chat </NavLink> |
+                    <NavLink className="nav-link" to="/Settings"> Settings </NavLink>| 
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </>
         
-          <nav>
-            <ul>
-              <li>
-                |<NavLink className="nav-link" to="/Games"> Games </NavLink>| 
-                <NavLink className="nav-link" to="/Chat"
-  onClick={(e) => {
-    // e.preventDefault();
-    document.querySelector('.navbar').style.position = 'unset';
-  }}> Chat </NavLink> |
-
-                <NavLink className="nav-link" to="/Settings"> Settings </NavLink>| 
-
-              </li>
-            </ul>
-          </nav>
-
-            <Routes>
-              <Route path="/Chat" element={<Chat />} />
-              <Route path="/search" element={<SearchResult />} />
-
-              
-            </Routes>
-
-      </div>
-
-    </section>
-    </HashRouter>
+      </section>
 
   );
 }
