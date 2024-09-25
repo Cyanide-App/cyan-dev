@@ -258,7 +258,7 @@ export default function App() {
           <ul>
             <li>
               |
-              <NavLink className="nav-link" to="/Games">
+              <NavLink className="nav-link" to="games">
                 {" "}
                 Games{" "}
               </NavLink>
