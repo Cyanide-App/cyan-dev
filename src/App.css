@@ -127,6 +127,33 @@ ul, ol {
   margin-right: 10px;
 }
 
+
+.iframeWindow {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #fff;
+  
+}
+
+#urlInput {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 14px;
+  width: 100%;
+  outline: none;
+}
+
+#searchButton {
+  display: none;
+}
+
 .search-input {
   background: transparent;
   border: none;
