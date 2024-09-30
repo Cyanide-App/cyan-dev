@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
 // import Games from "./Games.jsx";
 // import Games from "./games.jsx"
-import Games from "./G.jsx";
+import Games from "./Games.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 
