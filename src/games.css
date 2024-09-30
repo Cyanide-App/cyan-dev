@@ -1,8 +1,4 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
-*{
-    font-family: "Roboto Mono", monospace;
 
-} */
 .game-info {
     display: flex;
     justify-content: flex-start;
@@ -12,22 +8,26 @@
   }
   
   .game-genre, .game-type {
+    font-size: x-small;
+    color: #ffffff95;
     border: 1px solid rgba(255, 255, 255, 0.268);
     margin: 0;
+    padding: 1px;
     margin-top: 10px;
+    
   }
 
   .spacer{
     margin: 0;
+    color: #ffffff95;
     margin-top: 10px;
-
-    /* margin-top: -5px; */
-    /* margin-bottom: -30px; */
-    /* border: 1px solid rgba(255, 255, 255, 0.268); */
-    font-size: 21px;
+    font-size: 15px;
   }
   
   .game-title{
+    font-size:larger;
+    font-weight: 800;
+
     margin-top: 10px;
   }
   

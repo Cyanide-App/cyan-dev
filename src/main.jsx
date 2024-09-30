@@ -4,6 +4,7 @@ import App from "./App.jsx";
 // import Games from "./Games.jsx";
 // import Games from "./games.jsx"
 import Games from "./Games.jsx";
+import Chat from "./Chat.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
     path: "games",
     element: <Games />,
   },
+  {
+    path: "chat",
+    element: <Chat />,
+  }
 ]);
 
 createRoot(document.getElementById("root")).render(

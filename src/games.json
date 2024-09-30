@@ -1,4 +1,5 @@
-{
+
+  {
     "games": [
       {
         "title": "2048",
@@ -7,33 +8,29 @@
         "type": "HTML",
         "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/2048/2048.html"
       },
+        
       {
-        "title": "The Legend of Zelda: Breath of the Wild",
-        "imageSrc": "/images/zelda-botw.jpg",
-        "genre": "Action-Adventure",
-        "type": "Single-player",
-        "link": "https://www.zelda.com/breath-of-the-wild/"
+        "title": "10 Minutes Till Dawn",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/10minutestilldawn/10minutestilldawn.jpg",
+        "genre": "Action",
+        "type": "HTML",
+        "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/10minutestilldawn/10minutestilldawn.html"
       },
-      {
-        "title": "Overwatch",
-        "imageSrc": "/images/overwatch.jpg",
-        "genre": "First-person shooter",
-        "type": "Multiplayer",
-        "link": "https://playoverwatch.com/"
-      },
+
       {
         "title": "Minecraft",
         "imageSrc": "/images/minecraft.jpg",
         "genre": "Sandbox",
-        "type": "Both",
-        "link": "https://www.minecraft.net/"
+        "type": "HTML",
+        "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/minecraft/minecraft.html"
       },
+      
       {
-        "title": "Fortnite",
-        "imageSrc": "/images/fortnite.jpg",
-        "genre": "Battle Royale",
-        "type": "Multiplayer",
-        "link": "https://www.epicgames.com/fortnite/"
+        "title": "Pokemon Fire Red",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/EMULATORS/Pokemon%20Fire%20Red/pokemon-fire-red.icon.jpg",
+        "genre": "Action-RPG",
+        "type": "EMULATOR",
+        "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/EMULATORS/Pokemon%20Fire%20Red/Pokemon%20-%20Fire%20Red%20Version%20(U)%20(V1.11).gba"
       }
     ]
   }
