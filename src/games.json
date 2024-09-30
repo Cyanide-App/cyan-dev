@@ -26,7 +26,7 @@
         "imageSrc": "/images/minecraft.jpg",
         "genre": "Sandbox",
         "type": "Both",
-        "link": "https://www.minecraft.net/"
+        "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/minecraft/minecraft.html"
       },
       {
         "title": "Fortnite",
