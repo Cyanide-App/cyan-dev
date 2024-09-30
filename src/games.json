@@ -7,6 +7,15 @@
         "type": "HTML",
         "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/2048/2048.html"
       },
+        
+      {
+        "title": "10 Minutes Till Dawn",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/10minutestilldawn/10minutestilldawn.jpg",
+        "genre": "Action-Adventure",
+        "type": "Single-player",
+        "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/10minutestilldawn/10minutestilldawn.html"
+      },
+        
       {
         "title": "The Legend of Zelda: Breath of the Wild",
         "imageSrc": "/images/zelda-botw.jpg",
@@ -14,6 +23,7 @@
         "type": "Single-player",
         "link": "https://www.zelda.com/breath-of-the-wild/"
       },
+        
       {
         "title": "Overwatch",
         "imageSrc": "/images/overwatch.jpg",
@@ -21,6 +31,7 @@
         "type": "Multiplayer",
         "link": "https://playoverwatch.com/"
       },
+        
       {
         "title": "Minecraft",
         "imageSrc": "/images/minecraft.jpg",
@@ -28,6 +39,7 @@
         "type": "HTML",
         "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/minecraft/minecraft.html"
       },
+        
       {
         "title": "Fortnite",
         "imageSrc": "/images/fortnite.jpg",
