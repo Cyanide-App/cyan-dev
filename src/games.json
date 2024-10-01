@@ -3,10 +3,10 @@
     "games": [
       {
         "title": "2048",
-        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/2048/2048.icon.png",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/2048/2048.png",
         "genre": "Puzzle",
         "type": "HTML",
-        "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/2048/2048.html"
+        "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/2048/2048.html"
       },
         
       {
@@ -30,7 +30,7 @@
         "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/EMULATORS/Pokemon%20Fire%20Red/pokemon-fire-red.icon.jpg",
         "genre": "Action-RPG",
         "type": "EMULATOR",
-        "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/EMULATORS/Pokemon%20Fire%20Red/Pokemon%20-%20Fire%20Red%20Version%20(U)%20(V1.11).gba"
+        "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/EMULATORS/Pokemon%20Fire%20Red/Pokemon%20-%20Fire%20Red%20Version%20(U)%20(V1.1).zi"
       }
     ]
   }

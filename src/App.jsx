@@ -22,7 +22,7 @@ function SplashText() {
   }, []);
 
   return <h4 className="splash-text">{text}</h4>;
-} 
+}
 
 const AsciiArtAnimation = () => {
   const containerRef = useRef(null);

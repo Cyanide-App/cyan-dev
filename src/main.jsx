@@ -20,7 +20,7 @@ const router = createBrowserRouter([
   {
     path: "chat",
     element: <Chat />,
-  }
+  },
 ]);
 
 createRoot(document.getElementById("root")).render(
