@@ -93,8 +93,8 @@
   left: 0;
   width: 100%;
   height: 97%;
-  z-index: 9999; /* Ensure it's on top of other elements */
-  overflow: hidden; /* Prevent scrollbars within the iframe */
+  z-index: 9999; 
+  overflow: hidden; 
 }
 
 .full-page-iframe {

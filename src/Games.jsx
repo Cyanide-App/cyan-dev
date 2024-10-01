@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Form } from "react-router-dom";
 import { Search, Plus, ArrowLeft } from "lucide-react";
 import "./games.css";
+import { EmulatorJS } from "react-emulatorjs"
 import gamesData from "./games.json";
 
 function GameContent({ htmlContent, handleBackClick }) {
@@ -19,6 +20,7 @@ function GameContent({ htmlContent, handleBackClick }) {
           srcDoc={htmlContent}
           title="Game Content"
           className="full-page-iframe"
+          
         />
       </div>
     </div>
@@ -26,9 +28,11 @@ function GameContent({ htmlContent, handleBackClick }) {
 }
 
 function Games() {
-  const [htmlContent, setHtmlContent] = useState(null);
+  const [htmlContent, setHtmlContent]         = useState(null);
+  const [emulatorContent, setEmulatorContent] = useState("");
+  const [emulatorCore, setEmulatorCore]       = useState("");
 
-  const handleClick = async (link, type) => {
+  const handleClick = async (link, type, core = "") => {
     switch (type) {
       case "HTML":
         try {
@@ -42,11 +46,10 @@ function Games() {
 
       case "EMULATOR":
         try {
-          // Not set up yet, but this is how it should work:
-          //   <EmulatorJS
-          //   EJS_core="mgba" // emulator core
-          //   EJS_gameUrl="https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/EMULATORS/Pokemon%20Fire%20Red/Pokemon%20-%20Fire%20Red%20Version%20(U)%20(V1.1).zip" // rom url
-          // />
+          setEmulatorCore(core);
+          setEmulatorContent(link);
+
+
         } catch (error) {
           console.error("Error loading game:", error);
         }
@@ -60,6 +63,7 @@ function Games() {
 
   const handleBackClick = () => {
     setHtmlContent(null);
+    setEmulatorContent("");
   };
 
   return (
@@ -74,7 +78,7 @@ function Games() {
             <div
               className="card"
               key={index}
-              onClick={() => handleClick(game.link, game.type)}
+              onClick={() => handleClick(game.link, game.type, game.core)}
             >
               <Plus strokeWidth={1.5} className="corner-icon top-left" />
               <Plus strokeWidth={1.5} className="corner-icon top-right" />
@@ -91,11 +95,32 @@ function Games() {
             </div>
           )
         )}
-
+ 
       {htmlContent && (
         <GameContent
           htmlContent={htmlContent}
           handleBackClick={handleBackClick}
+        />
+      )}
+
+      {emulatorContent && (
+         <EmulatorJS
+         
+
+         width={window.innerWidth}
+         height={window.innerHeight}
+        EJS_core={emulatorCore} // emulator core
+        EJS_gameUrl={emulatorContent} // game url
+        //  EJS_gameName = {game.title}
+        EJS_alignStartButton = "center"
+        EJS_backgroundColor = '#000'
+        EJS_color = '#413a61'
+        style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          zIndex: 9999,
+        }} 
         />
       )}
     </div>
