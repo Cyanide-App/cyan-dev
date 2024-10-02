@@ -22,7 +22,7 @@ function SplashText() {
   }, []);
 
   return <h4 className="splash-text">{text}</h4>;
-} 
+}
 
 const AsciiArtAnimation = () => {
   const containerRef = useRef(null);
@@ -145,7 +145,7 @@ function SearchBar() {
       event.preventDefault();
 
       let url = urlInputRef.current.value;
-      let searchUrl = "https://search.brave.com/search?q=";
+      let searchUrl = "https://www.google.com/search?q=";
 
       if (!url.includes(".")) {
         url = searchUrl + encodeURIComponent(url);
@@ -265,7 +265,7 @@ export default function App() {
               |
               <NavLink
                 className="nav-link"
-                to="/Chat"
+                to="chat"
                 onClick={(e) => {
                   // e.preventDefault();
                   document.querySelector(".navbar").style.position = "unset";
