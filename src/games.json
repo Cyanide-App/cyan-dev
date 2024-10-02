@@ -15,6 +15,70 @@
         "type": "Single-player",
         "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/10minutestilldawn/10minutestilldawn.html"
       },
+
+      {
+        "title": "Derek 1",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/derek1/derek1.jpg",
+        "genre": "Platformer",
+        "type": "Single-player",
+        "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/derek1/derek1.html"
+      },
+
+      {
+        "title": "Derek 2",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/derek1/derek2.jpg",
+        "genre": "Platformer",
+        "type": "Single-player",
+        "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/derek1/derek2.html"
+      },
+
+      {
+        "title": "Derek 3",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/derek3/derek3.jpg",
+        "genre": "Platformer",
+        "type": "Single-player",
+        "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/derek3/derek3.html"
+      },
+
+      {
+        "title": "Derek 4",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/derek4/derek4.jpg",
+        "genre": "Platformer",
+        "type": "Single-player",
+        "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/derek4/derek4.html"
+      },
+
+      {
+        "title": "Derek 5",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/derek5/derek5.jpg",
+        "genre": "Platformer",
+        "type": "Single-player",
+        "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/derek5/derek5.html"
+      },
+
+      {
+        "title": "Derek 6",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/derek6/derek6.jpg",
+        "genre": "Platformer",
+        "type": "Single-player",
+        "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/derek6/derek6.html"
+      },
+
+      {
+        "title": "Derek 7",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/derek7/derek7.jpg",
+        "genre": "Platformer",
+        "type": "Single-player",
+        "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/derek7/derek7.html"
+      },
+
+      {
+        "title": "Derek 8",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/derek8/derek8.jpg",
+        "genre": "Platformer",
+        "type": "Single-player",
+        "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/derek8/derek8.html"
+      },
         
       {
         "title": "The Legend of Zelda: Breath of the Wild",
