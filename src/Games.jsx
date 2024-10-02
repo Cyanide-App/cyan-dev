@@ -67,13 +67,10 @@ function Games() {
 
   return (
     <div className="games-container">
-      {gamesData.games
-        .sort((a, b) => a.title.localeCompare(b.title))
-        .map(
-          (
-            game,
-            index // sorts items alphabetically
-          ) => (
+      <div className="games-grid">
+        {gamesData.games
+          .sort((a, b) => a.title.localeCompare(b.title))
+          .map((game, index) => (
             <div
               className="card"
               key={index}
@@ -94,8 +91,8 @@ function Games() {
                 <p className="game-type"> {game.type} </p>
               </div>
             </div>
-          )
-        )}
+          ))}
+      </div>
 
       {htmlContent && (
         <GameContent

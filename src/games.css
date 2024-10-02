@@ -1,6 +1,7 @@
 * {
   color: white;
 }
+
 .game-info {
   display: flex;
   justify-content: flex-start;
@@ -108,4 +109,12 @@
 .full-page-iframe {
   width: 100%;
   height: 100%;
+}
+
+.games-grid {
+  margin-: ;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 240px);
+  gap: 50px;
+  justify-items: center;
 }
