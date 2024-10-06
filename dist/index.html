@@ -1,31 +1,33 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <script src="/uv/uv.bundle.js"></script>
     <script src="/uv/uv.config.js"></script>
 
     <script>
-    if ("serviceWorker" in navigator) {
+      if ("serviceWorker" in navigator) {
         window.addEventListener("load", () => {
-            navigator.serviceWorker.register("/uv/sw.js", {
-                scope: __uv$config.prefix,
-            });
+          navigator.serviceWorker.register("/uv/sw.js", {
+            scope: __uv$config.prefix,
+          });
         });
-    }
+      }
     </script>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+      rel="stylesheet"
+    />
     <title>cyλn</title>
-  
-    <script type="module" crossorigin src="/assets/index-B9pGO512.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-B9Eo7G7P.css">
+
+    <script type="module" crossorigin src="./assets/index-dist.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-dist.css" />
   </head>
   <body>
     <div id="root"></div>
-    
   </body>
 </html>
