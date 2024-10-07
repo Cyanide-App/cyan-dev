@@ -59,9 +59,7 @@ function Games() {
           try {
             const encodedUrl = window.__uv$config.encodeUrl(link);
             const proxyUrl = __uv$config.prefix + encodedUrl;
-            setHtmlContent(`
-              <iframe src="${proxyUrl}" style="width:100%;height:100%;border:none;"></iframe>
-            `);
+            setHtmlContent(proxyUrl);
           } catch (error) {
             console.error("Error loading proxied game:", error);
           }
