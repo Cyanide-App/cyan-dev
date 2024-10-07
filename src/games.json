@@ -110,8 +110,8 @@
     },
     {
       "title": "Proxy",
-      "imageSrc": "https://placehold.co/200",
-      "genre": "temp",
+      "imageSrc": "https://placehold.co/100",
+      "genre": "testing",
       "type": "PROXY",
       "link": "https://www.coolmathgames.com/"
     },
