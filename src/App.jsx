@@ -125,61 +125,23 @@ function SearchBar() {
   const urlInputRef = useRef(null);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if ("serviceWorker" in navigator) {
-      window.addEventListener("load", () => {
-        navigator.serviceWorker.register("/uv/sw.js", {
-          scope: window.__uv$config.prefix,
-        });
-      });
+  const handleSearch = (event) => {
+    event.preventDefault();
+
+    let url = urlInputRef.current.value;
+    let searchUrl = "https://www.google.com/search?q=";
+
+    if (!url.includes(".")) {
+      url = searchUrl + encodeURIComponent(url);
+    } else {
+      if (!url.startsWith("http://") && !url.startsWith("https://")) {
+        url = "https://" + url;
+      }
     }
 
-    const handleKeyDown = (event) => {
-      if (event.key === "Enter") {
-        event.preventDefault();
-        document.getElementById("searchButton").click();
-      }
-    };
-
-    const handleClick = (event) => {
-      event.preventDefault();
-    
-      let url = urlInputRef.current.value;
-      let searchUrl = "https://www.google.com/search?q=";
-    
-      if (!url.includes(".")) {
-        url = searchUrl + encodeURIComponent(url);
-      } else {
-        if (!url.startsWith("http://") && !url.startsWith("https://")) {
-          url = "https://" + url;
-        }
-      }
-    
-      const encodedUrl = window.__uv$config.encodeUrl(url);
-      navigate(`/search?url=${encodeURIComponent(encodedUrl)}`);
-    };
-    
-
-    const urlInput = document.getElementById("urlInput");
-    const searchButton = document.getElementById("searchButton");
-
-    if (urlInput) {
-      urlInput.addEventListener("keydown", handleKeyDown);
-    }
-
-    if (searchButton) {
-      searchButton.onclick = handleClick;
-    }
-
-    return () => {
-      if (urlInput) {
-        urlInput.removeEventListener("keydown", handleKeyDown);
-      }
-      if (searchButton) {
-        searchButton.onclick = null;
-      }
-    };
-  }, []);
+    const encodedUrl = window.__uv$config.encodeUrl(url);
+    navigate(`/search?url=${encodeURIComponent(encodedUrl)}`);
+  };
 
   return (
     <div className="search-input-wrapper">
@@ -187,36 +149,38 @@ function SearchBar() {
       <input
         type="text"
         id="urlInput"
-        placeholder="Search with google or enter adresss"
+        placeholder="Search with google or enter address"
         ref={urlInputRef}
       />
-      <button id="searchButton">Search Text</button>
+      <button id="searchButton" onClick={handleSearch}>Search</button>
     </div>
   );
 }
 
+
 function SearchResult() {
-  const iframeWindowRef = useRef(null);
+  const iframeRef = useRef(null);
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const encodedUrl = searchParams.get("url");
 
   useEffect(() => {
     if (encodedUrl) {
-      iframeWindowRef.current.src =
-        window.__uv$config.prefix + decodeURIComponent(encodedUrl);
+      iframeRef.current.src = window.__uv$config.prefix + decodeURIComponent(encodedUrl);
     }
   }, [encodedUrl]);
 
   return (
     <iframe
-      id="iframeWindow"
-      className="iframeWindow"
-      title="Website Frame"
-      ref={iframeWindowRef}
+      ref={iframeRef}
+      className="search-result-iframe"
+      title="Search Result"
+      width="100%"
+      height="100%"
     />
   );
 }
+
 
 export default function App() {
   return (
@@ -284,13 +248,12 @@ export default function App() {
             </li>
           </ul>
         </nav>
-        {/* 
+        
             <Routes>
-              <Route path="/Chat" element={<Chat />} />
               <Route path="/search" element={<SearchResult />} />
 
               
-            </Routes> */}
+            </Routes>
       </div>
     </section>
   );
