@@ -56,17 +56,16 @@ function Games() {
         break;
       
         case "PROXY":
-  try {
-    alert("Original link:", "https://www.coolmathgames.com/");
-    const encodedUrl = window.__uv$config.encodeUrl("https://www.coolmathgames.com/");
-    alert("Encoded URL:", encodedUrl);
-    const proxyUrl = __uv$config.prefix + encodedUrl;
-    alert("Proxy URL:", proxyUrl);
-    window.location.href = `/search?url=${encodeURIComponent(proxyUrl)}`;
-  } catch (error) {
-    console.error("Error loading proxied game:", error);
-  }
-  break;
+          try {
+            const encodedUrl = window.__uv$config.encodeUrl(link);
+            const proxyUrl = __uv$config.prefix + encodedUrl;
+            setHtmlContent(`
+              <iframe src="${proxyUrl}" style="width:100%;height:100%;border:none;"></iframe>
+            `);
+          } catch (error) {
+            console.error("Error loading proxied game:", error);
+          }
+          break;
 
       default:
         // Handle other types or provide a default action
@@ -143,6 +142,55 @@ function Games() {
   );
 }
 
+function SearchBar() {
+  const urlInputRef = useRef(null);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("/uv/sw.js", {
+          scope: window.__uv$config.prefix,
+        });
+      });
+    }
+
+
+    const handleClick = (event) => {
+      event.preventDefault();
+
+      let url = urlInputRef.current.value;
+      let searchUrl = "https://www.google.com/search?q=";
+
+      if (!url.includes(".")) {
+        url = searchUrl + encodeURIComponent(url);
+      } else {
+        if (!url.startsWith("http://") && !url.startsWith("https://")) {
+          url = "https://" + url;
+        }
+      }
+
+      const encodedUrl = window.__uv$config.encodeUrl(url);
+      navigate(`/search`);
+    };
+
+
+
+  }, []);
+
+  return (
+    <div className="search-input-wrapper">
+      <Search className="search-icon" />
+      <input
+        type="text"
+        id="urlInput"
+        placeholder="Search with google or enter adresss"
+        ref={urlInputRef}
+      />
+      <button id="searchButton">Search Text</button>
+    </div>
+  );
+}
 
 
 export default Games;
