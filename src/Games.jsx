@@ -56,14 +56,17 @@ function Games() {
         break;
       
         case "PROXY":
-          try {
-            const encodedUrl = window.__uv$config.encodeUrl("https://www.coolmathgames.com/");
-            const proxyUrl = __uv$config.prefix + encodedUrl;
-            window.location.href = `/search?url=${encodeURIComponent(proxyUrl)}`;
-          } catch (error) {
-            console.error("Error loading proxied game:", error);
-          }
-          break;
+  try {
+    alert("Original link:", link);
+    const encodedUrl = window.__uv$config.encodeUrl(link);
+    alert("Encoded URL:", encodedUrl);
+    const proxyUrl = __uv$config.prefix + encodedUrl;
+    alert("Proxy URL:", proxyUrl);
+    window.location.href = `/search?url=${encodeURIComponent(proxyUrl)}`;
+  } catch (error) {
+    console.error("Error loading proxied game:", error);
+  }
+  break;
 
       default:
         // Handle other types or provide a default action
