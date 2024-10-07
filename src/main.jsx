@@ -21,6 +21,10 @@ const router = createBrowserRouter([
     path: "chat",
     element: <Chat />,
   },
+  {
+    path: "search",
+    element: "",
+  },
 ]);
 
 createRoot(document.getElementById("root")).render(

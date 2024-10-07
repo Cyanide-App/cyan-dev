@@ -156,7 +156,7 @@ function SearchBar() {
       }
 
       const encodedUrl = window.__uv$config.encodeUrl(url);
-      navigate(`/search?url=${encodeURIComponent(encodedUrl)}`);
+      navigate(`/search`);
     };
 
     const urlInput = document.getElementById("urlInput");
