@@ -57,8 +57,8 @@ function Games() {
       
         case "PROXY":
   try {
-    alert("Original link:", link);
-    const encodedUrl = window.__uv$config.encodeUrl(link);
+    alert("Original link:", "https://www.coolmathgames.com/");
+    const encodedUrl = window.__uv$config.encodeUrl("https://www.coolmathgames.com/");
     alert("Encoded URL:", encodedUrl);
     const proxyUrl = __uv$config.prefix + encodedUrl;
     alert("Proxy URL:", proxyUrl);
