@@ -7,6 +7,7 @@ import Games from "./Games.jsx";
 import Chat from "./Chat.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
+import Search from "./Search.jsx";
 
 const router = createBrowserRouter([
   {
@@ -23,7 +24,7 @@ const router = createBrowserRouter([
   },
   {
     path: "search",
-    element: "",
+    element: <Search />,
   },
 ]);
 

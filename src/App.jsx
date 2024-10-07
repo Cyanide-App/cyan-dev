@@ -143,10 +143,10 @@ function SearchBar() {
 
     const handleClick = (event) => {
       event.preventDefault();
-
+    
       let url = urlInputRef.current.value;
       let searchUrl = "https://www.google.com/search?q=";
-
+    
       if (!url.includes(".")) {
         url = searchUrl + encodeURIComponent(url);
       } else {
@@ -154,10 +154,11 @@ function SearchBar() {
           url = "https://" + url;
         }
       }
-
+    
       const encodedUrl = window.__uv$config.encodeUrl(url);
-      navigate(`/search`);
+      navigate(`/search?url=${encodeURIComponent(encodedUrl)}`);
     };
+    
 
     const urlInput = document.getElementById("urlInput");
     const searchButton = document.getElementById("searchButton");
