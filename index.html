@@ -1,30 +1,23 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <script src="/uv/uv.bundle.js"></script>
-    <script src="/uv/uv.config.js"></script>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Chemical Example</title>
+		<!-- <script type="module" src="./node_modules/chemicaljs/client/chemical.js"></script> -->
+	</head>
+	<body>
+		<h1>Chemical Example</h1>
+		<input id="search" placeholder="Enter URL" />
 
-    <script>
-    if ("serviceWorker" in navigator) {
-        window.addEventListener("load", () => {
-            navigator.serviceWorker.register("/uv/sw.js", {
-                scope: __uv$config.prefix,
-            });
-        });
-    }
-    </script>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
-    <title>cyλn</title>
-  
-  </head>
-  <body>
-    <div id="root"></div>
-    
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+		<script>
+			const search = document.getElementById("search");
+
+			search.addEventListener("keydown", async function (e) {
+				if (e.key == "Enter" && chemical.loaded && e.target.value) {
+					window.location = await chemical.encode(e.target.value);
+				}
+			});
+		</script>
+	</body>
 </html>
