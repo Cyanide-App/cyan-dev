@@ -1,25 +1,40 @@
 {
-  "name": "fancy-example",
-  "version": "1.0.0",
-  "description": "An advanced example using Chemical components.",
-  "main": "index.js",
+  "name": "cyan",
+  "private": true,
+  "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "start": "node index.js"
-    },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/chemicaljs/fancy-example.git"
+    "start": "vite",
+    "dev": "nodemon index.js",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
   },
-  "author": "Nebelung",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/chemicaljs/fancy-example/issues"
-  },
-  "homepage": "https://github.com/chemicaljs/fancy-example#readme",
   "dependencies": {
-    "chemicaljs": "^1.7.3",
-    "express": "^4.19.2"
+    "@react-navigation/native": "^6.1.18",
+    "@react-navigation/native-stack": "^6.11.0",
+    "@tomphttp/bare-client": "^2.2.0-alpha",
+    "@tomphttp/bare-server-node": "2.0.3",
+    "@widgetbot/react-embed": "^1.9.0",
+    "cors": "^2.8.5",
+    "express": "^4.21.0",
+    "lucide-react": "^0.438.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-emulatorjs": "^2.2.6",
+    "react-router-dom": "^6.26.2"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.9.0",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "eslint": "^9.9.0",
+    "eslint-plugin-react": "^7.35.0",
+    "eslint-plugin-react-hooks": "^5.1.0-rc.0",
+    "eslint-plugin-react-refresh": "^0.4.9",
+    "globals": "^15.9.0",
+    "nodemon": "^3.1.6",
+    "vite": "^5.4.1"
   }
-
 }

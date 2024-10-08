@@ -3,10 +3,7 @@
     "devCommand": "node index.js",
     "builds": [{
         "src": "index.js",
-        "use": "@vercel/node",
-        "config": {
-            "prebuild": "mkdir -p node_modules && find node_modules -type d -exec mkdir -p /var/task/{} \\;"
-        }
+        "use": "@vercel/node"
     }],
     "routes": [{
         "src": "/(.*)",

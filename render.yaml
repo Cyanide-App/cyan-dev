@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: cyan
+    runtime: node
+    buildCommand: "npm run build"
+    startCommand: "npm start"
+    plan: free
