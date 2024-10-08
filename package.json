@@ -1,7 +1,7 @@
 {
-  "name": "basic-example",
+  "name": "fancy-example",
   "version": "1.0.0",
-  "description": "A simple example using Chemical.",
+  "description": "An advanced example using Chemical components.",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chemicaljs/basic-example.git"
+    "url": "git+https://github.com/chemicaljs/fancy-example.git"
   },
   "author": "Nebelung",
-  "license": "AGPL-3.0-only",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/chemicaljs/basic-example/issues"
+    "url": "https://github.com/chemicaljs/fancy-example/issues"
   },
-  "homepage": "https://github.com/chemicaljs/basic-example#readme",
+  "homepage": "https://github.com/chemicaljs/fancy-example#readme",
   "dependencies": {
     "chemicaljs": "^1.7.3",
     "express": "^4.19.2"
