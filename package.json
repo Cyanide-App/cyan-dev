@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "node index.js"
-  },
+    },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/chemicaljs/fancy-example.git"
@@ -21,4 +21,5 @@
     "chemicaljs": "^1.7.3",
     "express": "^4.19.2"
   }
+
 }
