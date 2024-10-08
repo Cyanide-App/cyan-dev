@@ -4,7 +4,9 @@
     "builds": [{
         "src": "index.js",
         "use": "@vercel/node",
-        "config": { "includeFiles": ["node_modules/**"] }
+        "config": {
+            "prebuild": "mkdir -p node_modules && find node_modules -type d -exec mkdir -p /var/task/{} \\;"
+        }
     }],
     "routes": [{
         "src": "/(.*)",
