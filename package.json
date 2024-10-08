@@ -1,49 +1,24 @@
 {
-  "name": "cyan",
-  "private": true,
-  "version": "0.0.0",
+  "name": "basic-example",
+  "version": "1.0.0",
+  "description": "A simple example using Chemical.",
+  "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "vite",
-    "dev": "nodemon index.js",
-    "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "start": "node index.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chemicaljs/basic-example.git"
+  },
+  "author": "Nebelung",
+  "license": "AGPL-3.0-only",
+  "bugs": {
+    "url": "https://github.com/chemicaljs/basic-example/issues"
+  },
+  "homepage": "https://github.com/chemicaljs/basic-example#readme",
   "dependencies": {
-    "@mercuryworkshop/bare-mux": "^2.0.9",
-    "@mercuryworkshop/epoxy-transport": "^2.1.13",
-    "@mercuryworkshop/libcurl-transport": "^1.3.10",
-    "@mercuryworkshop/scramjet": "^1.0.2",
-    "@mercuryworkshop/wisp-js": "^0.3.2",
-    "@rubynetwork/rammerhead": "^1.3.5",
-    "@titaniumnetwork-dev/ultraviolet": "^3.2.7",
-    "meteorproxy": "^1.0.6-patch.1",
-    "@react-navigation/native": "^6.1.18",
-    "@react-navigation/native-stack": "^6.11.0",
-    "@tomphttp/bare-client": "^2.2.0-alpha",
-    "@tomphttp/bare-server-node": "2.0.3",
-    "@widgetbot/react-embed": "^1.9.0",
-    "chemicaljs": "^2.0.2",
-    "cors": "^2.8.5",
-    "express": "^4.21.0",
-    "lucide-react": "^0.438.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-emulatorjs": "^2.2.6",
-    "react-router-dom": "^6.26.2"
-  },
-  "devDependencies": {
-    "@eslint/js": "^9.9.0",
-    "@types/react": "^18.3.3",
-    "@types/react-dom": "^18.3.0",
-    "@vitejs/plugin-react": "^4.3.1",
-    "eslint": "^9.9.0",
-    "eslint-plugin-react": "^7.35.0",
-    "eslint-plugin-react-hooks": "^5.1.0-rc.0",
-    "eslint-plugin-react-refresh": "^0.4.9",
-    "globals": "^15.9.0",
-    "nodemon": "^3.1.6",
-    "vite": "^5.4.1"
+    "chemicaljs": "^1.7.3",
+    "express": "^4.19.2"
   }
 }

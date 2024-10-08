@@ -4,7 +4,7 @@ import express from "express";
 const [app, listen] = new ChemicalServer();
 const port = process.env.PORT || 3000;
 
-app.use(express.static("", {
+app.use(express.static("public", {
     index: "index.html",
     extensions: ["html"]
 }));
@@ -17,5 +17,5 @@ app.use((req, res) => {
 });
 
 listen(port, () => {
-    console.log(`Chemical demo listening on port ${port}`);
+    console.log(`Basic example listening on port ${port}`);
 });
