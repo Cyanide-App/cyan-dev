@@ -24,7 +24,7 @@ function SplashText() {
   return <h4 className="splash-text">{text}</h4>;
 }
 
-
+var bg =require('./bg.html');
 
 function SearchBar() {
   const urlInputRef = useRef(null);
@@ -123,6 +123,8 @@ function SearchResult() {
 }
 
 export default function App() {
+
+  
   return (
     <section className="layout">
       <div className="header frame">
@@ -131,14 +133,7 @@ export default function App() {
         <Plus strokeWidth={1.5} className="corner-icon bottom-left" />
         <Plus strokeWidth={1.5} className="corner-icon bottom-right" />
         <>
-  <meta charSet="UTF-8" />
-  <style
-    type="text/css"
-    dangerouslySetInnerHTML={{
-      __html:
-        "\n\t\t\tbody {\n\t\t\t\tbackground-color: black;\n\t\t\t}\n/*\t\t\tcanvas {\n\t\t\t\twidth: 100vw;\n\t\t\t\theight: 100vh;\n\t\t\t}\n*/\t\t"
-    }}
-  />
+        <iframe src={bg }></iframe>
 </>
 
         <h4 className="title">:header</h4>
