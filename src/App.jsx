@@ -24,7 +24,29 @@ function SplashText() {
   return <h4 className="splash-text">{text}</h4>;
 }
 
-var bg =require('./bg.html');
+function MyComponent() {
+  const bgRef = useRef(null);
+
+  useEffect(() => {
+    // 1. Fetch the bg.html content
+    fetch('/bg.html') 
+      .then(response => response.text())
+      .then(html => {
+        // 2. Set the content as the innerHTML of a container element
+        if (bgRef.current) {
+          bgRef.current.innerHTML = html; 
+        }
+      });
+  }, []); // Run only once on component mount
+
+  return (
+    <div>
+      {/* 3. Create a container element to hold the bg.html content */}
+      <div ref={bgRef} style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', zIndex: -1 }} /> 
+      {/* ... your other component content ... */}
+    </div>
+  );
+}
 
 function SearchBar() {
   const urlInputRef = useRef(null);
@@ -132,9 +154,7 @@ export default function App() {
         <Plus strokeWidth={1.5} className="corner-icon top-right" />
         <Plus strokeWidth={1.5} className="corner-icon bottom-left" />
         <Plus strokeWidth={1.5} className="corner-icon bottom-right" />
-        <>
-        <iframe src={bg }></iframe>
-</>
+        <MyComponent />
 
         <h4 className="title">:header</h4>
         <div className="hero">
