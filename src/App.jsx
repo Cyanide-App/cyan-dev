@@ -1654,7 +1654,7 @@ export default function App() {
         <Plus strokeWidth={1.5} className="corner-icon top-right" />
         <Plus strokeWidth={1.5} className="corner-icon bottom-left" />
         <Plus strokeWidth={1.5} className="corner-icon bottom-right" />
-        <ASCII />
+        {/* <ASCII /> */}
 
         <h4 className="title">:header</h4>
         <div className="hero">
