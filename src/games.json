@@ -183,7 +183,7 @@
 
       {
         "title": "Earthbound",
-        "core" : "mgba",
+        "core" : "snes",
         "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/EMULATORS/images/earthbound.jpg",
         "genre": "temp",
         "type": "EMULATOR",
