@@ -101,12 +101,75 @@
       },
 
       {
+        "title": "Pokemon Emerald",
+        "core" : "mgba",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/EMULATORS/images/pokemonemerald.jpg",
+        "genre": "temp",
+        "type": "EMULATOR",
+        "link": "https://cdn.jsdelivr.net/gh/vbaemulator/GBA-Roms@main/Pokemon%20Emerald%20%2B.zip"
+      },
+
+      {
         "title": "Pokemon Fire Red",
         "core" : "mgba",
-        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/EMULATORS/Pokemon%20Fire%20Red/pokemon-fire-red.icon.jpg",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/EMULATORS/images/pokemonfirered.jpg",
         "genre": "Action-RPG",
         "type": "EMULATOR",
-        "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/EMULATORS/Pokemon%20Fire%20Red/Pokemon%20-%20Fire%20Red%20Version%20(U)%20(V1.1).gba"
+        "link": "https://cdn.jsdelivr.net/gh/vbaemulator/GBA-Roms@main/Pokemon%20Firered%20251.zip"
+      },
+
+      {
+        "title": "Pokemon Crystal",
+        "core" : "mgba",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/EMULATORS/images/pokemoncrystal.jpg",
+        "genre": "Action-RPG",
+        "type": "EMULATOR",
+        "link": "https://cdn.jsdelivr.net/gh/mehransab101/GBC_ROMS@master/Pokemon%20-%20Crystal%20Version%20(UE)%20(V1.1)%20%5BC%5D%5B!%5D.gbc"
+      },
+
+      {
+        "title": "Pokemon Red",
+        "core" : "mgba",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/EMULATORS/images/pokemonred.jpg",
+        "genre": "Action-RPG",
+        "type": "EMULATOR",
+        "link": "https://cdn.jsdelivr.net/gh/mehransab101/GBC_ROMS@master/Pokemon%20-%20Red%20Version%20(UE)%5B!%5D.zip"
+      },
+
+      {
+        "title": "Pokemon Blue",
+        "core" : "mgba",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/EMULATORS/images/pokemonblue.jpg",
+        "genre": "Action-RPG",
+        "type": "EMULATOR",
+        "link": "https://cdn.jsdelivr.net/gh/mehransab101/GBC_ROMS@master/pokemon-blue.gb"
+      },
+
+      {
+        "title": "Pokemon Gold",
+        "core" : "mgba",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/EMULATORS/images/pokemongold.jpg",
+        "genre": "Action-RPG",
+        "type": "EMULATOR",
+        "link": "https://cdn.jsdelivr.net/gh/mehransab101/GBC_ROMS@master/Pokemon%20-%20Gold%20Version%20(UE)%20%5BC%5D%5B!%5D.gbc"
+      },
+
+      {
+        "title": "Pokemon Silver",
+        "core" : "mgba",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/EMULATORS/images/pokemonsilver.jpg",
+        "genre": "Action-RPG",
+        "type": "EMULATOR",
+        "link": "https://cdn.jsdelivr.net/gh/mehransab101/GBC_ROMS@master/Pokemon%20-%20Silver%20Version%20(USA%2C%20Europe)%20(SGB%20Enhanced).gbc"
+      },
+
+      {
+        "title": "Castlevania - Harmony of Dissonance",
+        "core" : "mgba",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/EMULATORS/images/harmonyofdissonance.jpg",
+        "genre": "Action-RPG",
+        "type": "EMULATOR",
+        "link": "https://cdn.jsdelivr.net/gh/vbaemulator/GBA-Roms@main/Castlevania%20-%20Harmony%20of%20Dissonance%20(USA).zip"
       },
 
       {
@@ -119,12 +182,12 @@
       },
 
       {
-        "title": "Ι Placeholder",
-        "imageSrc": "https://placehold.co/200",
+        "title": "Earthbound",
+        "core" : "mgba",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/EMULATORS/images/earthbound.jpg",
         "genre": "temp",
-        "type": "HTML",
-        "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/minecraft/minecraft.html"
-
+        "type": "EMULATOR",
+        "link": "https://cdn.jsdelivr.net/gh/dolchi21-retroarch/snes-roms@master/Earthbound.7z"
       },
         
       {
