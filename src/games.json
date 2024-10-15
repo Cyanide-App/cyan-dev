@@ -99,7 +99,7 @@
         "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/minecraft/minecraft.html"
 
       },
-      
+
       {
         "title": "Pokemon Fire Red",
         "core" : "mgba",
@@ -108,13 +108,16 @@
         "type": "EMULATOR",
         "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/EMULATORS/Pokemon%20Fire%20Red/Pokemon%20-%20Fire%20Red%20Version%20(U)%20(V1.1).gba"
       },
+
       {
-        "title": "Ι Placeholder",
-        "imageSrc": "https://placehold.co/200",
+        "title": "Jimmy Neutron Boy Genius",
+        "core" : "mgba",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/EMULATORS/images/jimmyneutronboygenius.jpg",
         "genre": "temp",
-        "type": "HTML",
-        "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/minecraft/minecraft.html"
+        "type": "EMULATOR",
+        "link": "https://cdn.jsdelivr.net/gh/vbaemulator/GBA-Roms@main/Adventures%20of%20Jimmy%20Neutron%20Boy%20Genius%20vs.%20Jimmy%20Negatron%2C%20The%20(USA%2C%20Europe).zip"
       },
+
       {
         "title": "Ι Placeholder",
         "imageSrc": "https://placehold.co/200",
@@ -131,6 +134,7 @@
         "type": "HTML",
         "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/minecraft/minecraft.html"
       },
+
       {
         "title": "Ι Placeholder",
         "imageSrc": "https://placehold.co/200",
