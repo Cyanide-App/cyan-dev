@@ -1094,8 +1094,8 @@ function ASCII() {
                   }),
                       
                       (document.documentElement.style.height = "100%"),
-                      (document.body.style.height = "100%"),
-                      (document.body.style.width = "100%"),
+                      (document.body.style.height = "90%"),
+                      (document.body.style.width = "60%"),
                       (document.body.style.margin = 0),
                       (document.body.style.padding = 0),
                       (document.body.style.overflow = "hidden"),
