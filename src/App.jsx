@@ -1092,17 +1092,15 @@ function ASCII() {
                                 ? (document.body.style.cursor = "none" === document.body.style.cursor ? "auto" : "none")
                                 : "x" == t.key && document.body.requestFullscreen && document.body.requestFullscreen().catch((t) => consle.warn(t)));
                   }),
-                      (document.documentElement.style.overscrollBehavior = "none"),
+                      
                       (document.documentElement.style.height = "100%"),
                       (document.body.style.height = "100%"),
                       (document.body.style.width = "100%"),
                       (document.body.style.margin = 0),
                       (document.body.style.padding = 0),
                       (document.body.style.overflow = "hidden"),
-                      (document.body.style.backgroundColor = "rgb(30,30,30)"),
-                      (document.body.style.display = "flex"),
-                      (document.body.style.alignItems = "center"),
-                      (document.body.style.justifyContent = "center");
+                      (document.body.style.backgroundColor = "rgba(0,0,0,0)"),
+                      (document.body.style.display = "flex");
                   const K = document.createElement("canvas");
                   document.body.appendChild(K),
                       (K.style.display = "block"),
