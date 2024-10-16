@@ -124,7 +124,7 @@ canvas{
   overflow: hidden;
   white-space: pre;
   /* text-shadow: 0 0 10px white; */
-  position: absolute!important; 
+  position: fixed!important; 
   z-index: -1!important; 
 
 }
