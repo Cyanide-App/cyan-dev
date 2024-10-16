@@ -1062,36 +1062,7 @@ function ASCII() {
                   const Z = Object.assign({ seed: Math.random().toString(16).substring(2), tokenId: null, env: null, mode: null, res: null }, window.params),
                       U = new URLSearchParams(location.search),
                       W = { scale: parseInt(U.get("scale")) || 0, fps: parseInt(U.get("fps")) || 0, canvasWidth: parseInt(U.get("canvasWidth")) || 0, canvasHeight: parseInt(U.get("canvasHeight")) || 0 };
-                  window.addEventListener("keydown", (t) => {
-                      function e() {
-                          (S = S == u ? g : S == g ? m : u), (z = !0);
-                      }
-                      function o(t) {
-                          t > 0 ? N++ : (N = t < 0 ? Math.max(1, N - 1) : 1), (z = !0);
-                      }
-                      "i" == t.key
-                          ? (v = !v)
-                          : "s" == t.key
-                          ? ((R = p), e())
-                          : "f" == t.key
-                          ? ((R = I), e())
-                          : "t" == t.key
-                          ? (L = !0)
-                          : "p" == t.key
-                          ? (b = 1)
-                          : "P" == t.key
-                          ? (b = 4)
-                          : "w" == t.key ||
-                            ("ArrowUp" == t.key
-                                ? o(1)
-                                : "ArrowDown" == t.key
-                                ? o(-1)
-                                : "0" == t.key
-                                ? o(0)
-                                : "c" == t.key
-                                ? (document.body.style.cursor = "none" === document.body.style.cursor ? "auto" : "none")
-                                : "x" == t.key && document.body.requestFullscreen && document.body.requestFullscreen().catch((t) => consle.warn(t)));
-                  }),
+                 
                       
                       (document.documentElement.style.height = "100%"),
                       (document.body.style.height = "100%"),
