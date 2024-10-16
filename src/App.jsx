@@ -1100,7 +1100,9 @@ function ASCII() {
                       (document.body.style.padding = 0),
                       (document.body.style.overflow = "hidden"),
                       (document.body.style.backgroundColor = "rgba(0,0,0,0)"),
-                      (document.body.style.display = "flex");
+                      (document.body.style.display = "flex"),
+                      (document.body.style.alignItems = "center"),
+                      (document.body.style.justifyContent = "center");
                   const K = document.createElement("canvas");
                   document.body.appendChild(K),
                       (K.style.display = "block"),
