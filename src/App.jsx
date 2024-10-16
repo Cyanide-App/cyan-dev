@@ -1660,7 +1660,7 @@ export default function App() {
         <div className="hero">
 
           <h1 className="hero-title">cyλn</h1>
-          <SplashText />
+          {/* <SplashText /> */}
         </div>
       </div>
 
