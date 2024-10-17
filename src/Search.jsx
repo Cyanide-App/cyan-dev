@@ -1,10 +1,16 @@
+
 import React, { useState, useEffect } from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
+
 function Search() {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
-  const encodedUrl = searchParams.get('url');
-  const url = window.__uv$config.decodeUrl(encodedUrl); // Decode the URL
+
+  // Get encoded URL from search params
+  const encodedUrl = searchParams.get('url'); 
+
+  // Decode the URL using __uv$config
+  const url = window.__uv$config.decodeUrl(encodedUrl); 
 
   const [html, setHtml] = useState('');
   const [loading, setLoading] = useState(true);
@@ -12,7 +18,8 @@ function Search() {
   useEffect(() => {
     const fetchHtml = async () => {
       try {
-        const response = await fetch(`/api/proxy?url=${encodeURIComponent(url)}`);
+        // Use the decoded URL in the proxy fetch request
+        const response = await fetch(`/api/proxy?url=${encodeURIComponent(url)}`); 
         const data = await response.text();
         setHtml(data);
       } catch (error) {
@@ -23,13 +30,14 @@ function Search() {
       }
     };
 
+    // Fetch HTML only if a URL is provided
     if (url) {
-      fetchHtml();
+      fetchHtml(); 
     } else {
       // Handle case where URL is not provided, e.g., redirect to home
       navigate('/'); 
     }
-  }, [url, navigate]);
+  }, [url, navigate]); // Re-fetch when 'url' or 'navigate' changes
 
   if (loading) {
     return <div>Loading...</div>;
@@ -38,7 +46,7 @@ function Search() {
   // Display the proxied HTML content
   return (
     <div className="search-results">
-      {/* You can use dangerouslySetInnerHTML to render the HTML */}
+      {/* Use dangerouslySetInnerHTML to render the HTML */}
       <div dangerouslySetInnerHTML={{ __html: html }} /> 
     </div>
   );

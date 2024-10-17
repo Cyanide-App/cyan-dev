@@ -1,3 +1,5 @@
+// setup uv on vercel: https://github.com/crllect/UV-on-vercel
+
 import React, { useState, useEffect, useRef } from "react";
 import {
   HashRouter,
@@ -1593,28 +1595,6 @@ function SearchBar() {
   );
 }
 
-function SearchResult() {
-  const iframeWindowRef = useRef(null);
-  const location = useLocation();
-  const searchParams = new URLSearchParams(location.search);
-  const encodedUrl = searchParams.get("url");
-
-  useEffect(() => {
-    if (encodedUrl) {
-      iframeWindowRef.current.src =
-        window.__uv$config.prefix + decodeURIComponent(encodedUrl);
-    }
-  }, [encodedUrl]);
-
-  return (
-    <iframe
-      id="iframeWindow"
-      className="iframeWindow"
-      title="Website Frame"
-      ref={iframeWindowRef}
-    />
-  );
-}
 
 export default function App() {
 
