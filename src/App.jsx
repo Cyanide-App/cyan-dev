@@ -10,7 +10,7 @@ import {
 import { Search, Plus } from "lucide-react";
 import Chat from "./Chat";
 import "./App.css";
-import { Form } from "react-router-dom";
+import {  useSearchParams } from 'react-router-dom';
 import bgHtml from './bg.html?raw'; // Import bg.html
 
 function SplashText() {
@@ -1543,7 +1543,7 @@ function SearchBar() {
       event.preventDefault();
 
       let url = urlInputRef.current.value;
-      let searchUrl = "https://www.google.com/search?q=";
+        let searchUrl = "https://www.google.com/search?q=";
 
       if (!url.includes(".")) {
         url = searchUrl + encodeURIComponent(url);
@@ -1554,7 +1554,8 @@ function SearchBar() {
       }
 
       const encodedUrl = window.__uv$config.encodeUrl(url);
-      navigate(`/search`);
+      // Pass encodedUrl as a query parameter
+      navigate(`/search?url=${encodedUrl}`);
     };
 
     const urlInput = document.getElementById("urlInput");
