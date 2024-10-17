@@ -10,7 +10,7 @@ import {
 import { Search, Plus } from "lucide-react";
 import Chat from "./Chat";
 import "./App.css";
-import {  useSearchParams } from 'react-router-dom';
+import { Form } from "react-router-dom";
 import bgHtml from './bg.html?raw'; // Import bg.html
 
 function SplashText() {
