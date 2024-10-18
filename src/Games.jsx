@@ -68,11 +68,12 @@ function Games() {
           case "FLASH":
             try {
               const flashContent = `
-                <object>
-                  <embed src="${link}" width="1000" height="800" />
-                </object>
-                <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
-              `;
+              <object style="width: 100%; height: 100%;">
+                <embed src="${link}" width="100%" height="100%" />
+              </object>
+              <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+            `;
+            
               setHtmlContent(flashContent); 
             } catch (error) {
               console.error("Error loading flash game:", error);
