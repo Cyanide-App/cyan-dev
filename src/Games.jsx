@@ -69,7 +69,7 @@ function Games() {
             try {
               const flashContent = `
                 <object>
-                  <embed src="${link}" width="100%" height="100%" />
+                  <embed src="${link}" width="1000" height="800" />
                 </object>
                 <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
               `;
