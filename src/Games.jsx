@@ -64,23 +64,25 @@ function Games() {
             console.error("Error loading proxied game:", error);
           }
           break;
+case "FLASH":
+  try {
+    const windowWidth = window.innerWidth;
+    const windowHeight = window.innerHeight;
 
-          case "FLASH":
-            try {
-              const flashContent = `
-              <object style="width: 100%; height: 100%;">
-                <embed src="${link}" width="100%" height="100%" />
-              </object>
-              <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
-            `;
-            
-              setHtmlContent(flashContent); 
-            } catch (error) {
-              console.error("Error loading flash game:", error);
-            }
-            break;
-          
-  
+    const flashContent = `
+      <object style="width: ${windowWidth}px; height: ${windowHeight}px;">
+        <embed src="${link}" width="${windowWidth}" height="${windowHeight}" />
+      </object>
+      <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+    `;
+    setHtmlContent(flashContent);
+
+ 
+  } catch (error) {
+    console.error("Error loading flash game:", error);
+  }
+  break;
+
 
       default:
         // Handle other types or provide a default action
