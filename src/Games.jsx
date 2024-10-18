@@ -42,7 +42,7 @@ function Games() {
           const html = await response.text();
           setHtmlContent(html);
         } catch (error) {
-          console.error("Error loading game:", error);
+          console.error("Error loading html game:", error);
         }
         break;
 
@@ -51,7 +51,7 @@ function Games() {
           setEmulatorCore(core);
           setEmulatorContent(link);
         } catch (error) {
-          console.error("Error loading game:", error);
+          console.error("Error loading emulated game:", error);
         }
         break;
       
@@ -64,6 +64,22 @@ function Games() {
             console.error("Error loading proxied game:", error);
           }
           break;
+
+          case "FLASH":
+            try {
+              const flashContent = `
+                <object>
+                  <embed src="${link}" width="1000" height="800" />
+                </object>
+                <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+              `;
+              setHtmlContent(flashContent); 
+            } catch (error) {
+              console.error("Error loading flash game:", error);
+            }
+            break;
+          
+  
 
       default:
         // Handle other types or provide a default action
