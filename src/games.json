@@ -188,19 +188,35 @@
     },
 
     {
-      "title": "Ι Placeholder",
-      "imageSrc": "https://placehold.co/200",
-      "genre": "temp",
-      "type": "HTML",
-      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/minecraft/minecraft.html"
+      "title": "Papa's Burgeria",
+      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Papa'sBurgeria/papasburgeria_300x300.jpg",
+      "genre": "Strategy",
+      "type": "FLASH",
+      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Papa'sBurgeria/papasburgeria.swf"
     },
 
     {
-      "title": "Ι Placeholder",
-      "imageSrc": "https://placehold.co/200",
-      "genre": "temp",
-      "type": "HTML",
-      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/minecraft/minecraft.html"
+      "title": "Papa's Freezeria",
+      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Papa'sFreezeria/papasfreezeria_300x300.jpg",
+      "genre": "Strategy",
+      "type": "FLASH",
+      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Papa'sFreezeria/papasfreezeria.swf"
+    },
+
+    {
+      "title": "Papa's Pizzeria",
+      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Papa'sPizzeria/papaspizzeria_100x100.jpg",
+      "genre": "Strategy",
+      "type": "FLASH",
+      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Papa'sPizzeria/papaspizzeria_v2.swf"
+    },
+
+    {
+      "title": "Papa's Sushiria",
+      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Papa'sSushiria/icon_300x300_papassushiria.jpg",
+      "genre": "Strategy",
+      "type": "FLASH",
+      "link": "https://github.com/Cyanide-App/cyan-assets/blob/main/FLASH/Papa'sSushiria/papassushiria.swf"
     }
   ]
 }
