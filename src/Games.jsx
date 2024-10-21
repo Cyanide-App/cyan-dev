@@ -96,7 +96,25 @@ case "FLASH":
   };
 
   return (
+    <div className="games-layout">
+      <div className="search-container ">
+      <div className="search-input-wrapper">
+      <Search className="search-icon" />
+      <input
+        type="text"
+        id="urlInput"
+        placeholder="Search with google or enter adresss"
+        
+      />
+      <button id="searchButton">Search Text</button>
+    </div>
+      </div>
     <div className="games-container">
+              <Plus strokeWidth={1.5} className="corner-icon top-left" />
+        <Plus strokeWidth={1.5} className="corner-icon top-right" />
+        <Plus strokeWidth={1.5} className="corner-icon bottom-left" />
+        <Plus strokeWidth={1.5} className="corner-icon bottom-right" />
+        <h4 className="title">:search</h4>
       <div className="games-grid">
         {gamesData.games
           .sort((a, b) => a.title.localeCompare(b.title))
@@ -155,6 +173,7 @@ case "FLASH":
           </div>
         </div>
       )}
+    </div>
     </div>
   );
 }

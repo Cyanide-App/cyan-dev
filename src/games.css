@@ -1,13 +1,69 @@
 * {
   color: white;
 }
+.frame {
+  position: relative;
+}
+.games-layout {
+  outline: 1px solid rgba(255, 255, 255, 0.4);
 
+  margin-left: 10vw;
+  margin-right: 10vw;
+
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+
+  width: 80vw;
+  height: 90vh;
+  
+
+  display: grid;
+  grid:
+    "search-container" 0.1fr
+    "games-container" 1fr
+    / 1fr;
+  gap: 8px;
+}
+
+.search-container { grid-area: search-container; }
+outline: 1px solid rgba(255, 255, 255, 0.4);
+
+.games-container { grid-area: games-container; }
+
+.search-input-wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  /* border-radius: 4px; */
+  padding: 5px 10px;
+}
+
+.search-icon {
+  color: white;
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
+}
 .game-info {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   margin-top: auto;
   width: 100%;
+}
+
+.search-input {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 14px;
+  width: 100%;
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .game-genre,
@@ -112,9 +168,8 @@
 }
 
 .games-grid {
-  margin-: ;
+  
   display: grid;
   grid-template-columns: repeat(auto-fill, 240px);
   gap: 50px;
-  justify-items: center;
 }
