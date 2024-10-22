@@ -71,15 +71,15 @@ function Games() {
         }
         break;
       
-        case "PROXY":
-          try {
-            const encodedUrl = window.__uv$config.encodeUrl(link);
-            const proxyUrl = __uv$config.prefix + encodedUrl;
-            setHtmlContent(proxyUrl);
-          } catch (error) {
-            console.error("Error loading proxied game:", error);
-          }
-          break;
+        // case "PROXY":
+        //   try {
+        //     const encodedUrl = window.__uv$config.encodeUrl(link);
+        //     const proxyUrl = __uv$config.prefix + encodedUrl;
+        //     setHtmlContent(proxyUrl);
+        //   } catch (error) {
+        //     console.error("Error loading proxied game:", error);
+        //   }
+        //   break;
 case "FLASH":
   try {
     const windowWidth = window.innerWidth;
@@ -205,55 +205,7 @@ case "FLASH":
   );
 }
 
-function SearchBar() {
-  const urlInputRef = useRef(null);
-  const navigate = useNavigate();
 
-  useEffect(() => {
-    if ("serviceWorker" in navigator) {
-      window.addEventListener("load", () => {
-        navigator.serviceWorker.register("/uv/sw.js", {
-          scope: window.__uv$config.prefix,
-        });
-      });
-    }
-
-
-    const handleClick = (event) => {
-      event.preventDefault();
-
-      let url = urlInputRef.current.value;
-      let searchUrl = "https://www.google.com/search?q=";
-
-      if (!url.includes(".")) {
-        url = searchUrl + encodeURIComponent(url);
-      } else {
-        if (!url.startsWith("http://") && !url.startsWith("https://")) {
-          url = "https://" + url;
-        }
-      }
-
-      const encodedUrl = window.__uv$config.encodeUrl(url);
-      navigate(`/search`);
-    };
-
-
-
-  }, []);
-
-  return (
-    <div className="search-input-wrapper">
-      <Search className="search-icon" />
-      <input
-        type="text"
-        id="urlInput"
-        placeholder="Search with google or enter adresss"
-        ref={urlInputRef}
-      />
-      <button id="searchButton">Search Text</button>
-    </div>
-  );
-}
 
 
 export default Games;

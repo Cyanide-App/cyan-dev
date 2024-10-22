@@ -30,64 +30,7 @@ function SplashText() {
 
 
 function SearchBar() {
-  const urlInputRef = useRef(null);
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    if ("serviceWorker" in navigator) {
-      window.addEventListener("load", () => {
-        navigator.serviceWorker.register("/uv/sw.js", {
-          scope: window.__uv$config.prefix,
-        });
-      });
-    }
-
-    const handleKeyDown = (event) => {
-      if (event.key === "Enter") {
-        event.preventDefault();
-        document.getElementById("searchButton").click();
-      }
-    };
-
-    const handleClick = (event) => {
-      event.preventDefault();
-
-      let url = urlInputRef.current.value;
-        let searchUrl = "https://www.google.com/search?q=";
-
-      if (!url.includes(".")) {
-        url = searchUrl + encodeURIComponent(url);
-      } else {
-        if (!url.startsWith("http://") && !url.startsWith("https://")) {
-          url = "https://" + url;
-        }
-      }
-
-      const encodedUrl = window.__uv$config.encodeUrl(url);
-      // Pass encodedUrl as a query parameter
-      navigate(`/search?url=${encodedUrl}`);
-    };
-
-    const urlInput = document.getElementById("urlInput");
-    const searchButton = document.getElementById("searchButton");
-
-    if (urlInput) {
-      urlInput.addEventListener("keydown", handleKeyDown);
-    }
-
-    if (searchButton) {
-      searchButton.onclick = handleClick;
-    }
-
-    return () => {
-      if (urlInput) {
-        urlInput.removeEventListener("keydown", handleKeyDown);
-      }
-      if (searchButton) {
-        searchButton.onclick = null;
-      }
-    };
-  }, []);
+ // removing proxy for now
 
   return (
     <div className="search-input-wrapper">
@@ -95,7 +38,7 @@ function SearchBar() {
       <input
         type="text"
         id="urlInput"
-        placeholder="Search with google or enter adresss"
+        placeholder="// PROXY COMMING SOON"
         ref={urlInputRef}
       />
       <button id="searchButton">Search Text</button>
