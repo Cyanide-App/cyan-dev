@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Serve static files from the React build directory
-const buildPath = path.join(__dirname, ""); // Update if your build directory is different
+const buildPath = path.join(__dirname, "dist"); // Update if your build directory is different
 app.use(express.static(buildPath));
 app.use(cors());
 
