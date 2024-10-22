@@ -39,7 +39,6 @@ function SearchBar() {
         type="text"
         id="urlInput"
         placeholder="// PROXY COMMING SOON"
-        ref={urlInputRef}
       />
       <button id="searchButton">Search Text</button>
     </div>
