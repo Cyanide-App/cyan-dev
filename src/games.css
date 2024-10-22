@@ -5,7 +5,6 @@
   position: relative;
 }
 .games-layout {
-  outline: 1px solid rgba(255, 255, 255, 0.4);
 
   margin-left: 10vw;
   margin-right: 10vw;
@@ -19,16 +18,47 @@
 
   display: grid;
   grid:
-    "search-container" 0.1fr
+    "search-container" auto
     "games-container" 1fr
     / 1fr;
-  gap: 8px;
+  gap: 20px;
 }
 
-.search-container { grid-area: search-container; }
+.search-container { grid-area: search-container;
+  padding: 10px; 
+  outline: 1px solid rgba(255, 255, 255, 0.4);
+  position: relative;
+
+}
+.games-container { grid-area: games-container; 
+padding: 50px;
 outline: 1px solid rgba(255, 255, 255, 0.4);
 
-.games-container { grid-area: games-container; }
+position: relative;
+}
+
+.status-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #0f0f0f; /* Example background color */
+  color: white;
+  /* padding: 5px; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 9999;
+}
+.status-title{
+  background-color: cyan;
+  color: #001312;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.left-side, .right-side {
+  /* Add any specific styling for the left/right sections */
+}
 
 .search-input-wrapper {
   display: flex;
@@ -172,4 +202,6 @@ outline: 1px solid rgba(255, 255, 255, 0.4);
   display: grid;
   grid-template-columns: repeat(auto-fill, 240px);
   gap: 50px;
+  justify-content: center; 
+  align-items: center; 
 }
