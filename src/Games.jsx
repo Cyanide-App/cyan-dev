@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Form } from "react-router-dom";
-import { Search, Plus, ArrowLeft } from "lucide-react";
+import { Search, Plus, ArrowLeft, Gamepad } from "lucide-react";
 import "./games.css";
 import { EmulatorJS } from "react-emulatorjs";
 import gamesData from "./games.json";
@@ -25,7 +25,23 @@ function GameContent({ htmlContent, handleBackClick }) {
     </div>
   );
 }
+function StatusBar({ siteTitle, gameCount }) {
+  const currentDate = new Date();
+  const options = { year: 'numeric', month: 'long', day: 'numeric' };
+  const formattedDate = currentDate.toLocaleDateString(undefined, options);
+  const formattedTime = currentDate.toLocaleTimeString();
 
+  return (
+    <div className="status-bar">
+      <div className="left-side">
+        <span className="status-title">{siteTitle}</span> ▨:{gameCount}
+      </div>
+      <div className="right-side">
+        {formattedDate} {formattedTime}
+      </div>
+    </div>
+  );
+}
 function Games() {
   const [htmlContent, setHtmlContent] = useState(null);
   const [gameTitle, setGameTitle] = useState("");
@@ -96,7 +112,36 @@ case "FLASH":
   };
 
   return (
+    
+    <div className="games-layout">
+      
+   <StatusBar siteTitle="cyλn" gameCount={gamesData.games.length} />
+
+      <div className="search-container ">
+      <Plus strokeWidth={1.5} className="corner-icon top-left" />
+              <Plus strokeWidth={1.5} className="corner-icon top-right" />
+              <Plus strokeWidth={1.5} className="corner-icon bottom-left" />
+              <Plus strokeWidth={1.5} className="corner-icon bottom-right" />
+              <h4 className="title">:search</h4>
+
+      <div className="search-input-wrapper">
+      <Search className="search-icon" />
+      <input
+        type="text"
+        id="urlInput"
+        placeholder="Search with google or enter adresss"
+        
+      />
+      <button id="searchButton">Search Text</button>
+    </div>
+      </div>
     <div className="games-container">
+    <Plus strokeWidth={1.5} className="corner-icon top-left" />
+              <Plus strokeWidth={1.5} className="corner-icon top-right" />
+              <Plus strokeWidth={1.5} className="corner-icon bottom-left" />
+              <Plus strokeWidth={1.5} className="corner-icon bottom-right" />
+
+        <h4 className="title">:games</h4>
       <div className="games-grid">
         {gamesData.games
           .sort((a, b) => a.title.localeCompare(b.title))
@@ -155,6 +200,7 @@ case "FLASH":
           </div>
         </div>
       )}
+    </div>
     </div>
   );
 }
