@@ -26,7 +26,6 @@
     <div id="root"></div>
     
     <script type="module" src="/src/main.jsx"></script>
-    <button>embed about:blank</button>
     <script type="text/javascript">
         var urlobj = new window.URL(window.location.href);
         // get the url of the current page
@@ -34,8 +33,7 @@
         alert("// Opening page in about:blank");
         if (url) {
             var win;
-            document.querySelector('button'). onclick = function() {
-            if (win) {
+        if (win) {
             win.focus();
         }
         else {
@@ -52,7 +50,7 @@
             }
             location.reload();
             }
-        }
+        
     </script>
   </body>
 </html>
