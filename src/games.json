@@ -217,6 +217,13 @@
       "genre": "Strategy",
       "type": "FLASH",
       "link": "https://github.com/Cyanide-App/cyan-assets/blob/main/FLASH/Papa'sSushiria/papassushiria.swf"
+    },
+    {
+      "title": "Duck Life",
+      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Duck%20Life/ducklife.jpeg",
+      "genre": "Simulation",
+      "type": "FLASH",
+      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Duck%20Life/ducklife.swf"
     }
   ]
 }
