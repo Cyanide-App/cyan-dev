@@ -24,7 +24,15 @@
     / 1fr;
   gap: 20px;
 }
+.games-navbar{
+  margin-left: 2.5vw;
+  margin-right: 2.5vw;
+  width: 95vw;
+  height: 5vh;
+  position: relative;
+  outline: 1px solid rgba(255, 255, 255, 0.4);
 
+}
 .search-container { grid-area: search-container;
   padding: 10px; 
   outline: 1px solid rgba(255, 255, 255, 0.4);

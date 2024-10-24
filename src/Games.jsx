@@ -1,7 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { Form } from "react-router-dom";
 import { Search, Plus, ArrowLeft, Gamepad } from "lucide-react";
 import "./games.css";
+import {
+  HashRouter,
+  Routes,
+  Route,
+  NavLink,
+  useNavigate,
+  useLocation,
+} from "react-router-dom";
 import { EmulatorJS } from "react-emulatorjs";
 import gamesData from "./games.json";
 
@@ -112,8 +119,61 @@ case "FLASH":
   };
 
   return (
+    <>
+    <div className="games-navbar">
+        <Plus strokeWidth={1.5} className="corner-icon top-left" />
+        <Plus strokeWidth={1.5} className="corner-icon top-right" />
+        <Plus strokeWidth={1.5} className="corner-icon bottom-left" />
+        <Plus strokeWidth={1.5} className="corner-icon bottom-right" />
+        <h4 className="title">:navbar</h4>
+
+        <nav>
+          <ul>
+            <li>
+              |
+              <NavLink className="nav-link" to="/" onClick={(event) => {
+  const canvases = document.querySelectorAll('canvas');
+  canvases.forEach(canvas => {
+    canvas.remove();
+    navigate(`/`);
+    
+  });
+}}>                {" "}
+                Home{" "}
+              </NavLink>
+              |
+              <NavLink
+                className="nav-link"
+                to="chat"
+                onClick={(e) => {
+                  // e.preventDefault();
+                  document.querySelector(".navbar").style.position = "unset";
+                }}
+              >
+                {" "}
+                Chat{" "}
+              </NavLink>{" "}
+              |
+              <NavLink className="nav-link" to="/Settings">
+                {" "}
+                Settings{" "}
+              </NavLink>
+              |
+            </li>
+          </ul>
+        </nav>
+        {/* 
+            <Routes>
+              <Route path="/Chat" element={<Chat />} />
+              <Route path="/search" element={<SearchResult />} />
+
+              
+            </Routes> */}
+            
+      </div>
     
     <div className="games-layout">
+      
       
    <StatusBar siteTitle="cyλn" gameCount={gamesData.games.length} />
 
@@ -202,6 +262,7 @@ case "FLASH":
       )}
     </div>
     </div>
+    </>
   );
 }
 
