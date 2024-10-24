@@ -1,5 +1,6 @@
 * {
   color: white;
+  background-color: #030303;
 }
 .frame {
   position: relative;
@@ -197,6 +198,10 @@ position: relative;
   height: 100%;
 }
 
+iframe{
+  background-color: #030303;
+  border: 0px;
+}
 .games-grid {
   
   display: grid;

@@ -292,14 +292,14 @@
       "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Happy%20Wheels/hw.jpeg",
       "genre": "Platformer",
       "type": "FLASH",
-      "link": "https://github.com/Cyanide-App/cyan-assets/blob/main/FLASH/Happy%20Wheels/547504_hw_demo.swf"
+      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Happy%20Wheels/547504_hw_demo.swf"
     }
     ,    {
       "title": "Mutilate A Doll 2",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Mutilate%20A%20Doll%202/164481_mutilate-a-doll-2_v4.swf",
+      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Mutilate%20A%20Doll%202/mad2.png",
       "genre": "Sandbox",
       "type": "FLASH",
-      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Mutilate%20A%20Doll%202/mad2.png"
+      "link": "      https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Mutilate%20A%20Doll%202/164481_mutilate-a-doll-2_v4.swf"
     },    {
       "title": "One Chance",
       "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/One%20Chance/oc.webp",
@@ -326,7 +326,7 @@
       "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Run%202/run_2.swf"
     },    {
       "title": "Simpsons Home",
-      "imageSrc": "https://github.com/Cyanide-App/cyan-assets/blob/main/FLASH/Simpsons%20Home/sh.jpeg",
+      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Simpsons%20Home/sh.jpeg",
       "genre": "Sandbox",
       "type": "FLASH",
       "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Simpsons%20Home/simphome.swf"
