@@ -266,6 +266,76 @@
       "genre": "Simulation",
       "type": "FLASH",
       "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Learn%20to%20Fly%203/learntofly3.swf"
+    },
+    {
+      "title": "Bad Piggies",
+      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Bad%20Piggies/bp.png",
+      "genre": "Puzzle",
+      "type": "FLASH",
+      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Bad%20Piggies/bad-piggies-online-2018.swf"
+    },
+    {
+      "title": "Escaping The Prison",
+      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Escaping%20The%20Prison/etp.png",
+      "genre": "Puzzle",
+      "type": "FLASH",
+      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Escaping%20The%20Prison/533001_PrisonNG.swf"
+    },
+    {
+      "title": "Freakbob",
+      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Freakbob/fb.jpeg",
+      "genre": "freaky",
+      "type": "FLASH",
+      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Freakbob/sayit.swf"
+    },    {
+      "title": "Happy Wheels",
+      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Happy%20Wheels/hw.jpeg",
+      "genre": "Platformer",
+      "type": "FLASH",
+      "link": "https://github.com/Cyanide-App/cyan-assets/blob/main/FLASH/Happy%20Wheels/547504_hw_demo.swf"
+    }
+    ,    {
+      "title": "Mutilate A Doll 2",
+      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Mutilate%20A%20Doll%202/164481_mutilate-a-doll-2_v4.swf",
+      "genre": "Sandbox",
+      "type": "FLASH",
+      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Mutilate%20A%20Doll%202/mad2.png"
+    },    {
+      "title": "One Chance",
+      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/One%20Chance/oc.webp",
+      "genre": "Story",
+      "type": "FLASH",
+      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/One%20Chance/One%20Chance.swf"
+    },    {
+      "title": "Plants vs Zombies",
+      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/PvZ/pvz.jpeg",
+      "genre": "Action",
+      "type": "FLASH",
+      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/PvZ/pvz_9_15.swf"
+    },    {
+      "title": "QWOP",
+      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/QWOP/qwop.jpeg",
+      "genre": "Racing",
+      "type": "FLASH",
+      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/QWOP/qwop.swf"
+    },    {
+      "title": "Run 2",
+      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Run%202/r2.jpeg",
+      "genre": "Racing",
+      "type": "FLASH",
+      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Run%202/run_2.swf"
+    },    {
+      "title": "Simpsons Home",
+      "imageSrc": "https://github.com/Cyanide-App/cyan-assets/blob/main/FLASH/Simpsons%20Home/sh.jpeg",
+      "genre": "Sandbox",
+      "type": "FLASH",
+      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Simpsons%20Home/simphome.swf"
+    },    {
+      "title": "Stealing The Diamond",
+      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Stealing%20The%20Diamond/std.jpeg",
+      "genre": "Story",
+      "type": "FLASH",
+      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Stealing%20The%20Diamond/Stealing_the_Diamond.swf"
     }
   ]
 }
