@@ -1,7 +1,18 @@
-<!-- <!doctype html>
+<!doctype html>
 <html lang="en">
   <head>
+    <!-- <script src="/uv/uv.bundle.js"></script>
+    <script src="/uv/uv.config.js"></script>
 
+    <script>
+    if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+            navigator.serviceWorker.register("/uv/sw.js", {
+                scope: __uv$config.prefix,
+            });
+        });
+    }
+    </script> -->
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,75 +21,12 @@
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
     <title>cyλn</title>
   
+    <script type="module" crossorigin src="/assets/index-BkeLg-81.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-Dw1zalNK.css">
   </head>
   <body>
     <div id="root"></div>
     
-    <script type="module" src="/src/main.jsx"></script>
     
-  </body>
-</html> -->
-<html lang="en">
-  <head>
-    <title>Oxide</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content=" No tracking, no useless stuff, just a dead simple proxy. " />
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
-    <script src="/chemical.js"></script>
-    <script defer>
-      const form = document.getElementById("form");
-form.addEventListener("keydown", async function (e) {
-  if (e.key == "Enter" && chemical.loaded && e.target.value) {
-    let input = e.target.value;
-    try {
-      new URL(input);
-    } catch (_) {
-      // search it
-      input = 'https://duckduckgo.com/?q=' + encodeURIComponent(input);
-    }
-    window.location = await chemical.encode(input);
-  }
-});
-    </script>
-    <style>
-      :root {
-        --text-color: black;
-        --back-color: white;
-      }
-
-      body {
-        margin: 0;
-        padding: 0;
-        color: var(--text-color);
-        background-color: var(--back-color);
-      }
-
-      a:link,
-      span,
-      a:visited {
-        color: var(--text-color);
-        cursor: pointer;
-        text-decoration: none;
-      }
-
-      a:hover,
-      span:hover {
-        text-decoration: underline;
-      }
-    </style>
-  </head>
-  <body>
-    <center>
-      <h1 style="margin: 0;">Oxide Proxy</h1>
-      <h2 style="margin: 0;">No tracking, no useless stuff, just a dead simple proxy.</h2>
-      <h4 style="margin: 0;"><a href="/faq">Why so ugly? and FAQ</a> || <a href="https://github.com/3kh0/Oxide">Source</a> || <a href="https://3kh0.net/">Who made this?</a></h4>
-      <h4 style="margin: 0;"><a href="https://github.com/titaniumnetwork-dev">TitaniumNetwork</a> || <a href="https://github.com/tomphttp">TompHTTP</a> || <a href="/credits">Credits</a></h4>
-      <h4 style="margin: 0;"><span id="cfgBlank">Open in about:blank</span> || <span id="cfgCloak">Tab Cloak</span> || <span id="cfgDark">Dark mode</span></h4>
-      <p>Search the web freely</p>
-      <div style="width: 100%;">
-        <input id="form" style="width: 50%; text-align: center;" type="text" placeholder="Input a URL or search query"/>
-      </div>
-      <p>Version 0.6</p>
-    </center>
   </body>
 </html>
