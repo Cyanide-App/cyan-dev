@@ -8,6 +8,7 @@ import Chat from "./Chat.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import Search from "./Search.jsx";
+import { Analytics } from "@vercel/analytics/react"
 
 const router = createBrowserRouter([
   {

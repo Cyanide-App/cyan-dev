@@ -1,7 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { Form } from "react-router-dom";
 import { Search, Plus, ArrowLeft, Gamepad } from "lucide-react";
 import "./games.css";
+import {
+  HashRouter,
+  Routes,
+  Route,
+  NavLink,
+  useNavigate,
+  useLocation,
+} from "react-router-dom";
 import { EmulatorJS } from "react-emulatorjs";
 import gamesData from "./games.json";
 
@@ -71,15 +78,15 @@ function Games() {
         }
         break;
       
-        case "PROXY":
-          try {
-            const encodedUrl = window.__uv$config.encodeUrl(link);
-            const proxyUrl = __uv$config.prefix + encodedUrl;
-            setHtmlContent(proxyUrl);
-          } catch (error) {
-            console.error("Error loading proxied game:", error);
-          }
-          break;
+        // case "PROXY":
+        //   try {
+        //     const encodedUrl = window.__uv$config.encodeUrl(link);
+        //     const proxyUrl = __uv$config.prefix + encodedUrl;
+        //     setHtmlContent(proxyUrl);
+        //   } catch (error) {
+        //     console.error("Error loading proxied game:", error);
+        //   }
+        //   break;
 case "FLASH":
   try {
     const windowWidth = window.innerWidth;
@@ -112,8 +119,61 @@ case "FLASH":
   };
 
   return (
+    <>
+    <div className="games-navbar">
+        <Plus strokeWidth={1.5} className="corner-icon top-left" />
+        <Plus strokeWidth={1.5} className="corner-icon top-right" />
+        <Plus strokeWidth={1.5} className="corner-icon bottom-left" />
+        <Plus strokeWidth={1.5} className="corner-icon bottom-right" />
+        <h4 className="title">:navbar</h4>
+
+        <nav>
+          <ul>
+            <li>
+              |
+              <NavLink className="nav-link" to="/" onClick={(event) => {
+  const canvases = document.querySelectorAll('canvas');
+  canvases.forEach(canvas => {
+    canvas.remove();
+    navigate(`/`);
+    
+  });
+}}>                {" "}
+                Home{" "}
+              </NavLink>
+              |
+              <NavLink
+                className="nav-link"
+                to="chat"
+                onClick={(e) => {
+                  // e.preventDefault();
+                  document.querySelector(".navbar").style.position = "unset";
+                }}
+              >
+                {" "}
+                Chat{" "}
+              </NavLink>{" "}
+              |
+              <NavLink className="nav-link" to="/Settings">
+                {" "}
+                Settings{" "}
+              </NavLink>
+              |
+            </li>
+          </ul>
+        </nav>
+        {/* 
+            <Routes>
+              <Route path="/Chat" element={<Chat />} />
+              <Route path="/search" element={<SearchResult />} />
+
+              
+            </Routes> */}
+            
+      </div>
     
     <div className="games-layout">
+      
       
    <StatusBar siteTitle="cyλn" gameCount={gamesData.games.length} />
 
@@ -202,58 +262,11 @@ case "FLASH":
       )}
     </div>
     </div>
+    </>
   );
 }
 
-function SearchBar() {
-  const urlInputRef = useRef(null);
-  const navigate = useNavigate();
 
-  useEffect(() => {
-    if ("serviceWorker" in navigator) {
-      window.addEventListener("load", () => {
-        navigator.serviceWorker.register("/uv/sw.js", {
-          scope: window.__uv$config.prefix,
-        });
-      });
-    }
-
-
-    const handleClick = (event) => {
-      event.preventDefault();
-
-      let url = urlInputRef.current.value;
-      let searchUrl = "https://www.google.com/search?q=";
-
-      if (!url.includes(".")) {
-        url = searchUrl + encodeURIComponent(url);
-      } else {
-        if (!url.startsWith("http://") && !url.startsWith("https://")) {
-          url = "https://" + url;
-        }
-      }
-
-      const encodedUrl = window.__uv$config.encodeUrl(url);
-      navigate(`/search`);
-    };
-
-
-
-  }, []);
-
-  return (
-    <div className="search-input-wrapper">
-      <Search className="search-icon" />
-      <input
-        type="text"
-        id="urlInput"
-        placeholder="Search with google or enter adresss"
-        ref={urlInputRef}
-      />
-      <button id="searchButton">Search Text</button>
-    </div>
-  );
-}
 
 
 export default Games;
