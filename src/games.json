@@ -330,12 +330,37 @@
       "genre": "Sandbox",
       "type": "FLASH",
       "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Simpsons%20Home/simphome.swf"
-    },    {
+    },   
+    
+    {
       "title": "Stealing The Diamond",
       "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Stealing%20The%20Diamond/std.jpeg",
       "genre": "Story",
       "type": "FLASH",
       "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Stealing%20The%20Diamond/Stealing_the_Diamond.swf"
+    },
+    {
+      "title": "Bloons Tower Defense 5",
+      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/BTD5/btd5.jpeg",
+      "genre": "Strategy",
+      "type": "FLASH",
+      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/BTD5/Bloons%20Tower%20Defense%205%20(BTD5).swf"
+    },
+    {
+      "title": "Dig To China",
+      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Stealing%20The%20Diamond/std.jpeg",
+      "genre": "Simulation",
+      "type": "FLASH",
+      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/DIgToChina/Dig%20to%20China%20-%20Unblocked%20Adventures.swf"
+    },
+    {
+      "title": "Fireboy and Watergirl",
+      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/FireBoyandWaterGirl/Fireboywatergirl.png",
+      "genre": "Co-Op",
+      "type": "FLASH",
+      "link": "https://github.com/Cyanide-App/cyan-assets/blob/main/FLASH/FireBoyandWaterGirl/Fireboy%20and%20Watergirl.swf"
     }
+  
   ]
+
 }
