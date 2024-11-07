@@ -320,7 +320,6 @@
       "type": "FLASH",
       "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Simpsons%20Home/simphome.swf"
     },   
-    
     {
       "title": "Stealing The Diamond",
       "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Stealing%20The%20Diamond/std.jpeg",
@@ -348,8 +347,49 @@
       "genre": "Co-Op",
       "type": "FLASH",
       "link": "https://cdn.jsdelivr.net/gh/gameproxy/swf_storage_1@master/Fireboy%20and%20Watergirl.swf"
+    },
+    {
+      "title": "CSGO Clicker",
+      "imageSrc": "",
+      "genre": "Clicker",
+      "type": "HTML",
+      "link": "https://raw.githubusercontent.com/Cyanide-App/cyan-assets/refs/heads/main/HTML/csgo-clicker/index.html"
+    },
+    {
+      "title": "Cell Machine",
+      "imageSrc": "",
+      "genre": "Sandbox",
+      "type": "HTML",
+      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/cell-machine/index.html"
+    },
+    {
+      "title": "Achievement Unlocked",
+      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/achievementunlocked/achievementunlocked.png",
+      "genre": "Platformer",
+      "type": "FLASH",
+      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/achievementunlocked/achievementunlocked.swf"
+    },
+    {
+      "title": "Doodle Jump",
+      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/doodle-jump/doodle.png",
+      "genre": "Platformer",
+      "type": "HTML",
+      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/doodle-jump/index.html"
+    },
+    {
+      "title": "Gimme the Airpod",
+      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/gimme-the-airpod/img/logo.png",
+      "genre": "Two-Player",
+      "type": "HTML",
+      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/gimme-the-airpod/Build/UnityLoader.js"
+    },
+    {
+      "title": "Rooftop Snipers",
+      "imageSrc": "https://github.com/Cyanide-App/cyan-assets/blob/main/HTML/rooftop-snipers/img/thumb.png",
+      "genre": "Two-Player",
+      "type": "HTML",
+      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/rooftop-snipers/index.html"
     }
-  
   ]
 
 }
