@@ -101,7 +101,7 @@
       "title": "Pokemon Emerald",
       "core": "mgba",
       "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/EMULATORS/images/pokemonemerald.jpg",
-      "genre": "temp",
+      "genre": "Action-RPG",
       "type": "EMULATOR",
       "link": "https://cdn.jsdelivr.net/gh/vbaemulator/GBA-Roms@main/Pokemon%20Emerald%20%2B.zip"
     },
@@ -389,7 +389,15 @@
       "genre": "Two-Player",
       "type": "HTML",
       "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/rooftop-snipers/index.html"
+    },
+    {
+      "title": "Sandboxels",
+      "imageSrc": "https://github.com/Cyanide-App/cyan-assets/blob/main/HTML/rooftop-snipers/img/thumb.png",
+      "genre": "Sandbox",
+      "type": "PROXY",
+      "link": "https://sulfur-inky.vercel.app/a/hvtrs8%2F-scnfbmxglq.p76n%2Ccmm-"
     }
+
   ]
 
 }

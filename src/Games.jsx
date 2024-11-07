@@ -32,6 +32,28 @@ function GameContent({ htmlContent, handleBackClick }) {
     </div>
   );
 }
+
+function ProxyContent({ proxyContent, handleBackClick }) {
+  return (
+    <div className="game-content">
+      <div className="navbar-game">
+        <ArrowLeft
+          strokeWidth={1.5}
+          className="back-button"
+          onClick={handleBackClick}
+        />
+      </div>
+      <div className="full-page-iframe-container">
+        <iframe
+          src={proxyContent}
+          title="Game Content"
+          className="full-page-iframe"
+        />
+      </div>
+    </div>
+  );
+}
+
 function StatusBar({ siteTitle, gameCount }) {
   const currentDate = new Date();
   const options = { year: 'numeric', month: 'long', day: 'numeric' };
@@ -56,6 +78,9 @@ function Games() {
   const [emulatorContent, setEmulatorContent] = useState("");
   const [emulatorCore, setEmulatorCore] = useState("");
 
+  const [proxyContent, setProxyContent] = useState("");
+
+
   const handleClick = async (title, link, type, core = "") => {
     setGameTitle(title);
     switch (type) {
@@ -69,6 +94,14 @@ function Games() {
         }
         break;
 
+      case "PROXY":
+          try {
+            const response = await fetch(link);
+            setProxyContent(response.url);
+          } catch (error) {
+            console.error("Error loading proxy game:", error);
+          }
+          break;
       case "EMULATOR":
         try {
           setEmulatorCore(core);
@@ -77,38 +110,29 @@ function Games() {
           console.error("Error loading emulated game:", error);
         }
         break;
+
+      case "FLASH":
+        try {
+          const windowWidth = window.innerWidth;
+          const windowHeight = window.innerHeight;
+        
+          const flashContent = `
+            <object style="width: ${windowWidth}px; height: ${windowHeight}px;">
+              <embed src="${link}" width="${windowWidth}" height="${windowHeight}" />
+            </object>
+            <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+          `;
+          setHtmlContent(flashContent);
+        
+        
+        } catch (error) {
+          console.error("Error loading flash game:", error);
+        }
+        break;
       
-        // case "PROXY":
-        //   try {
-        //     const encodedUrl = window.__uv$config.encodeUrl(link);
-        //     const proxyUrl = __uv$config.prefix + encodedUrl;
-        //     setHtmlContent(proxyUrl);
-        //   } catch (error) {
-        //     console.error("Error loading proxied game:", error);
-        //   }
-        //   break;
-case "FLASH":
-  try {
-    const windowWidth = window.innerWidth;
-    const windowHeight = window.innerHeight;
-
-    const flashContent = `
-      <object style="width: ${windowWidth}px; height: ${windowHeight}px;">
-        <embed src="${link}" width="${windowWidth}" height="${windowHeight}" />
-      </object>
-      <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
-    `;
-    setHtmlContent(flashContent);
-
- 
-  } catch (error) {
-    console.error("Error loading flash game:", error);
-  }
-  break;
-
-
+      
       default:
-        // Handle other types or provide a default action
+              // Handle other types or provide a default action
         console.error(`Unsupported game type: ${type}`);
     }
   };
@@ -232,6 +256,13 @@ case "FLASH":
       {htmlContent && (
         <GameContent
           htmlContent={htmlContent}
+          handleBackClick={handleBackClick}
+        />
+      )}
+
+{proxyContent && (
+        <ProxyContent
+          htmlContent={proxyContent}
           handleBackClick={handleBackClick}
         />
       )}
