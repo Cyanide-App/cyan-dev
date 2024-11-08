@@ -1,7 +1,12 @@
+@font-face {
+  font-family: JetBrains Mono Nerd;
+  src: url(src/JetBrainsMonoNerdFontMono-Regular.ttf);
+}
+
 *{
   text-decoration: none;
 
-  font-family: "JetBrains Mono", monospace;
+  font-family: "JetBrains Mono Nerd", monospace;
 
 }
 
@@ -11,47 +16,28 @@ ul, ol {
 }
 
 .layout {
-  margin-left: 15vw;
-  margin-right: 15vw;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0);
 
-  margin-top: 5vh;
-  margin-bottom: 5vh;
-
-  width: 70vw;
-  height: 90vh;
   display: grid;
   grid:
-    "header header" 1fr
-    "search navbar" 0.1fr
-    /* "navbar animation" 1fr */
-
-    / 1fr 0.5fr;
-  gap: 30px;
-
+    "navbar header" 1fr
+    / 0.2fr 1fr;
+  gap: 8px;
 }
 
 .header {
   grid-area: header;
   outline: 1px solid rgba(255, 255, 255, 0.4);
+  background-color: #00000000;
 }
 
 .navbar {
+  /* left: 10px; */
   position: relative;
   grid-area: navbar;
   outline: 1px solid rgba(255, 255, 255, 0.4);
-}
-
-.animation {
-  grid-area: animation;
-  outline: 1px solid rgba(255, 255, 255, 0.4);
-}
-
-.search-bar {
-  grid-area: search;
-  outline: 1px solid rgba(255, 255, 255, 0.4);
-  display: flex;
-  align-items: center;
-  padding: 10px;
+  
 }
 
 
@@ -63,6 +49,7 @@ ul, ol {
 
   background-color: rgb(0, 0, 0);
   top: 0;
+  z-index: 99999;
 }
 
 .hero{
@@ -97,8 +84,7 @@ ul, ol {
 .ascii{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+
   width: 65vw;
   height: 70vh;
   background-color: rgba(0, 0, 0, 0);
@@ -108,22 +94,17 @@ ul, ol {
   line-height: 1.5;
   overflow: hidden;
   white-space: pre;
+
   /* text-shadow: 0 0 10px white; */
 
-  z-index: -1; 
+  z-index: 1; 
 
 }
 canvas{
-  top:10%;
   width: 65vw!important;
   height: 70vh!important;
   display: flex!important; 
   flex-direction: column!important; 
-  align-items: center!important; 
-  justify-content: center!important; 
-
-  background-color: black!important; 
-  color: rgba(0, 0, 0, 0)!important; 
   font-family: monospace;
   font-size: 10px;
   line-height: 1.5;
@@ -131,7 +112,8 @@ canvas{
   white-space: pre;
   /* text-shadow: 0 0 10px white; */
   position: fixed!important; 
-  z-index: -1!important; 
+  transform: translate(100px);
+
 
 }
 .search-input-wrapper {
@@ -204,7 +186,9 @@ iframe[src*="widgetbot"] {
   border: none;
 }
 
-
+li{
+  transform: translate(-15px);
+}
 
 .nav-link{
   color: white;
@@ -229,20 +213,28 @@ iframe[src*="widgetbot"] {
 .top-left {
   top: -8.5px;
   left: -8.5px;
+  z-index: 99999;
+
 }
 
 .top-right {
   top: -8.5px;
   right: -8.5px;
+  z-index: 99999;
+
 }
 
 .bottom-left {
   bottom: -8.5px;
   left: -8.5px;
+  z-index: 99999;
+
 }
 
 .bottom-right {
   bottom: -8.5px;
   right: -8.5px;
+  z-index: 99999;
+
 }
 

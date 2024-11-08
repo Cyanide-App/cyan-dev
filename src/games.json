@@ -350,14 +350,14 @@
     },
     {
       "title": "CSGO Clicker",
-      "imageSrc": "",
+      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/csgo-clicker/230x0w.webp",
       "genre": "Clicker",
       "type": "HTML",
       "link": "https://raw.githubusercontent.com/Cyanide-App/cyan-assets/refs/heads/main/HTML/csgo-clicker/index.html"
     },
     {
       "title": "Cell Machine",
-      "imageSrc": "",
+      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/cell-machine/cm_icon.png",
       "genre": "Sandbox",
       "type": "HTML",
       "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/cell-machine/index.html"
@@ -385,17 +385,10 @@
     },
     {
       "title": "Rooftop Snipers",
-      "imageSrc": "https://github.com/Cyanide-App/cyan-assets/blob/main/HTML/rooftop-snipers/img/thumb.png",
+      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/rooftop-snipers/img/thumb.png",
       "genre": "Two-Player",
       "type": "HTML",
       "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/rooftop-snipers/index.html"
-    },
-    {
-      "title": "Sandboxels",
-      "imageSrc": "https://github.com/Cyanide-App/cyan-assets/blob/main/HTML/rooftop-snipers/img/thumb.png",
-      "genre": "Sandbox",
-      "type": "PROXY",
-      "link": "https://sulfur-inky.vercel.app/a/hvtrs8%2F-scnfbmxglq.p76n%2Ccmm-"
     }
 
   ]

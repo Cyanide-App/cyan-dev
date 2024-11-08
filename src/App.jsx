@@ -66,19 +66,6 @@ export default function App() {
         </div>
       </div>
 
-      <div className="search-bar frame">
-        <Plus strokeWidth={1.5} className="corner-icon top-left" />
-        <Plus strokeWidth={1.5} className="corner-icon top-right" />
-        <Plus strokeWidth={1.5} className="corner-icon bottom-left" />
-        <Plus strokeWidth={1.5} className="corner-icon bottom-right" />
-        <h4 className="title">:search</h4>
-        <SearchBar />
-
-        {/* <div className="search-input-wrapper">
-          <Search className="search-icon" />
-          <input type="text" placeholder="Search with Google or Enter Address" className="search-input" />
-        </div> */}
-      </div>
 
       <div className="navbar">
         <Plus strokeWidth={1.5} className="corner-icon top-left" />
@@ -90,45 +77,27 @@ export default function App() {
         <nav>
           <ul>
             <li>
-              |
-              <NavLink className="nav-link" to="games" onClick={(event) => {
-  const canvases = document.querySelectorAll('canvas');
-  canvases.forEach(canvas => {
-    canvas.remove();
-    navigate(`/games`);
-    
-  });
-}}>                {" "}
-                Games{" "}
+              
+              <NavLink className="nav-link" to="games" onClick={(event) => {const canvases = document.querySelectorAll('canvas'); canvases.forEach(canvas => { canvas.remove(); navigate(`/games`); });}}>                
+              <>󰊖 Games    </>
               </NavLink>
-              |
-              <NavLink
-                className="nav-link"
-                to="chat"
-                onClick={(e) => {
-                  // e.preventDefault();
-                  document.querySelector(".navbar").style.position = "unset";
-                }}
-              >
-                {" "}
-                Chat{" "}
-              </NavLink>{" "}
-              |
-              <NavLink className="nav-link" to="/Settings">
-                {" "}
-                Settings{" "}
+              </li>
+              <li>
+              <NavLink className="nav-link" to="chat" onClick={(e) => { document.querySelector(".navbar").style.position = "unset"; }}>  
+              <>󰭻 Chat      </>
               </NavLink>
-              |
-            </li>
+              </li>
+              <li>
+
+              <NavLink className="nav-link" to="/Settings">  
+              <> Settings   </>
+              </NavLink>
+              </li>
+
+
+
           </ul>
         </nav>
-        {/* 
-            <Routes>
-              <Route path="/Chat" element={<Chat />} />
-              <Route path="/search" element={<SearchResult />} />
-
-              
-            </Routes> */}
             
       </div>
       

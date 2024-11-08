@@ -1466,8 +1466,6 @@ export default function ASCII() {
 })();
 
   return (
-    <div className="ascii" ref={bgRef}>
-      
-    </div>
+    <div className="ascii" ref={bgRef}></div>
   );
 }
