@@ -13,7 +13,7 @@ import { Search, Plus } from "lucide-react";
 import Chat from "./Chat";
 import "./App.css";
 import { Form } from "react-router-dom";
-import ASCII from "./ASCII";
+import ASCII from './ASCII';
 
 function SplashText() {
   const [text, setText] = useState("");
@@ -27,19 +27,28 @@ function SplashText() {
   return <h4 className="splash-text">{text}</h4>;
 }
 
+
+
 function SearchBar() {
-  // removing proxy for now
+ // removing proxy for now
 
   return (
     <div className="search-input-wrapper">
       <Search className="search-icon" />
-      <input type="text" id="urlInput" placeholder="// PROXY COMMING SOON" />
+      <input
+        type="text"
+        id="urlInput"
+        placeholder="// PROXY COMMING SOON"
+      />
       <button id="searchButton">Search Text</button>
     </div>
   );
 }
 
+
 export default function App() {
+
+  
   return (
     <section className="layout">
       <div className="header frame">
@@ -51,10 +60,12 @@ export default function App() {
 
         <h4 className="title">:header</h4>
         <div className="hero">
+
           <h1 className="hero-title">cyλn</h1>
           {/* <SplashText /> */}
         </div>
       </div>
+
 
       <div className="navbar">
         <Plus strokeWidth={1.5} className="corner-icon top-left" />
@@ -66,39 +77,31 @@ export default function App() {
         <nav>
           <ul>
             <li>
-              <NavLink
-                className="nav-link"
-                to="games"
-                onClick={(event) => {
-                  const canvases = document.querySelectorAll("canvas");
-                  canvases.forEach((canvas) => {
-                    canvas.remove();
-                    navigate(`/games`);
-                  });
-                }}
-              >
-                <>󰊖 Games    </>
+              
+              <NavLink className="nav-link" to="games" onClick={(event) => {const canvases = document.querySelectorAll('canvas'); canvases.forEach(canvas => { canvas.remove(); navigate(`/games`); });}}>                
+              <>󰊖 Games    </>
               </NavLink>
-            </li>
-            <li>
-              <NavLink
-                className="nav-link"
-                to="chat"
-                onClick={(e) => {
-                  document.querySelector(".navbar").style.position = "unset";
-                }}
-              >
-                <>󰭻 Chat      </>
+              </li>
+              <li>
+              <NavLink className="nav-link" to="chat" onClick={(e) => { document.querySelector(".navbar").style.position = "unset"; }}>  
+              <>󰭻 Chat      </>
               </NavLink>
-            </li>
-            <li>
-              <NavLink className="nav-link" to="/Settings">
-                <> Settings   </>
+              </li>
+              <li>
+
+              <NavLink className="nav-link" to="/Settings">  
+              <> Settings   </>
               </NavLink>
-            </li>
+              </li>
+
+
+
           </ul>
         </nav>
+            
       </div>
+      
+
     </section>
   );
 }
