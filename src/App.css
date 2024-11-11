@@ -16,14 +16,15 @@ ul, ol {
 }
 
 .layout {
-  width: 100%;
+
   background-color: rgba(0, 0, 0, 0);
 
   display: grid;
   grid:
     "navbar header" 1fr
-    / 0.2fr 1fr;
-  gap: 8px;
+    / 0.4fr 1fr;
+  gap: 15px;
+  justify-content: center;
 }
 
 .header {
@@ -34,6 +35,7 @@ ul, ol {
 
 .navbar {
   /* left: 10px; */
+  
   position: relative;
   grid-area: navbar;
   outline: 1px solid rgba(255, 255, 255, 0.4);
@@ -85,24 +87,12 @@ ul, ol {
   display: flex;
   flex-direction: column;
 
-  width: 65vw;
+  width: 63vw;
   height: 70vh;
-  background-color: rgba(0, 0, 0, 0);
-  color: rgba(0, 0, 0, 0);
-  font-family: monospace;
-  font-size: 10px;
-  line-height: 1.5;
-  overflow: hidden;
-  white-space: pre;
-
-  /* text-shadow: 0 0 10px white; */
-
-  z-index: 1; 
-
 }
 canvas{
-  width: 65vw!important;
-  height: 70vh!important;
+  width: 62vw!important;
+  height: 68vh!important;
   display: flex!important; 
   flex-direction: column!important; 
   font-family: monospace;
@@ -112,7 +102,9 @@ canvas{
   white-space: pre;
   /* text-shadow: 0 0 10px white; */
   position: fixed!important; 
-  transform: translate(100px);
+  transform: translate(9%);
+
+  z-index: 2;
 
 
 }
@@ -184,6 +176,7 @@ iframe[src*="widgetbot"] {
   width: 50%;
   height: 50%;
   border: none;
+  z-index: 99999;
 }
 
 li{
@@ -191,11 +184,12 @@ li{
 }
 
 .nav-link{
-  color: white;
+  color: rgba(255, 255, 255, 0.61);
 }
 
 .nav-link:hover{
   background-color: blue;
+  color: #ffffff;
 
 }
 .frame {
@@ -213,28 +207,28 @@ li{
 .top-left {
   top: -8.5px;
   left: -8.5px;
-  z-index: 99999;
+  z-index: 2;
 
 }
 
 .top-right {
   top: -8.5px;
   right: -8.5px;
-  z-index: 99999;
+  z-index: 2;
 
 }
 
 .bottom-left {
   bottom: -8.5px;
   left: -8.5px;
-  z-index: 99999;
+  z-index: 2;
 
 }
 
 .bottom-right {
   bottom: -8.5px;
   right: -8.5px;
-  z-index: 99999;
+  z-index: 2;
 
 }
 

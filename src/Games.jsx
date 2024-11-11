@@ -213,7 +213,7 @@ function Games() {
       <input
         type="text"
         id="urlInput"
-        placeholder="Search with google or enter adresss"
+        placeholder="Search Games"
         
       />
       <button id="searchButton">Search Text</button>
