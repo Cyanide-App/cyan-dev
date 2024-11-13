@@ -83,7 +83,7 @@ export default function App() {
               </NavLink>
               </li>
               <li>
-              <NavLink className="nav-link" to="chat" onClick={(e) => { document.querySelector(".navbar").style.position = "unset"; }}>  
+              <NavLink className="nav-link" to="chat" onClick={(event) => { document.querySelector(".navbar").style.position = "unset"; const canvases = document.querySelectorAll('canvas'); canvases.forEach(canvas => { canvas.remove(); navigate(`/chat`); });}}>  
               <>󰭻 Chat      </>
               </NavLink>
               </li>
