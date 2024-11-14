@@ -79,6 +79,8 @@ function Games() {
   const [emulatorCore, setEmulatorCore] = useState("");
 
   const [proxyContent, setProxyContent] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
+
 
 
   const handleClick = async (title, link, type, core = "") => {
@@ -144,7 +146,12 @@ function Games() {
 
   return (
     <>
-    <div className="games-navbar">
+
+
+    
+    <div className="games-layout">
+      
+    <div className="navbar">
         <Plus strokeWidth={1.5} className="corner-icon top-left" />
         <Plus strokeWidth={1.5} className="corner-icon top-right" />
         <Plus strokeWidth={1.5} className="corner-icon bottom-left" />
@@ -153,52 +160,38 @@ function Games() {
 
         <nav>
           <ul>
+          <li>
+              
+              <NavLink className="nav-link" to="games" onClick={(event) => {const canvases = document.querySelectorAll('canvas'); canvases.forEach(canvas => { canvas.remove(); navigate(`/games`); });}}>                
+              <>󰋜 Home</>
+              </NavLink>
+              </li>
             <li>
-              |
-              <NavLink className="nav-link" to="/" onClick={(event) => {
-  const canvases = document.querySelectorAll('canvas');
-  canvases.forEach(canvas => {
-    canvas.remove();
-    navigate(`/`);
-    
-  });
-}}>                {" "}
-                Home{" "}
+              
+              <NavLink className="nav-link" to="games" onClick={(event) => {const canvases = document.querySelectorAll('canvas'); canvases.forEach(canvas => { canvas.remove(); navigate(`/games`); });}}>                
+              <>󰊖 Games</>
               </NavLink>
-              |
-              <NavLink
-                className="nav-link"
-                to="chat"
-                onClick={(e) => {
-                  // e.preventDefault();
-                  document.querySelector(".navbar").style.position = "unset";
-                }}
-              >
-                {" "}
-                Chat{" "}
-              </NavLink>{" "}
-              |
-              <NavLink className="nav-link" to="/Settings">
-                {" "}
-                Settings{" "}
+              </li>
+              <li>
+              <NavLink className="nav-link" to="chat" onClick={(event) => { document.querySelector(".navbar").style.position = "unset"; const canvases = document.querySelectorAll('canvas'); canvases.forEach(canvas => { canvas.remove(); navigate(`/chat`); });}}>  
+              <>󰭻 Chat</>
               </NavLink>
-              |
-            </li>
+              </li>
+              <li>
+
+              <br></br>
+
+              <NavLink className="nav-link" to="/Settings">  
+              <> Settings</>
+              </NavLink>
+              </li>
+
+
+
           </ul>
         </nav>
-        {/* 
-            <Routes>
-              <Route path="/Chat" element={<Chat />} />
-              <Route path="/search" element={<SearchResult />} />
-
-              
-            </Routes> */}
             
       </div>
-    
-    <div className="games-layout">
-      
-      
    <StatusBar siteTitle="cyλn" gameCount={gamesData.games.length} />
 
       <div className="search-container ">
@@ -207,17 +200,16 @@ function Games() {
               <Plus strokeWidth={1.5} className="corner-icon bottom-left" />
               <Plus strokeWidth={1.5} className="corner-icon bottom-right" />
               <h4 className="title">:search</h4>
-
-      <div className="search-input-wrapper">
-      <Search className="search-icon" />
-      <input
-        type="text"
-        id="urlInput"
-        placeholder="Search Games"
-        
-      />
-      <button id="searchButton">Search Text</button>
-    </div>
+              <div className="search-input-wrapper">
+  <Search className="search-icon" />
+  <input
+    type="text"
+    id="urlInput"
+    placeholder="Search Games"
+    value={searchTerm}
+    onChange={(e) => setSearchTerm(e.target.value)}
+  />
+</div>
       </div>
     <div className="games-container">
     <Plus strokeWidth={1.5} className="corner-icon top-left" />
@@ -228,6 +220,10 @@ function Games() {
         <h4 className="title">:games</h4>
       <div className="games-grid">
         {gamesData.games
+        .filter(game => 
+          game.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          game.genre.toLowerCase().includes(searchTerm.toLowerCase())
+        )
           .sort((a, b) => a.title.localeCompare(b.title))
           .map((game, index) => (
             <div

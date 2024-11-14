@@ -79,18 +79,18 @@ export default function App() {
             <li>
               
               <NavLink className="nav-link" to="games" onClick={(event) => {const canvases = document.querySelectorAll('canvas'); canvases.forEach(canvas => { canvas.remove(); navigate(`/games`); });}}>                
-              <>󰊖 Games    </>
+              <>󰊖 Games</>
               </NavLink>
               </li>
               <li>
               <NavLink className="nav-link" to="chat" onClick={(event) => { document.querySelector(".navbar").style.position = "unset"; const canvases = document.querySelectorAll('canvas'); canvases.forEach(canvas => { canvas.remove(); navigate(`/chat`); });}}>  
-              <>󰭻 Chat      </>
+              <>󰭻 Chat</>
               </NavLink>
               </li>
               <li>
 
               <NavLink className="nav-link" to="/Settings">  
-              <> Settings   </>
+              <> Settings</>
               </NavLink>
               </li>
 
