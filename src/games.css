@@ -7,31 +7,28 @@
 }
 .games-layout {
 
-  margin-left: 10vw;
-  margin-right: 10vw;
+  margin-left: 5vw;
+  margin-right: 5vw;
 
   margin-top: 5vh;
   margin-bottom: 5vh;
 
-  width: 80vw;
+  width: 90vw;
   height: 90vh;
   
 
   display: grid;
   grid:
-    "search-container" auto
-    "games-container" 1fr
-    / 1fr;
+    "navbar search-container" auto
+    "navbar games-container" 1fr
+    / 0.2fr 1fr;
   gap: 20px;
 }
-.games-navbar{
-  margin-left: 2.5vw;
-  margin-right: 2.5vw;
-  width: 95vw;
-  height: 5vh;
-  position: relative;
+.navbar{
+  position: sticky;
+  grid-area: navbar;
   outline: 1px solid rgba(255, 255, 255, 0.4);
-
+  
 }
 .search-container { grid-area: search-container;
   padding: 10px; 

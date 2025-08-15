@@ -32,6 +32,28 @@ function GameContent({ htmlContent, handleBackClick }) {
     </div>
   );
 }
+
+function ProxyContent({ proxyContent, handleBackClick }) {
+  return (
+    <div className="game-content">
+      <div className="navbar-game">
+        <ArrowLeft
+          strokeWidth={1.5}
+          className="back-button"
+          onClick={handleBackClick}
+        />
+      </div>
+      <div className="full-page-iframe-container">
+        <iframe
+          src={proxyContent}
+          title="Game Content"
+          className="full-page-iframe"
+        />
+      </div>
+    </div>
+  );
+}
+
 function StatusBar({ siteTitle, gameCount }) {
   const currentDate = new Date();
   const options = { year: 'numeric', month: 'long', day: 'numeric' };
@@ -56,6 +78,11 @@ function Games() {
   const [emulatorContent, setEmulatorContent] = useState("");
   const [emulatorCore, setEmulatorCore] = useState("");
 
+  const [proxyContent, setProxyContent] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
+
+
+
   const handleClick = async (title, link, type, core = "") => {
     setGameTitle(title);
     switch (type) {
@@ -69,6 +96,14 @@ function Games() {
         }
         break;
 
+      case "PROXY":
+          try {
+            const response = await fetch(link);
+            setProxyContent(response.url);
+          } catch (error) {
+            console.error("Error loading proxy game:", error);
+          }
+          break;
       case "EMULATOR":
         try {
           setEmulatorCore(core);
@@ -77,38 +112,29 @@ function Games() {
           console.error("Error loading emulated game:", error);
         }
         break;
+
+      case "FLASH":
+        try {
+          const windowWidth = window.innerWidth;
+          const windowHeight = window.innerHeight;
+        
+          const flashContent = `
+            <object style="width: ${windowWidth}px; height: ${windowHeight}px;">
+              <embed src="${link}" width="${windowWidth}" height="${windowHeight}" />
+            </object>
+            <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+          `;
+          setHtmlContent(flashContent);
+        
+        
+        } catch (error) {
+          console.error("Error loading flash game:", error);
+        }
+        break;
       
-        // case "PROXY":
-        //   try {
-        //     const encodedUrl = window.__uv$config.encodeUrl(link);
-        //     const proxyUrl = __uv$config.prefix + encodedUrl;
-        //     setHtmlContent(proxyUrl);
-        //   } catch (error) {
-        //     console.error("Error loading proxied game:", error);
-        //   }
-        //   break;
-case "FLASH":
-  try {
-    const windowWidth = window.innerWidth;
-    const windowHeight = window.innerHeight;
-
-    const flashContent = `
-      <object style="width: ${windowWidth}px; height: ${windowHeight}px;">
-        <embed src="${link}" width="${windowWidth}" height="${windowHeight}" />
-      </object>
-      <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
-    `;
-    setHtmlContent(flashContent);
-
- 
-  } catch (error) {
-    console.error("Error loading flash game:", error);
-  }
-  break;
-
-
+      
       default:
-        // Handle other types or provide a default action
+              // Handle other types or provide a default action
         console.error(`Unsupported game type: ${type}`);
     }
   };
@@ -120,7 +146,12 @@ case "FLASH":
 
   return (
     <>
-    <div className="games-navbar">
+
+
+    
+    <div className="games-layout">
+      
+    <div className="navbar">
         <Plus strokeWidth={1.5} className="corner-icon top-left" />
         <Plus strokeWidth={1.5} className="corner-icon top-right" />
         <Plus strokeWidth={1.5} className="corner-icon bottom-left" />
@@ -129,52 +160,38 @@ case "FLASH":
 
         <nav>
           <ul>
+          <li>
+              
+              <NavLink className="nav-link" to="games" onClick={(event) => {const canvases = document.querySelectorAll('canvas'); canvases.forEach(canvas => { canvas.remove(); navigate(`/games`); });}}>                
+              <>󰋜 Home</>
+              </NavLink>
+              </li>
             <li>
-              |
-              <NavLink className="nav-link" to="/" onClick={(event) => {
-  const canvases = document.querySelectorAll('canvas');
-  canvases.forEach(canvas => {
-    canvas.remove();
-    navigate(`/`);
-    
-  });
-}}>                {" "}
-                Home{" "}
+              
+              <NavLink className="nav-link" to="games" onClick={(event) => {const canvases = document.querySelectorAll('canvas'); canvases.forEach(canvas => { canvas.remove(); navigate(`/games`); });}}>                
+              <>󰊖 Games</>
               </NavLink>
-              |
-              <NavLink
-                className="nav-link"
-                to="chat"
-                onClick={(e) => {
-                  // e.preventDefault();
-                  document.querySelector(".navbar").style.position = "unset";
-                }}
-              >
-                {" "}
-                Chat{" "}
-              </NavLink>{" "}
-              |
-              <NavLink className="nav-link" to="/Settings">
-                {" "}
-                Settings{" "}
+              </li>
+              <li>
+              <NavLink className="nav-link" to="chat" onClick={(event) => { document.querySelector(".navbar").style.position = "unset"; const canvases = document.querySelectorAll('canvas'); canvases.forEach(canvas => { canvas.remove(); navigate(`/chat`); });}}>  
+              <>󰭻 Chat</>
               </NavLink>
-              |
-            </li>
+              </li>
+              <li>
+
+              <br></br>
+
+              <NavLink className="nav-link" to="/Settings">  
+              <> Settings</>
+              </NavLink>
+              </li>
+
+
+
           </ul>
         </nav>
-        {/* 
-            <Routes>
-              <Route path="/Chat" element={<Chat />} />
-              <Route path="/search" element={<SearchResult />} />
-
-              
-            </Routes> */}
             
       </div>
-    
-    <div className="games-layout">
-      
-      
    <StatusBar siteTitle="cyλn" gameCount={gamesData.games.length} />
 
       <div className="search-container ">
@@ -183,17 +200,16 @@ case "FLASH":
               <Plus strokeWidth={1.5} className="corner-icon bottom-left" />
               <Plus strokeWidth={1.5} className="corner-icon bottom-right" />
               <h4 className="title">:search</h4>
-
-      <div className="search-input-wrapper">
-      <Search className="search-icon" />
-      <input
-        type="text"
-        id="urlInput"
-        placeholder="Search with google or enter adresss"
-        
-      />
-      <button id="searchButton">Search Text</button>
-    </div>
+              <div className="search-input-wrapper">
+  <Search className="search-icon" />
+  <input
+    type="text"
+    id="urlInput"
+    placeholder="Search Games"
+    value={searchTerm}
+    onChange={(e) => setSearchTerm(e.target.value)}
+  />
+</div>
       </div>
     <div className="games-container">
     <Plus strokeWidth={1.5} className="corner-icon top-left" />
@@ -204,6 +220,10 @@ case "FLASH":
         <h4 className="title">:games</h4>
       <div className="games-grid">
         {gamesData.games
+        .filter(game => 
+          game.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          game.genre.toLowerCase().includes(searchTerm.toLowerCase())
+        )
           .sort((a, b) => a.title.localeCompare(b.title))
           .map((game, index) => (
             <div
@@ -232,6 +252,13 @@ case "FLASH":
       {htmlContent && (
         <GameContent
           htmlContent={htmlContent}
+          handleBackClick={handleBackClick}
+        />
+      )}
+
+{proxyContent && (
+        <ProxyContent
+          htmlContent={proxyContent}
           handleBackClick={handleBackClick}
         />
       )}

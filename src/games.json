@@ -101,7 +101,7 @@
       "title": "Pokemon Emerald",
       "core": "mgba",
       "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/EMULATORS/images/pokemonemerald.jpg",
-      "genre": "temp",
+      "genre": "Action-RPG",
       "type": "EMULATOR",
       "link": "https://cdn.jsdelivr.net/gh/vbaemulator/GBA-Roms@main/Pokemon%20Emerald%20%2B.zip"
     },
@@ -267,13 +267,7 @@
       "type": "FLASH",
       "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Learn%20to%20Fly%203/learntofly3.swf"
     },
-    {
-      "title": "Bad Piggies",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Bad%20Piggies/bp.png",
-      "genre": "Puzzle",
-      "type": "FLASH",
-      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Bad%20Piggies/bad-piggies-online-2018.swf"
-    },
+
     {
       "title": "Escaping The Prison",
       "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Escaping%20The%20Prison/etp.png",
@@ -306,13 +300,8 @@
       "genre": "Story",
       "type": "FLASH",
       "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/One%20Chance/One%20Chance.swf"
-    },    {
-      "title": "Plants vs Zombies",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/PvZ/pvz.jpeg",
-      "genre": "Action",
-      "type": "FLASH",
-      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/PvZ/pvz_9_15.swf"
-    },    {
+    },    
+            {
       "title": "QWOP",
       "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/QWOP/qwop.jpeg",
       "genre": "Racing",
@@ -330,12 +319,78 @@
       "genre": "Sandbox",
       "type": "FLASH",
       "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Simpsons%20Home/simphome.swf"
-    },    {
+    },   
+    {
       "title": "Stealing The Diamond",
       "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Stealing%20The%20Diamond/std.jpeg",
       "genre": "Story",
       "type": "FLASH",
       "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Stealing%20The%20Diamond/Stealing_the_Diamond.swf"
+    },
+    {
+      "title": "Bloons Tower Defense 5",
+      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/BTD5/btd5.jpeg",
+      "genre": "Strategy",
+      "type": "FLASH",
+      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/BTD5/Bloons%20Tower%20Defense%205%20(BTD5).swf"
+    },
+    {
+      "title": "Dig To China",
+      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/DIgToChina/dtc.png",
+      "genre": "Simulation",
+      "type": "FLASH",
+      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/DIgToChina/Dig%20to%20China%20-%20Unblocked%20Adventures.swf"
+    },
+    {
+      "title": "Fireboy and Watergirl",
+      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/FireBoyandWaterGirl/Fireboywatergirl.png",
+      "genre": "Co-Op",
+      "type": "FLASH",
+      "link": "https://cdn.jsdelivr.net/gh/gameproxy/swf_storage_1@master/Fireboy%20and%20Watergirl.swf"
+    },
+    {
+      "title": "CSGO Clicker",
+      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/csgo-clicker/230x0w.webp",
+      "genre": "Clicker",
+      "type": "HTML",
+      "link": "https://raw.githubusercontent.com/Cyanide-App/cyan-assets/refs/heads/main/HTML/csgo-clicker/index.html"
+    },
+    {
+      "title": "Cell Machine",
+      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/cell-machine/cm_icon.png",
+      "genre": "Sandbox",
+      "type": "HTML",
+      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/cell-machine/index.html"
+    },
+    {
+      "title": "Achievement Unlocked",
+      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/achievementunlocked/achievementunlocked.png",
+      "genre": "Platformer",
+      "type": "FLASH",
+      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/achievementunlocked/achievementunlocked.swf"
+    },
+    {
+      "title": "Doodle Jump",
+      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/doodle-jump/doodle.png",
+      "genre": "Platformer",
+      "type": "HTML",
+      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/doodle-jump/index.html"
+    },
+    {
+      "title": "Gimme the Airpod",
+      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/gimme-the-airpod/img/logo.png",
+      "genre": "Two-Player",
+      "type": "HTML",
+      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/gimme-the-airpod/Build/UnityLoader.js"
+    },
+    {
+      "title": "Rooftop Snipers",
+      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/rooftop-snipers/img/thumb.png",
+      "genre": "Two-Player",
+      "type": "HTML",
+      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/rooftop-snipers/index.html"
     }
+
   ]
+
 }
