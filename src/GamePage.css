@@ -1,0 +1,89 @@
+.game-page-container {
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    font-family: 'Consolas', 'Monaco', 'monospace';
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.game-page-header {
+    background-color: #333;
+    padding: 10px;
+    border: 1px solid #555;
+    border-bottom: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    color: #fff;
+}
+
+.back-button {
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid #555;
+    padding: 2px 5px;
+}
+
+.back-button:hover {
+    background-color: #555;
+}
+
+.game-content-container {
+ flex-grow: 1;
+ display: flex;
+}
+
+
+.game-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #555;
+    padding: 10px;
+}
+
+.game-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.game-page-footer {
+    background-color: #333;
+    padding: 10px;
+    border: 1px solid #555;
+    border-top: none;
+    text-align: center;
+}
+
+.launch-screen {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.cdn-loaded-text {
+    color: #888;
+    margin-bottom: 20px;
+}
+
+.launch-button-game {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: 1px solid #555;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.launch-button-game:hover {
+    background-color: #555;
+}

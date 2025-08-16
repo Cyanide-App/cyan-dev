@@ -1,396 +1,396 @@
 {
-  "games": [
-    {
-      "title": "2048",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/2048/2048.png",
-      "genre": "Puzzle",
-      "type": "HTML",
-      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/2048/2048.html"
-    },
-
-    {
-      "title": "10 Minutes Till Dawn",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/10minutestilldawn/10minutestilldawn.jpg",
-      "genre": "Action-Adventure",
-      "type": "HTML",
-      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/10minutestilldawn/index.html"
-    },
-
-    {
-      "title": "Advance Wars",
-      "core": "mgba",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/EMULATORS/images/advancewars.jpg",
-      "genre": "Action-Adventure",
-      "type": "EMULATOR",
-      "link": "https://cdn.jsdelivr.net/gh/vbaemulator/GBA-Roms@main/Advance%20Wars%20(USA)%20(Rev%201).zip"
-    },
-
-    {
-      "title": "Derek 1",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/derek1/derek1.jpg",
-      "genre": "Platformer",
-      "type": "HTML",
-      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/derek1/derek1.html"
-    },
-
-    {
-      "title": "Derek 2",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/derek2/derek2.jpg",
-      "genre": "Platformer",
-      "type": "HTML",
-      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/derek2/derek2.html"
-    },
-
-    {
-      "title": "Derek 3",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/derek3/derek3.jpg",
-      "genre": "Platformer",
-      "type": "HTML",
-      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/derek3/derek3.html"
-    },
-
-    {
-      "title": "Derek 4",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/derek4/derek4.jpg",
-      "genre": "Platformer",
-      "type": "HTML",
-      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/derek4/derek4.html"
-    },
-
-    {
-      "title": "Derek 5",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/derek5/derek5.jpg",
-      "genre": "Platformer",
-      "type": "HTML",
-      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/derek5/derek5.html"
-    },
-
-    {
-      "title": "Derek 6",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/derek6/derek6.jpg",
-      "genre": "Platformer",
-      "type": "HTML",
-      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/derek6/derek6.html"
-    },
-
-    {
-      "title": "Derek 7",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/derek7/derek7.jpg",
-      "genre": "Platformer",
-      "type": "HTML",
-      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/derek7/derek7.html"
-    },
-
-    {
-      "title": "Derek 8",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/derek8/derek8.jpg",
-      "genre": "Platformer",
-      "type": "HTML",
-      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/derek8/derek8.html"
-    },
-
-    {
-      "title": "Minecraft",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/minecraft/minecraft.jpg",
-      "genre": "Sandbox",
-      "type": "HTML",
-      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/minecraft/minecraft.html"
-    },
-
-    {
-      "title": "Pokemon Emerald",
-      "core": "mgba",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/EMULATORS/images/pokemonemerald.jpg",
-      "genre": "Action-RPG",
-      "type": "EMULATOR",
-      "link": "https://cdn.jsdelivr.net/gh/vbaemulator/GBA-Roms@main/Pokemon%20Emerald%20%2B.zip"
-    },
-
-    {
-      "title": "Pokemon Fire Red",
-      "core": "mgba",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/EMULATORS/images/pokemon-fire-red.jpg",
-      "genre": "Action-RPG",
-      "type": "EMULATOR",
-      "link": "https://cdn.jsdelivr.net/gh/vbaemulator/GBA-Roms@main/Pokemon%20Firered%20251.zip"
-    },
-
-    {
-      "title": "Pokemon Crystal",
-      "core": "mgba",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/EMULATORS/images/pokemoncrystal.jpg",
-      "genre": "Action-RPG",
-      "type": "EMULATOR",
-      "link": "https://cdn.jsdelivr.net/gh/mehransab101/GBC_ROMS@master/Pokemon%20-%20Crystal%20Version%20(UE)%20(V1.1)%20%5BC%5D%5B!%5D.gbc"
-    },
-
-    {
-      "title": "Pokemon Red",
-      "core": "mgba",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/EMULATORS/images/pokemonred.jpg",
-      "genre": "Action-RPG",
-      "type": "EMULATOR",
-      "link": "https://cdn.jsdelivr.net/gh/mehransab101/GBC_ROMS@master/Pokemon%20-%20Red%20Version%20(UE)%5B!%5D.zip"
-    },
-
-    {
-      "title": "Pokemon Blue",
-      "core": "mgba",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/EMULATORS/images/pokemonblue.jpg",
-      "genre": "Action-RPG",
-      "type": "EMULATOR",
-      "link": "https://cdn.jsdelivr.net/gh/mehransab101/GBC_ROMS@master/pokemon-blue.gb"
-    },
-
-    {
-      "title": "Pokemon Gold",
-      "core": "mgba",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/EMULATORS/images/pokemongold.jpg",
-      "genre": "Action-RPG",
-      "type": "EMULATOR",
-      "link": "https://cdn.jsdelivr.net/gh/mehransab101/GBC_ROMS@master/Pokemon%20-%20Gold%20Version%20(UE)%20%5BC%5D%5B!%5D.gbc"
-    },
-
-    {
-      "title": "Pokemon Silver",
-      "core": "mgba",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/EMULATORS/images/pokemonsilver.jpg",
-      "genre": "Action-RPG",
-      "type": "EMULATOR",
-      "link": "https://cdn.jsdelivr.net/gh/mehransab101/GBC_ROMS@master/Pokemon%20-%20Silver%20Version%20(USA%2C%20Europe)%20(SGB%20Enhanced).gbc"
-    },
-
-    {
-      "title": "Castlevania - Harmony of Dissonance",
-      "core": "mgba",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/EMULATORS/images/harmonyofdissonance.jpg",
-      "genre": "Action-RPG",
-      "type": "EMULATOR",
-      "link": "https://cdn.jsdelivr.net/gh/vbaemulator/GBA-Roms@main/Castlevania%20-%20Harmony%20of%20Dissonance%20(USA).zip"
-    },
-
-    {
-      "title": "Jimmy Neutron Boy Genius",
-      "core": "mgba",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/EMULATORS/images/jimmyneutronboygenius.jpg",
-      "genre": "temp",
-      "type": "EMULATOR",
-      "link": "https://cdn.jsdelivr.net/gh/vbaemulator/GBA-Roms@main/Adventures%20of%20Jimmy%20Neutron%20Boy%20Genius%20vs.%20Jimmy%20Negatron%2C%20The%20(USA%2C%20Europe).zip"
-    },
-
-    {
-      "title": "Earthbound",
-      "core": "snes",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/EMULATORS/images/earthbound.jpg",
-      "genre": "temp",
-      "type": "EMULATOR",
-      "link": "https://cdn.jsdelivr.net/gh/dolchi21-retroarch/snes-roms@master/Earthbound.7z"
-    },
-
-    {
-      "title": "Papa's Burgeria",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Papa'sBurgeria/papasburgeria_300x300.jpg",
-      "genre": "Strategy",
-      "type": "FLASH",
-      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Papa'sBurgeria/papasburgeria.swf"
-    },
-
-    {
-      "title": "Papa's Freezeria",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Papa'sFreezeria/papasfreezeria_300x300.jpg",
-      "genre": "Strategy",
-      "type": "FLASH",
-      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Papa'sFreezeria/papasfreezeria.swf"
-    },
-
-    {
-      "title": "Papa's Pizzeria",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Papa'sPizzeria/papaspizzeria_100x100.jpg",
-      "genre": "Strategy",
-      "type": "FLASH",
-      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Papa'sPizzeria/papaspizzeria_v2.swf"
-    },
-
-    {
-      "title": "Papa's Sushiria",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Papa'sSushiria/icon_300x300_papassushiria.jpg",
-      "genre": "Strategy",
-      "type": "FLASH",
-      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Papa'sSushiria/papassushiria.swf"
-    },
-    {
-      "title": "Duck Life",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Duck%20Life/ducklife.jpeg",
-      "genre": "Racing",
-      "type": "FLASH",
-      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Duck%20Life/ducklife.swf"
-    },
-    {
-      "title": "Duck Life 2",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Duck%20Life%202/ducklife2.jpg",
-      "genre": "Racing",
-      "type": "FLASH",
-      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Duck%20Life%202/Duck%20Life%202%20-%20World%20Champion.swf"
-    },
-    {
-      "title": "Duck Life 3",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Duck%20Life%203/ducklife3.jfif",
-      "genre": "Racing",
-      "type": "FLASH",
-      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Duck%20Life%203/Duck%20Life%203%20-%20Evolution.swf"
-    },
-    {
-      "title": "Duck Life 4",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Duck%20Life%204/ducklife4.png",
-      "genre": "Racing",
-      "type": "FLASH",
-      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Duck%20Life%204/Duck%20Life%204.swf"
-    },
-    {
-      "title": "Learn To Fly",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Learn%20to%20Fly/learntofly.jfif",
-      "genre": "Simulation",
-      "type": "FLASH",
-      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Learn%20to%20Fly/learn-to-fly.swf"
-    },
-    {
-      "title": "Learn to Fly 2",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Learn%202%20Fly/learn2fly.png",
-      "genre": "Simulation",
-      "type": "FLASH",
-      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Learn%202%20Fly/learn-to-fly-2-11967.swf"
-    },
-    {
-      "title": "Learn To Fly 3",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Learn%20to%20Fly%203/learn-to-fly3.jfif",
-      "genre": "Simulation",
-      "type": "FLASH",
-      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Learn%20to%20Fly%203/learntofly3.swf"
-    },
-
-    {
-      "title": "Escaping The Prison",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Escaping%20The%20Prison/etp.png",
-      "genre": "Puzzle",
-      "type": "FLASH",
-      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Escaping%20The%20Prison/533001_PrisonNG.swf"
-    },
-    {
-      "title": "Freakbob",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Freakbob/fb.jpeg",
-      "genre": "freaky",
-      "type": "FLASH",
-      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Freakbob/sayit.swf"
-    },    {
-      "title": "Happy Wheels",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Happy%20Wheels/hw.jpeg",
-      "genre": "Platformer",
-      "type": "FLASH",
-      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Happy%20Wheels/547504_hw_demo.swf"
-    }
-    ,    {
-      "title": "Mutilate A Doll 2",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Mutilate%20A%20Doll%202/mad2.png",
-      "genre": "Sandbox",
-      "type": "FLASH",
-      "link": "      https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Mutilate%20A%20Doll%202/164481_mutilate-a-doll-2_v4.swf"
-    },    {
-      "title": "One Chance",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/One%20Chance/oc.webp",
-      "genre": "Story",
-      "type": "FLASH",
-      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/One%20Chance/One%20Chance.swf"
-    },    
-            {
-      "title": "QWOP",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/QWOP/qwop.jpeg",
-      "genre": "Racing",
-      "type": "FLASH",
-      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/QWOP/qwop.swf"
-    },    {
-      "title": "Run 2",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Run%202/r2.jpeg",
-      "genre": "Racing",
-      "type": "FLASH",
-      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Run%202/run_2.swf"
-    },    {
-      "title": "Simpsons Home",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Simpsons%20Home/sh.jpeg",
-      "genre": "Sandbox",
-      "type": "FLASH",
-      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Simpsons%20Home/simphome.swf"
-    },   
-    {
-      "title": "Stealing The Diamond",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Stealing%20The%20Diamond/std.jpeg",
-      "genre": "Story",
-      "type": "FLASH",
-      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Stealing%20The%20Diamond/Stealing_the_Diamond.swf"
-    },
-    {
-      "title": "Bloons Tower Defense 5",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/BTD5/btd5.jpeg",
-      "genre": "Strategy",
-      "type": "FLASH",
-      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/BTD5/Bloons%20Tower%20Defense%205%20(BTD5).swf"
-    },
-    {
-      "title": "Dig To China",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/DIgToChina/dtc.png",
-      "genre": "Simulation",
-      "type": "FLASH",
-      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/DIgToChina/Dig%20to%20China%20-%20Unblocked%20Adventures.swf"
-    },
-    {
-      "title": "Fireboy and Watergirl",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/FireBoyandWaterGirl/Fireboywatergirl.png",
-      "genre": "Co-Op",
-      "type": "FLASH",
-      "link": "https://cdn.jsdelivr.net/gh/gameproxy/swf_storage_1@master/Fireboy%20and%20Watergirl.swf"
-    },
-    {
-      "title": "CSGO Clicker",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/csgo-clicker/230x0w.webp",
-      "genre": "Clicker",
-      "type": "HTML",
-      "link": "https://raw.githubusercontent.com/Cyanide-App/cyan-assets/refs/heads/main/HTML/csgo-clicker/index.html"
-    },
-    {
-      "title": "Cell Machine",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/cell-machine/cm_icon.png",
-      "genre": "Sandbox",
-      "type": "HTML",
-      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/cell-machine/index.html"
-    },
-    {
-      "title": "Achievement Unlocked",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/achievementunlocked/achievementunlocked.png",
-      "genre": "Platformer",
-      "type": "FLASH",
-      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/achievementunlocked/achievementunlocked.swf"
-    },
-    {
-      "title": "Doodle Jump",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/doodle-jump/doodle.png",
-      "genre": "Platformer",
-      "type": "HTML",
-      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/doodle-jump/index.html"
-    },
-    {
-      "title": "Gimme the Airpod",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/gimme-the-airpod/img/logo.png",
-      "genre": "Two-Player",
-      "type": "HTML",
-      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/gimme-the-airpod/Build/UnityLoader.js"
-    },
-    {
-      "title": "Rooftop Snipers",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/rooftop-snipers/img/thumb.png",
-      "genre": "Two-Player",
-      "type": "HTML",
-      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/rooftop-snipers/index.html"
-    }
-
-  ]
-
-}
+    "games": [
+      {
+        "title": "2048",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/2048/2048.png",
+        "genre": "Puzzle",
+        "type": "HTML",
+        "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/2048/2048.html"
+      },
+  
+      {
+        "title": "10 Minutes Till Dawn",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/10minutestilldawn/10minutestilldawn.jpg",
+        "genre": "Action-Adventure",
+        "type": "HTML",
+        "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/10minutestilldawn/index.html"
+      },
+  
+      {
+        "title": "Advance Wars",
+        "core": "mgba",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/EMULATORS/images/advancewars.jpg",
+        "genre": "Action-Adventure",
+        "type": "EMULATOR",
+        "link": "https://cdn.jsdelivr.net/gh/vbaemulator/GBA-Roms@main/Advance%20Wars%20(USA)%20(Rev%201).zip"
+      },
+  
+      {
+        "title": "Derek 1",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/derek1/derek1.jpg",
+        "genre": "Platformer",
+        "type": "HTML",
+        "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/derek1/derek1.html"
+      },
+  
+      {
+        "title": "Derek 2",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/derek2/derek2.jpg",
+        "genre": "Platformer",
+        "type": "HTML",
+        "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/derek2/derek2.html"
+      },
+  
+      {
+        "title": "Derek 3",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/derek3/derek3.jpg",
+        "genre": "Platformer",
+        "type": "HTML",
+        "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/derek3/derek3.html"
+      },
+  
+      {
+        "title": "Derek 4",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/derek4/derek4.jpg",
+        "genre": "Platformer",
+        "type": "HTML",
+        "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/derek4/derek4.html"
+      },
+  
+      {
+        "title": "Derek 5",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/derek5/derek5.jpg",
+        "genre": "Platformer",
+        "type": "HTML",
+        "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/derek5/derek5.html"
+      },
+  
+      {
+        "title": "Derek 6",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/derek6/derek6.jpg",
+        "genre": "Platformer",
+        "type": "HTML",
+        "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/derek6/derek6.html"
+      },
+  
+      {
+        "title": "Derek 7",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/derek7/derek7.jpg",
+        "genre": "Platformer",
+        "type": "HTML",
+        "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/derek7/derek7.html"
+      },
+  
+      {
+        "title": "Derek 8",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/derek8/derek8.jpg",
+        "genre": "Platformer",
+        "type": "HTML",
+        "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/derek8/derek8.html"
+      },
+  
+      {
+        "title": "Minecraft",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/minecraft/minecraft.jpg",
+        "genre": "Sandbox",
+        "type": "HTML",
+        "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/minecraft/minecraft.html"
+      },
+  
+      {
+        "title": "Pokemon Emerald",
+        "core": "mgba",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/EMULATORS/images/pokemonemerald.jpg",
+        "genre": "Action-RPG",
+        "type": "EMULATOR",
+        "link": "https://cdn.jsdelivr.net/gh/vbaemulator/GBA-Roms@main/Pokemon%20Emerald%20%2B.zip"
+      },
+  
+      {
+        "title": "Pokemon Fire Red",
+        "core": "mgba",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/EMULATORS/images/pokemon-fire-red.jpg",
+        "genre": "Action-RPG",
+        "type": "EMULATOR",
+        "link": "https://cdn.jsdelivr.net/gh/vbaemulator/GBA-Roms@main/Pokemon%20Firered%20251.zip"
+      },
+  
+      {
+        "title": "Pokemon Crystal",
+        "core": "mgba",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/EMULATORS/images/pokemoncrystal.jpg",
+        "genre": "Action-RPG",
+        "type": "EMULATOR",
+        "link": "https://cdn.jsdelivr.net/gh/mehransab101/GBC_ROMS@master/Pokemon%20-%20Crystal%20Version%20(UE)%20(V1.1)%20%5BC%5D%5B!%5D.gbc"
+      },
+  
+      {
+        "title": "Pokemon Red",
+        "core": "mgba",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/EMULATORS/images/pokemonred.jpg",
+        "genre": "Action-RPG",
+        "type": "EMULATOR",
+        "link": "https://cdn.jsdelivr.net/gh/mehransab101/GBC_ROMS@master/Pokemon%20-%20Red%20Version%20(UE)%5B!%5D.zip"
+      },
+  
+      {
+        "title": "Pokemon Blue",
+        "core": "mgba",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/EMULATORS/images/pokemonblue.jpg",
+        "genre": "Action-RPG",
+        "type": "EMULATOR",
+        "link": "https://cdn.jsdelivr.net/gh/mehransab101/GBC_ROMS@master/pokemon-blue.gb"
+      },
+  
+      {
+        "title": "Pokemon Gold",
+        "core": "mgba",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/EMULATORS/images/pokemongold.jpg",
+        "genre": "Action-RPG",
+        "type": "EMULATOR",
+        "link": "https://cdn.jsdelivr.net/gh/mehransab101/GBC_ROMS@master/Pokemon%20-%20Gold%20Version%20(UE)%20%5BC%5D%5B!%5D.gbc"
+      },
+  
+      {
+        "title": "Pokemon Silver",
+        "core": "mgba",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/EMULATORS/images/pokemonsilver.jpg",
+        "genre": "Action-RPG",
+        "type": "EMULATOR",
+        "link": "https://cdn.jsdelivr.net/gh/mehransab101/GBC_ROMS@master/Pokemon%20-%20Silver%20Version%20(USA%2C%20Europe)%20(SGB%20Enhanced).gbc"
+      },
+  
+      {
+        "title": "Castlevania - Harmony of Dissonance",
+        "core": "mgba",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/EMULATORS/images/harmonyofdissonance.jpg",
+        "genre": "Action-RPG",
+        "type": "EMULATOR",
+        "link": "https://cdn.jsdelivr.net/gh/vbaemulator/GBA-Roms@main/Castlevania%20-%20Harmony%20of%20Dissonance%20(USA).zip"
+      },
+  
+      {
+        "title": "Jimmy Neutron Boy Genius",
+        "core": "mgba",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/EMULATORS/images/jimmyneutronboygenius.jpg",
+        "genre": "temp",
+        "type": "EMULATOR",
+        "link": "https://cdn.jsdelivr.net/gh/vbaemulator/GBA-Roms@main/Adventures%20of%20Jimmy%20Neutron%20Boy%20Genius%20vs.%20Jimmy%20Negatron%2C%20The%20(USA%2C%20Europe).zip"
+      },
+  
+      {
+        "title": "Earthbound",
+        "core": "snes",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/EMULATORS/images/earthbound.jpg",
+        "genre": "temp",
+        "type": "EMULATOR",
+        "link": "https://cdn.jsdelivr.net/gh/dolchi21-retroarch/snes-roms@master/Earthbound.7z"
+      },
+  
+      {
+        "title": "Papa's Burgeria",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Papa'sBurgeria/papasburgeria_300x300.jpg",
+        "genre": "Strategy",
+        "type": "FLASH",
+        "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Papa'sBurgeria/papasburgeria.swf"
+      },
+  
+      {
+        "title": "Papa's Freezeria",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Papa'sFreezeria/papasfreezeria_300x300.jpg",
+        "genre": "Strategy",
+        "type": "FLASH",
+        "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Papa'sFreezeria/papasfreezeria.swf"
+      },
+  
+      {
+        "title": "Papa's Pizzeria",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Papa'sPizzeria/papaspizzeria_100x100.jpg",
+        "genre": "Strategy",
+        "type": "FLASH",
+        "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Papa'sPizzeria/papaspizzeria_v2.swf"
+      },
+  
+      {
+        "title": "Papa's Sushiria",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Papa'sSushiria/icon_300x300_papassushiria.jpg",
+        "genre": "Strategy",
+        "type": "FLASH",
+        "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Papa'sSushiria/papassushiria.swf"
+      },
+      {
+        "title": "Duck Life",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Duck%20Life/ducklife.jpeg",
+        "genre": "Racing",
+        "type": "FLASH",
+        "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Duck%20Life/ducklife.swf"
+      },
+      {
+        "title": "Duck Life 2",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Duck%20Life%202/ducklife2.jpg",
+        "genre": "Racing",
+        "type": "FLASH",
+        "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Duck%20Life%202/Duck%20Life%202%20-%20World%20Champion.swf"
+      },
+      {
+        "title": "Duck Life 3",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Duck%20Life%203/ducklife3.jfif",
+        "genre": "Racing",
+        "type": "FLASH",
+        "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Duck%20Life%203/Duck%20Life%203%20-%20Evolution.swf"
+      },
+      {
+        "title": "Duck Life 4",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Duck%20Life%204/ducklife4.png",
+        "genre": "Racing",
+        "type": "FLASH",
+        "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Duck%20Life%204/Duck%20Life%204.swf"
+      },
+      {
+        "title": "Learn To Fly",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Learn%20to%20Fly/learntofly.jfif",
+        "genre": "Simulation",
+        "type": "FLASH",
+        "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Learn%20to%20Fly/learn-to-fly.swf"
+      },
+      {
+        "title": "Learn to Fly 2",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Learn%202%20Fly/learn2fly.png",
+        "genre": "Simulation",
+        "type": "FLASH",
+        "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Learn%202%20Fly/learn-to-fly-2-11967.swf"
+      },
+      {
+        "title": "Learn To Fly 3",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Learn%20to%20Fly%203/learn-to-fly3.jfif",
+        "genre": "Simulation",
+        "type": "FLASH",
+        "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Learn%20to%20Fly%203/learntofly3.swf"
+      },
+  
+      {
+        "title": "Escaping The Prison",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Escaping%20The%20Prison/etp.png",
+        "genre": "Puzzle",
+        "type": "FLASH",
+        "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Escaping%20The%20Prison/533001_PrisonNG.swf"
+      },
+      {
+        "title": "Freakbob",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Freakbob/fb.jpeg",
+        "genre": "freaky",
+        "type": "FLASH",
+        "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Freakbob/sayit.swf"
+      },    {
+        "title": "Happy Wheels",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Happy%20Wheels/hw.jpeg",
+        "genre": "Platformer",
+        "type": "FLASH",
+        "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Happy%20Wheels/547504_hw_demo.swf"
+      }
+      ,    {
+        "title": "Mutilate A Doll 2",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Mutilate%20A%20Doll%202/mad2.png",
+        "genre": "Sandbox",
+        "type": "FLASH",
+        "link": "      https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Mutilate%20A%20Doll%202/164481_mutilate-a-doll-2_v4.swf"
+      },    {
+        "title": "One Chance",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/One%20Chance/oc.webp",
+        "genre": "Story",
+        "type": "FLASH",
+        "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/One%20Chance/One%20Chance.swf"
+      },    
+              {
+        "title": "QWOP",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/QWOP/qwop.jpeg",
+        "genre": "Racing",
+        "type": "FLASH",
+        "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/QWOP/qwop.swf"
+      },    {
+        "title": "Run 2",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Run%202/r2.jpeg",
+        "genre": "Racing",
+        "type": "FLASH",
+        "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Run%202/run_2.swf"
+      },    {
+        "title": "Simpsons Home",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Simpsons%20Home/sh.jpeg",
+        "genre": "Sandbox",
+        "type": "FLASH",
+        "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Simpsons%20Home/simphome.swf"
+      },   
+      {
+        "title": "Stealing The Diamond",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Stealing%20The%20Diamond/std.jpeg",
+        "genre": "Story",
+        "type": "FLASH",
+        "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Stealing%20The%20Diamond/Stealing_the_Diamond.swf"
+      },
+      {
+        "title": "Bloons Tower Defense 5",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/BTD5/btd5.jpeg",
+        "genre": "Strategy",
+        "type": "FLASH",
+        "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/BTD5/Bloons%20Tower%20Defense%205%20(BTD5).swf"
+      },
+      {
+        "title": "Dig To China",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/DIgToChina/dtc.png",
+        "genre": "Simulation",
+        "type": "FLASH",
+        "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/DIgToChina/Dig%20to%20China%20-%20Unblocked%20Adventures.swf"
+      },
+      {
+        "title": "Fireboy and Watergirl",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/FireBoyandWaterGirl/Fireboywatergirl.png",
+        "genre": "Co-Op",
+        "type": "FLASH",
+        "link": "https://cdn.jsdelivr.net/gh/gameproxy/swf_storage_1@master/Fireboy%20and%20Watergirl.swf"
+      },
+      {
+        "title": "CSGO Clicker",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/csgo-clicker/230x0w.webp",
+        "genre": "Clicker",
+        "type": "HTML",
+        "link": "https://raw.githubusercontent.com/Cyanide-App/cyan-assets/refs/heads/main/HTML/csgo-clicker/index.html"
+      },
+      {
+        "title": "Cell Machine",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/cell-machine/cm_icon.png",
+        "genre": "Sandbox",
+        "type": "HTML",
+        "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/cell-machine/index.html"
+      },
+      {
+        "title": "Achievement Unlocked",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/achievementunlocked/achievementunlocked.png",
+        "genre": "Platformer",
+        "type": "FLASH",
+        "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/achievementunlocked/achievementunlocked.swf"
+      },
+      {
+        "title": "Doodle Jump",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/doodle-jump/doodle.png",
+        "genre": "Platformer",
+        "type": "HTML",
+        "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/doodle-jump/index.html"
+      },
+      {
+        "title": "Gimme the Airpod",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/gimme-the-airpod/img/logo.png",
+        "genre": "Two-Player",
+        "type": "HTML",
+        "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/gimme-the-airpod/Build/UnityLoader.js"
+      },
+      {
+        "title": "Rooftop Snipers",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/rooftop-snipers/img/thumb.png",
+        "genre": "Two-Player",
+        "type": "HTML",
+        "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/rooftop-snipers/index.html"
+      }
+  
+    ]
+  
+  }

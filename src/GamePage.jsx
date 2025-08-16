@@ -1,0 +1,98 @@
+import React, { useState, useEffect } from 'react';
+import { Link, useParams } from 'react-router-dom';
+import gamesData from './games.json';
+import './GamePage.css';
+import createGameHtml from './GameLoader';
+
+const GamePage = () => {
+  const { title } = useParams();
+  const game = gamesData.games.find((g) => g.title === decodeURIComponent(title));
+  
+  const [gameLaunched, setGameLaunched] = useState(false);
+  const [htmlContent, setHtmlContent] = useState('');
+
+  useEffect(() => {
+    const fetchHtmlGame = async () => {
+      try {
+        const response = await fetch(game.link);
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        let text = await response.text();
+        
+        // Prepend a <base> tag to all relative URLs
+        const baseUrl = new URL(game.link);
+        const baseTag = `<base href="${baseUrl.origin}${baseUrl.pathname.substring(0, baseUrl.pathname.lastIndexOf('/') + 1)}">`;
+        
+        // Insert the base tag after the <head> tag
+        text = text.replace(/<head>/i, `<head>${baseTag}`);
+
+        setHtmlContent(text);
+
+      } catch (error) {
+        console.error("Error fetching HTML game:", error);
+        setHtmlContent(`<h1>Error loading game</h1><p>${error.message}</p>`);
+      }
+    };
+
+    if (game) {
+      if (game.type === 'HTML') {
+        fetchHtmlGame();
+      } else {
+        const generatedHtml = createGameHtml(game);
+        setHtmlContent(generatedHtml);
+      }
+    }
+  }, [game]);
+
+  if (!game) {
+    return <div>Game not found</div>;
+  }
+
+  const handleLaunchGame = () => {
+    setGameLaunched(true);
+  };
+
+  const handleDownloadHtml = () => {
+    if (htmlContent) {
+      const blob = new Blob([htmlContent], { type: 'text/html' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `${game.title.replace(/[^a-zA-Z0-9]/g, '_')}.html`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+  };
+
+  return (
+    <div className="game-page-container">
+      <div className="game-page-header">
+        <span>{game.title}</span>
+        <Link to="/" className="back-button">[ Back ]</Link>
+      </div>
+
+      <div className="game-content-container">
+        {gameLaunched ? (
+          <iframe srcDoc={htmlContent} title={game.title} className="game-iframe" />
+        ) : (
+          <div className="launch-screen">
+             <p className="cdn-loaded-text">CDN Loaded: {game.link}</p>
+            <button className="launch-button-game" onClick={handleLaunchGame}>
+              Launch Game
+            </button>
+          </div>
+        )}
+      </div>
+
+      <div className="game-page-footer">
+        <span>Genre: {game.genre} | Type: {game.type}</span>
+        {gameLaunched && <button onClick={handleDownloadHtml}>Download HTML</button>}
+      </div>
+    </div>
+  );
+};
+
+export default GamePage;
