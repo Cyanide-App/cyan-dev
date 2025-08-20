@@ -24,7 +24,7 @@
 .back-button {
     color: #fff;
     text-decoration: none;
-    border: 1px solid #555;
+    border: 1px solid #00FFD0;
     padding: 2px 5px;
 }
 
@@ -42,7 +42,7 @@
     flex-grow: 1;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; 
     border: 1px solid #555;
     padding: 10px;
 }
@@ -56,7 +56,7 @@
 .game-page-footer {
     background-color: #333;
     padding: 10px;
-    border: 1px solid #555;
+    border: 1px solid #00FFD0;
     border-top: none;
     text-align: center;
 }
@@ -79,7 +79,7 @@
     background-color: #333;
     color: white;
     padding: 10px 20px;
-    border: 1px solid #555;
+    border: 1px solid #00FFD0;
     cursor: pointer;
     font-size: 16px;
 }

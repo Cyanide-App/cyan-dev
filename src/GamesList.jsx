@@ -41,14 +41,15 @@ const GamesList = () => {
               <tbody>
                 {games.map((game, index) => (
                   <tr key={index} onClick={() => handleGameClick(game)}>
-                    <td
+                    <td 
                       onMouseEnter={() => setPreviewData({ src: game.imageSrc, title: game.title })}
                       onMouseLeave={() => setPreviewData(null)}
+                      className="game-title"
                     >
                       {game.title}
                     </td>
-                    <td>{game.genre}</td>
-                    <td>{game.type}</td>
+                    <td className="game-genre">{game.genre}</td>
+                    <td className="game-type">{game.type}</td>
                   </tr>
                 ))}
               </tbody>

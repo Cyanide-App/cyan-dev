@@ -389,6 +389,20 @@
         "genre": "Two-Player",
         "type": "HTML",
         "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/rooftop-snipers/index.html"
+      },
+      {
+        "title": "circloO",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/circlo/img/download.png",
+        "genre": "Platformer",
+        "type": "HTML",
+        "link": "https://github.com/Cyanide-App/cyan-assets/blob/main/HTML/circlo/index.html"
+      },
+      {
+        "title": "The Heist",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/theheist/theheist.jpg",
+        "genre": "Action",
+        "type": "HTML",
+        "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/theheist/index.html"
       }
   
     ]

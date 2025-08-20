@@ -1,8 +1,8 @@
 .status-bar {
-    background-color: #333;
-    color: #fff;
+    background-color: var(--md-sys-color-surface-container-high);
+    color: var(--md-sys-color-on-surface);
     padding: 5px 10px;
-    border-top: 1px solid #555;
+    border-top: 1px solid var(--md-sys-color-outline);
     display: flex;
     justify-content: space-between;
     align-items: center;
