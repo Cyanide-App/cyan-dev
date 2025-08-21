@@ -403,6 +403,15 @@
         "genre": "Action",
         "type": "HTML",
         "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/theheist/index.html"
+      },
+
+      {
+        "title": "Pokemon Unbound",
+        "core": "mgba",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/EMULATORS/Pokemon%20Unbound/Unbound.png",
+        "genre": "Action-Adventure",
+        "type": "EMULATOR",
+        "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/EMULATORS/Pokemon%20Unbound/POKEMON_UNBOUND.gba"
       }
   
     ]

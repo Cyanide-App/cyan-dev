@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import './GamesList.css';
 import gamesData from './games.json';
 import StatusBar from './StatusBar';
+import ASCII from './ASCII';
+
 
 const GamesList = () => {
   const [games, setGames] = useState([]);
@@ -25,17 +27,17 @@ const GamesList = () => {
   return (
     <>
       <div className="btop-container" onMouseMove={handleMouseMove}>
-        <div className="btop-box">
-          <div className="btop-header">
-            <span>Games List</span>
-          </div>
+      <ASCII/>
+      <h4 className='title'>:Games</h4>
+
+      <div className="btop-box">
           <div className="btop-table-container">
             <table className="btop-table">
               <thead>
                 <tr>
-                  <th>Title</th>
-                  <th>Genre</th>
-                  <th>Type</th>
+                  <th>Title:</th>
+                  <th>Genre:</th>
+                  <th>Type:</th>
                 </tr>
               </thead>
               <tbody>
@@ -55,9 +57,9 @@ const GamesList = () => {
               </tbody>
             </table>
           </div>
-          <div className="btop-footer">
+          {/* <div className="btop-footer">
             <span>Games: {games.length}</span>
-          </div>
+          </div>  */}
         </div>
         {previewData && (
           <div

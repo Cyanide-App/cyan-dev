@@ -87,3 +87,7 @@
 .launch-button-game:hover {
     background-color: #555;
 }
+
+.ascii{
+ z-index: -100;
+}
