@@ -12,6 +12,11 @@ const GamePage = () => {
   const [htmlContent, setHtmlContent] = useState('');
 
   useEffect(() => {
+    // delete ascii div cuz idk how to use react lol
+    const canvases = document.querySelectorAll('canvas');
+    canvases.forEach(canvas => {
+    canvas.remove(); })
+    
     const fetchHtmlGame = async () => {
       try {
         const response = await fetch(game.link);

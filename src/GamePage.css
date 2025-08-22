@@ -35,6 +35,7 @@
 .game-content-container {
  flex-grow: 1;
  display: flex;
+ z-index: 1;
 }
 
 

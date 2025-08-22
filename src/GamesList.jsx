@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect, useRef } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import './GamesList.css';
 import gamesData from './games.json';
 import StatusBar from './StatusBar';
@@ -11,15 +11,25 @@ const GamesList = () => {
   const [previewData, setPreviewData] = useState(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const navigate = useNavigate();
+  const location = useLocation(); // Initialize useLocation
+  const [asciiKey, setAsciiKey] = useState(0); // State for the key
+  const asciiBackgroundRef = useRef(null); // Ref for the ASCII background div
 
   useEffect(() => {
     setGames(gamesData.games);
   }, []);
 
+  useEffect(() => {
+    // Check if the user is navigating back to the games list
+    if (location.pathname === '/') { // Assuming '/' is the path for GamesList
+      setAsciiKey(prevKey => prevKey + 1); // Update the key to force reload
+    }
+  }, [location.pathname]); // Re-run effect when pathname changes
+
   const handleMouseMove = (e) => {
     setMousePosition({ x: e.clientX, y: e.clientY });
   };
-
+  
   const handleGameClick = (game) => {
     navigate(`/game/${game.title}`);
   };
@@ -27,8 +37,12 @@ const GamesList = () => {
   return (
     <>
       <div className="btop-container" onMouseMove={handleMouseMove}>
-      <ASCII/>
-      <h4 className='title'>:Games</h4>
+        
+      {/* Wrap ASCII in a div for styling */}
+      <div ref={asciiBackgroundRef} className="ascii-background">
+        <ASCII mousePosition={mousePosition}/> {/* Pass mousePosition as prop */}
+      </div>
+      {/* <h4 className='title'>:Games</h4> */}
 
       <div className="btop-box">
           <div className="btop-table-container">
