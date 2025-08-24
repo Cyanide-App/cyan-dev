@@ -1,1 +1,0 @@
-Balatro must be hosted on the public end for it to work.
