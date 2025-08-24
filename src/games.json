@@ -412,6 +412,14 @@
         "genre": "Action-Adventure",
         "type": "EMULATOR",
         "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/EMULATORS/Pokemon%20Unbound/POKEMON_UNBOUND.gba"
+      },
+
+      {
+        "title": "Balatro",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/Balatro/lcon.jpg",
+        "genre": "Rougelike",
+        "type": "HTML",
+        "link": "/Balatro/Balatro.html"
       }
   
     ]

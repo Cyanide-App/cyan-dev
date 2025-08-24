@@ -1,6 +1,6 @@
 .status-bar {
-    background-color: var(--md-sys-color-surface-container-high);
-    color: var(--md-sys-color-on-surface);
+    background-color: #28191193;
+    color: rgb(223, 201, 151);
     padding: 5px 10px;
     border-top: 1px solid var(--md-sys-color-outline);
     display: flex;
@@ -11,9 +11,11 @@
     position: fixed;
     bottom: 0;
     left: 0;
-    width: 100%;
+    width: calc(100vw - 10px); /* Subtract left+right margin */
     box-sizing: border-box;
-    z-index: 0;
+    z-index: 10;
+    backdrop-filter: blur(5px);
+    margin: 5px;
 }
 
 .status-left {

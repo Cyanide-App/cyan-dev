@@ -1,19 +1,26 @@
 .game-page-container {
-    background-color: #1e1e1e;
-    color: #d4d4d4;
+    outline: 2px solid rgb(128, 106, 55);
+    padding: 10px;
+    outline-offset: -6px;
+    border-radius: 15px;
+    box-shadow: rgba(23, 23, 23, 0.25) 0px 25px 50px -12px;
     font-family: 'Consolas', 'Monaco', 'monospace';
     display: flex;
     flex-direction: column;
     height: 100vh;
-    padding: 10px;
     box-sizing: border-box;
 }
 
 .game-page-header {
-    background-color: #333;
+     outline: 2px solid rgb(128, 106, 55);
     padding: 10px;
-    border: 1px solid #555;
-    border-bottom: none;
+    outline-offset: -6px;
+    border-radius: 15px;
+    box-shadow: rgba(23, 23, 23, 0.25) 0px 25px 50px -12px;
+    /* background-color: #333; */
+    /* padding: 10px; */
+    /* border: 1px solid #555; */
+    /* border-bottom: none; */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -24,12 +31,19 @@
 .back-button {
     color: #fff;
     text-decoration: none;
-    border: 1px solid #00FFD0;
-    padding: 2px 5px;
+    /* border: 1px solid #00FFD0; */
+    /* padding: 2px 5px; */
+     /* outline: 2px solid rgb(128, 106, 55); */
+    /* padding: 10px; */
+    /* outline-offset: -6px; */
+    /* border-radius: 15px; */
+    box-shadow: rgba(23, 23, 23, 0.25) 0px 25px 50px -12px;
 }
 
 .back-button:hover {
-    background-color: #555;
+  background-color: #771136;
+  color: #ffffff !important;
+  cursor: pointer;
 }
 
 .game-content-container {
@@ -44,8 +58,12 @@
     display: flex;
     justify-content: center;
     align-items: center; 
-    border: 1px solid #555;
+    /* border: 1px solid #555; */
+    /* padding: 10px; */
+        outline: 2px solid rgb(128, 106, 55);
     padding: 10px;
+    outline-offset: -6px;
+    border-radius: 15px;
 }
 
 .game-iframe {
@@ -55,11 +73,15 @@
 }
 
 .game-page-footer {
-    background-color: #333;
-    padding: 10px;
-    border: 1px solid #00FFD0;
-    border-top: none;
+    /* background-color: #333; */
+    /* padding: 10px; */
+    /* border: 1px solid #00FFD0; */
+    /* border-top: none; */
     text-align: center;
+        outline: 2px solid rgb(128, 106, 55);
+    padding: 10px;
+    outline-offset: -6px;
+    border-radius: 15px;
 }
 
 .launch-screen {
@@ -77,9 +99,13 @@
 }
 
 .launch-button-game {
+        /* outline: 2px solid rgb(128, 106, 55); */
+    padding: 10px;
+    /* outline-offset: -6px; */
+    border-radius: 15px;
     background-color: #333;
-    color: white;
-    padding: 10px 20px;
+    /* color: white; */
+    /* padding: 10px 20px; */
     border: 1px solid #00FFD0;
     cursor: pointer;
     font-size: 16px;

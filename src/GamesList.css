@@ -1,7 +1,7 @@
 .btop-container {
  /* background-image: url('/src/assets/bg.png'); */
     color: #ffedc7;
- background-size: cover;
+    background-size: cover;
     font-family: 'Consolas', 'Monaco', 'monospace';
     font-weight: bold;
     padding: 50px;
@@ -34,7 +34,7 @@
 
 canvas{
   z-index: -200;
-  opacity: 25%;
+  opacity: 40%;
 
 }
 
@@ -42,20 +42,23 @@ canvas{
   outline: 2px solid rgb(128, 106, 55);
   padding: 10px;
   outline-offset: -6px;
-  overflow: scroll;
   border-radius: 15px;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  overflow: scroll;
-  background-color: #00000000;
-  backdrop-filter: blur(5px);
+  overflow: auto; 
+  background-color: #00000057;
+  backdrop-filter: blur(10px);
   background-image: url("data:image/svg+xml,%3Csvg width='15' height='15' viewBox='0 0 10 10' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='5' cy='5' r='0.5' fill-opacity='0.3' fill='%23ffedc7'/%3E%3C/svg%3E");
   background-size: 15px 15px;
   background-repeat: repeat;
   background-blend-mode: overlay;
   box-shadow: rgba(23, 23, 23, 0.25) 0px 25px 50px -12px;
   z-index: 1;
+  max-width: 100vw;  
+  max-height: 100vh; 
+  width: 100%;
+  height: 100%;
 }
 
 .btop-header {

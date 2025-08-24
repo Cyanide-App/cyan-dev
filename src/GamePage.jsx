@@ -12,10 +12,9 @@ const GamePage = () => {
   const [htmlContent, setHtmlContent] = useState('');
 
   useEffect(() => {
-    // delete ascii div cuz idk how to use react lol
+    // delete ascii div on page load cuz idk how to use react lol
     const canvases = document.querySelectorAll('canvas');
-    canvases.forEach(canvas => {
-    canvas.remove(); })
+    canvases.forEach(canvas => { canvas.remove(); });
     
     const fetchHtmlGame = async () => {
       try {
@@ -25,11 +24,16 @@ const GamePage = () => {
         }
         let text = await response.text();
         
-        // Prepend a <base> tag to all relative URLs
-        const baseUrl = new URL(game.link);
+        // add a <base> tag to all relative URLs
+        let baseUrl;
+        if (game.link.startsWith('/')) {
+          baseUrl = new URL(game.link, window.location.origin);
+        } else {
+          baseUrl = new URL(game.link);
+        }
         const baseTag = `<base href="${baseUrl.origin}${baseUrl.pathname.substring(0, baseUrl.pathname.lastIndexOf('/') + 1)}">`;
         
-        // Insert the base tag after the <head> tag
+        // add the base tag after the <head> tag
         text = text.replace(/<head>/i, `<head>${baseTag}`);
 
         setHtmlContent(text);
@@ -86,7 +90,7 @@ const GamePage = () => {
           <div className="launch-screen">
              <p className="cdn-loaded-text">CDN Loaded: {game.link}</p>
             <button className="launch-button-game" onClick={handleLaunchGame}>
-              Launch Game
+              {'>'} Launch
             </button>
           </div>
         )}
