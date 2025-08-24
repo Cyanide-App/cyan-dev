@@ -1,7 +1,7 @@
 {
   "headers": [
     {
-      "source": "/game/(.*)",
+      "source": "/(.*)",
       "headers": [
         {
           "key": "Cross-Origin-Opener-Policy",
@@ -10,8 +10,19 @@
         {
           "key": "Cross-Origin-Embedder-Policy",
           "value": "require-corp"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "script-src 'self' 'unsafe-eval';"
         }
       ]
     }
-  ]
+  ],
+  "functions": {
+    "app/**/*.wasm": {
+      "headers": {
+        "Content-Type": "application/wasm"
+      }
+    }
+  }
 }
