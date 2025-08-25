@@ -9,41 +9,12 @@ const GamePage = () => {
   const game = gamesData.games.find((g) => g.title === decodeURIComponent(title));
   
   const [gameLaunched, setGameLaunched] = useState(false);
-  const [htmlContent, setHtmlContent] = useState('');
 
   useEffect(() => {
     // delete ascii div on page load cuz idk how to use react lol
     const canvases = document.querySelectorAll('canvas');
     canvases.forEach(canvas => { canvas.remove(); });
-    
-    const fetchHtmlGame = async () => {
-      try {
-        const response = await fetch(game.link);
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        let text = await response.text();
-        
-        // add a <base> tag to all relative URLs
-        let baseUrl;
-        if (game.link.startsWith('/')) {
-          baseUrl = new URL(game.link, window.location.origin);
-        } else {
-          baseUrl = new URL(game.link);
-        }
-        const baseTag = `<base href="${baseUrl.origin}${baseUrl.pathname.substring(0, baseUrl.pathname.lastIndexOf('/') + 1)}">`;
-        
-        // add the base tag after the <head> tag
-        text = text.replace(/<head>/i, `<head>${baseTag}`);
-
-        setHtmlContent(text);
-
-      } catch (error) {
-        console.error("Error fetching HTML game:", error);
-        setHtmlContent(`<h1>Error loading game</h1><p>${error.message}</p>`);
-      }
-    };
-
+ 
     if (game) {
       if (game.type === 'HTML') {
         fetchHtmlGame();
@@ -53,6 +24,11 @@ const GamePage = () => {
       }
     }
   }, [game]);
+
+  const htmlContent = game && game.type !== 'HTML' ? createGameHtml(game) : '';
+
+  // No need for the fetchHtmlGame function anymore
+  const fetchHtmlGame = () => {}; 
 
   if (!game) {
     return <div>Game not found</div>;
@@ -85,7 +61,7 @@ const GamePage = () => {
 
       <div className="game-content-container">
         {gameLaunched ? (
-          <iframe srcDoc={htmlContent} title={game.title} className="game-iframe" />
+          <iframe src={game.link} title={game.title} className="game-iframe" />
         ) : (
           <div className="launch-screen">
              <p className="cdn-loaded-text">CDN Loaded: {game.link}</p>
