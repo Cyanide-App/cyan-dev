@@ -9,26 +9,24 @@ const GamePage = () => {
   const game = gamesData.games.find((g) => g.title === decodeURIComponent(title));
   
   const [gameLaunched, setGameLaunched] = useState(false);
+  const [htmlContent, setHtmlContent] = useState(''); // Reintroduce htmlContent state
 
   useEffect(() => {
     // delete ascii div on page load cuz idk how to use react lol
     const canvases = document.querySelectorAll('canvas');
     canvases.forEach(canvas => { canvas.remove(); });
- 
+    
     if (game) {
       if (game.type === 'HTML') {
-        fetchHtmlGame();
+        // For HTML type, we directly use game.link in the iframe src
+        setHtmlContent(''); // Clear htmlContent as we're not using srcDoc
       } else {
+        // For other types, generate HTML and use srcDoc
         const generatedHtml = createGameHtml(game);
         setHtmlContent(generatedHtml);
       }
     }
   }, [game]);
-
-  const htmlContent = game && game.type !== 'HTML' ? createGameHtml(game) : '';
-
-  // No need for the fetchHtmlGame function anymore
-  const fetchHtmlGame = () => {}; 
 
   if (!game) {
     return <div>Game not found</div>;
@@ -61,7 +59,11 @@ const GamePage = () => {
 
       <div className="game-content-container">
         {gameLaunched ? (
-          <iframe src={game.link} title={game.title} className="game-iframe" />
+          game.type === 'HTML' ? (
+            <iframe src={game.link} title={game.title} className="game-iframe" />
+          ) : (
+            <iframe srcDoc={htmlContent} title={game.title} className="game-iframe" />
+          )
         ) : (
           <div className="launch-screen">
              <p className="cdn-loaded-text">CDN Loaded: {game.link}</p>
