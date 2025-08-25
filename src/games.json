@@ -413,15 +413,69 @@
         "type": "EMULATOR",
         "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/EMULATORS/Pokemon%20Unbound/POKEMON_UNBOUND.gba"
       },
-
-      {
-        "title": "Balatro",
-        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/Balatro/lcon.jpg",
-        "genre": "Rougelike",
+            {
+        "title": "Crazy Cattle 3D",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/CC3D/crazy-cattle-3d-1.jpg",
+        "genre": "Racing",
         "type": "HTML",
-        "link": "/Balatro/Balatro.html"
-      }
-  
+        "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/CC3D/Crazy%20Cattle%203D.html"
+      },
+            {
+        "title": "Buckshot Roulette",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/Buckshot%20Roulette/buckshot-roulette-feature-image.jpg",
+        "genre": "Strategy",
+        "type": "HTML",
+        "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/Buckshot%20Roulette/Buckshot%20Roulette.html"
+      },
+            {
+        "title": "Deltarune",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/Deltarune/delta.png",
+        "genre": "RPG",
+        "type": "HTML",
+        "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/Deltarune/Deltarune.html"
+      },
+                  {
+        "title": "Endoparasitic",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/Endoparasitic/endo.png",
+        "genre": "Horror",
+        "type": "HTML",
+        "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/Endoparasitic/Endoparasitic.html"
+      },
+                  {
+        "title": "Half Life",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/Half%20Life/half.jpg",
+        "genre": "Shooter",
+        "type": "HTML",
+        "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/Half%20Life/Half%20Life.html"
+      },
+                  {
+        "title": "Hotline Miami",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/Hotline%20Miami/hotline.jpg",
+        "genre": "Shooter",
+        "type": "HTML",
+        "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/Hotline%20Miami/Hotline%20Miami.html"
+      },
+      {
+        "title": "People Playground",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/People%20Playground/pp.jpg",
+        "genre": "Sandbox",
+        "type": "HTML",
+        "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/People%20Playground/People%20Playground.html"
+      },
+      {
+        "title": "Ultrakill",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/Ultrakill/ultrakill-l6f-logo.png",
+        "genre": "Shooter",
+        "type": "HTML",
+        "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/Ultrakill/ULTRAKILL.html"
+      },
+      {
+        "title": "Undertale",
+        "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/Undertale/Untitled.png",
+        "genre": "RPG",
+        "type": "HTML",
+        "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/Undertale/Undertale.html"
+      }  
     ]
   
   }
