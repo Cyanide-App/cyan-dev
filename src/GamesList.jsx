@@ -5,31 +5,33 @@ import gamesData from './games.json';
 import StatusBar from './StatusBar';
 import ASCII from './ASCII';
 
-
 const GamesList = () => {
   const [games, setGames] = useState([]);
   const [previewData, setPreviewData] = useState(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const navigate = useNavigate();
-  const location = useLocation(); // Initialize useLocation
-  const [asciiKey, setAsciiKey] = useState(0); // State for the key
-  const asciiBackgroundRef = useRef(null); // Ref for the ASCII background div
+  const location = useLocation();
+  const [asciiKey, setAsciiKey] = useState(0);
+  const asciiBackgroundRef = useRef(null);
 
   useEffect(() => {
     setGames(gamesData.games);
   }, []);
 
   useEffect(() => {
-    // Check if the user is navigating back to the games list
-    if (location.pathname === '/') { // Assuming '/' is the path for GamesList
-      setAsciiKey(prevKey => prevKey + 1); // Update the key to force reload
+    if (location.pathname === '/') {
+      setAsciiKey(prevKey => prevKey + 1);
     }
-  }, [location.pathname]); // Re-run effect when pathname changes
+  }, [location.pathname]);
 
   const handleMouseMove = (e) => {
     setMousePosition({ x: e.clientX, y: e.clientY });
   };
-  
+
+  const getPreviewTopPosition = () => {
+    return mousePosition.y > window.innerHeight * 0.8 ? mousePosition.y - 130 : mousePosition.y + 15; // Adjust 215 based on preview height
+  };
+
   const handleGameClick = (game) => {
     navigate(`/game/${game.title}`);
   };
@@ -37,14 +39,11 @@ const GamesList = () => {
   return (
     <>
       <div className="btop-container" onMouseMove={handleMouseMove}>
-        
-      {/* Wrap ASCII in a div for styling */}
-      <div ref={asciiBackgroundRef} className="ascii-background">
-        <ASCII mousePosition={mousePosition}/> {/* Pass mousePosition as prop */}
-      </div>
-      {/* <h4 className='title'>:Games</h4> */}
+        <div ref={asciiBackgroundRef} className="ascii-background">
+          <ASCII key={asciiKey} mousePosition={mousePosition} />
+        </div>
 
-      <div className="btop-box">
+        <div className="btop-box">
           <div className="btop-table-container">
             <table className="btop-table">
               <thead>
@@ -57,8 +56,13 @@ const GamesList = () => {
               <tbody>
                 {games.map((game, index) => (
                   <tr key={index} onClick={() => handleGameClick(game)}>
-                    <td 
-                      onMouseEnter={() => setPreviewData({ src: game.imageSrc, title: game.title })}
+                    <td
+                      onMouseEnter={() => setPreviewData({
+                        src: game.imageSrc,
+                        title: game.title,
+                        description: game.description,
+                        genre: game.genre
+                      })}
                       onMouseLeave={() => setPreviewData(null)}
                       className="game-title"
                     >
@@ -71,20 +75,22 @@ const GamesList = () => {
               </tbody>
             </table>
           </div>
-          {/* <div className="btop-footer">
-            <span>Games: {games.length}</span>
-          </div>  */}
         </div>
+
         {previewData && (
           <div
             className="game-preview"
             style={{
-              top: `${mousePosition.y + 15}px`,
+              top: `${getPreviewTopPosition()}px`,
               left: `${mousePosition.x + 15}px`,
             }}
           >
-            <img src={previewData.src} alt="Game Preview" />
-            <p className="preview-caption">{previewData.title}</p>
+            <img src={previewData.src} alt="Game Preview" className="preview-image" />
+            <div className="preview-details">
+              <p className="preview-title">{previewData.title}</p>
+              <p className="preview-genre">{previewData.genre}</p>
+              <p className="preview-description">{previewData.description || 'No description available.'}</p>
+            </div>
           </div>
         )}
       </div>
