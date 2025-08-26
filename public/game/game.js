@@ -1,4 +1,3 @@
-
 var Module;
 
 if (typeof Module === 'undefined') Module = eval('(function() { try { return Module || {} } catch(e) { return {} } })()');
@@ -222,22 +221,16 @@ Module.expectedDataFileDownloads++;
       assert(arrayBuffer, 'Loading data file failed.');
       assert(arrayBuffer instanceof ArrayBuffer, 'bad input to processPackageData');
       var byteArray = new Uint8Array(arrayBuffer);
-      var curr;
 
-        // copy the entire loaded file into a spot in the heap. Files will refer to slices in that. They cannot be freed though
-        // (we may be allocating before malloc is ready, during startup).
-        if (Module['SPLIT_MEMORY']) Module.printErr('warning: you should run the file packager with --no-heap-copy when SPLIT_MEMORY is used, otherwise copying into the heap may fail due to the splitting');
-        var ptr = Module['getMemory'](byteArray.length);
-        Module['HEAPU8'].set(byteArray, ptr);
-        DataRequest.prototype.byteArray = Module['HEAPU8'].subarray(ptr, ptr+byteArray.length);
+      DataRequest.prototype.byteArray = byteArray;
 
-        var files = metadata.files;
-        for (i = 0; i < files.length; ++i) {
-          DataRequest.prototype.requests[files[i].filename].onload();
-        }
-        Module['removeRunDependency']('datafile_game.data');
+      var files = metadata.files;
+      for (i = 0; i < files.length; ++i) {
+        DataRequest.prototype.requests[files[i].filename].onload();
+      }
+      Module['removeRunDependency']('datafile_game.data');
 
-      };
+    };
       Module['addRunDependency']('datafile_game.data');
 
       if (!Module.preloadResults) Module.preloadResults = {};

@@ -61,7 +61,7 @@
 
       var Module = {
         arguments: ["./game.love"],
-        INITIAL_MEMORY: 38232064,
+        INITIAL_MEMORY: 67108864,
         printErr: console.error.bind(console),
         canvas: (function() {
           var canvas = document.getElementById('canvas');
@@ -90,11 +90,12 @@
         }
       };
       Module.setStatus('Downloading...');
-      window.onerror = function(event) {
-        // TODO: do not warn on ok events like simulating an infinite loop or exitStatus
+      window.onerror = function(message, source, lineno, colno, error) {
+        console.log("Exception thrown:", message, source, lineno, colno, error);
+        alert("Exception thrown! See console for details: " + message);
         Module.setStatus('Exception thrown, see JavaScript console');
         Module.setStatus = function(text) {
-          if (text) Module.printErr('[post-exception status] ' + text);
+          if (text) Module.printErr('[post-exception status] ' + text,  message, source, lineno, colno, error);
         };
       };
 
