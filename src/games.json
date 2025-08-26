@@ -127,7 +127,7 @@
     {
       "title": "Pokemon Red",
       "core": "mgba",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/EMULATORS/images/pokemonred.jpg",
+      "imageSrc": "https://cdn.jsdelivr.net/gh/mehransab101/GBC_ROMS@master/Pokemon%20-%20Red%20Version%20(UE)%5B!%5D.zip",
       "genre": "Action-RPG",
       "type": "EMULATOR",
       "link": "https://cdn.jsdelivr.net/gh/mehransab101/GBC_ROMS@master/Pokemon%20-%20Red%20Version%20(UE)%5B!%5D.zip",
@@ -145,7 +145,7 @@
     {
       "title": "Pokemon Gold",
       "core": "mgba",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/EMULATORS/images/pokemongold.jpg",
+      "imageSrc": "https://cdn.jsdelivr.net/gh/mehransab101/GBC_ROMS@master/Pokemon%20-%20Gold%20Version%20(UE)%20%5BC%5D%5B!%5D.gbc",
       "genre": "Action-RPG",
       "type": "EMULATOR",
       "link": "https://cdn.jsdelivr.net/gh/mehransab101/GBC_ROMS@master/Pokemon%20-%20Gold%20Version%20(UE)%20%5BC%5D%5B!%5D.gbc",
@@ -154,7 +154,7 @@
     {
       "title": "Pokemon Silver",
       "core": "mgba",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/EMULATORS/images/pokemonsilver.jpg",
+      "imageSrc": "https://cdn.jsdelivr.net/gh/mehransab101/GBC_ROMS@master/Pokemon%20-%20Silver%20Version%20(USA%2C%20Europe)%20(SGB%20Enhanced).gbc",
       "genre": "Action-RPG",
       "type": "EMULATOR",
       "link": "https://cdn.jsdelivr.net/gh/mehransab101/GBC_ROMS@master/Pokemon%20-%20Silver%20Version%20(USA%2C%20Europe)%20(SGB%20Enhanced).gbc",
@@ -515,6 +515,14 @@
       "type": "HTML",
       "link": "/api/github-proxy?assetPath=HTML/Undertale/Undertale.html",
       "description": "Game where u dont have to kill people (yawn)"
+    },
+    {
+      "title": "Balatro",
+      "imageSrc": "https://via.placeholder.com/150",
+      "genre": "Rougelike",
+      "type": "HTML",
+      "link": "/game/index.html",
+      "description": ""
     }
   ]
 }
