@@ -520,8 +520,8 @@
       "title": "Balatro",
       "imageSrc": "https://via.placeholder.com/150",
       "genre": "Rougelike",
-      "type": "HTML",
-      "link": "/game/index.html",
+      "type": "PROXY", 
+      "link": "/api/external-proxy?url=https://game.randplays.com/balatro-online/index.html?v=1", 
       "description": ""
     }
   ]
