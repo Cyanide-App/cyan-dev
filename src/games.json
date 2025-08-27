@@ -520,7 +520,7 @@
       "title": "Balatro",
       "imageSrc": "https://via.placeholder.com/150",
       "genre": "Rougelike",
-      "type": "PROXY",
+      "type": "HTML",
       "link": "/api/github-proxy?assetPath=HTML/Balatro/index.html",
       "description": ""
     }
