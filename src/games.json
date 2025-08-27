@@ -520,7 +520,7 @@
       "title": "Balatro",
       "imageSrc": "https://via.placeholder.com/150",
       "genre": "Rougelike",
-      "type": "HTML",
+      "type": "PROXY",
       "link": "/game/index.html",
       "description": ""
     }
