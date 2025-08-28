@@ -14,7 +14,7 @@
             return originalDeleteDatabase.call(this, prefixedName);
         };
     </script>
-    <script src="/api/github-proxy?assetPath=HTML/Balatro/love.min.js"></script>
+    <script src="Balatro/love.min.js"></script>
     <title>Love.js</title>
     <style>
         #canvas {
@@ -34,22 +34,36 @@
 <body>
     <canvas id="canvas"></canvas>
 
-    <script>
-        async function getSource() {
-            // Fetch game.love using the github-proxy
-            const response = await fetch('/api/github-proxy?assetPath=HTML/Balatro/game.love');
-            if (!response.ok) {
-                throw new Error(`Failed to load game.love: ${response.statusText}`);
-            }
-            const arrayBuffer = await response.arrayBuffer();
-            return new Uint8Array(arrayBuffer);
-        }
-    </script>
-
-    <script src="/api/github-proxy?assetPath=HTML/Balatro/module.js"></script>
+    <!-- Include JSZip library for decompression -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 
     <script>
+        // This script will now fetch the zipped module.js, decompress it, and then execute it.
         (async () => {
+            // Fetch the zipped module.js
+            const zipUrl = "Balatro/module.js.zip";
+            const zipResponse = await fetch(zipUrl);
+            if (!zipResponse.ok) {
+                throw new Error(`Failed to load module.js.zip: ${zipResponse.statusText}`);
+            }
+            const zipArrayBuffer = await zipResponse.arrayBuffer();
+
+            // Load the zip file using JSZip
+            const zip = new JSZip();
+            const loadedZip = await zip.loadAsync(zipArrayBuffer);
+
+            // Find and extract module.js from the zip
+            const moduleJsFile = loadedZip.file("module.js"); // Ensure this matches the name inside the zip
+            if (!moduleJsFile) {
+                throw new Error("module.js not found inside the zip archive.");
+            }
+            const moduleJsContent = await moduleJsFile.async("text");
+
+            // Execute the extracted module.js content
+            // WARNING: Using eval() can be a security risk if the source is untrusted.
+            eval(moduleJsContent);
+
+            // Now that module.js is executed and window.getSource should be defined, proceed as usual.
             const d = await getSource();
             Module = {
                 INITIAL_MEMORY: 2 ** 28,
@@ -65,7 +79,10 @@
                 Module.removeRunDependency("fp game.love")
             }];
             Love(Module)
-        })()
+        })().catch(e => {
+            alert("Error during game initialization:", e);
+            // Optionally, display an error message to the user here.
+        });
     </script>
 </body>
 </html>
