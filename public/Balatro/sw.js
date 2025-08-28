@@ -1,9 +1,10 @@
 const CACHE_NAME = 'balatro-cache-v1';
 const urlsToCache = [
-  '/',
-  '/Balatro/index.html',
-  '/Balatro/love.min.js',
-  '/Balatro/module.js.zip',
+  './',
+  'index.html',
+  'love.min.js',
+  'https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js',
+  'module.js.zip'
 ];
 
 self.addEventListener('install', event => {
