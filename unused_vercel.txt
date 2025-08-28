@@ -1,38 +1,71 @@
-{
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "Cross-Origin-Opener-Policy",
-          "value": "same-origin"
-        },
-        {
-          "key": "Cross-Origin-Embedder-Policy",
-          "value": "require-corp"
-        },
-        {
-          "key": "Content-Security-Policy",
-          "value": "script-src 'self' 'unsafe-eval';"
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        const PREFIX = "Balatro_balatro_";
+        const originalOpen = indexedDB.open;
+        const originalDeleteDatabase = indexedDB.deleteDatabase;
+        indexedDB.open = function(name, version) {
+            const prefixedName = PREFIX + name;
+            return version !== undefined ? originalOpen.call(this, prefixedName, version) : originalOpen.call(this, prefixedName);
+        };
+        indexedDB.deleteDatabase = function(name) {
+            const prefixedName = PREFIX + name;
+            return originalDeleteDatabase.call(this, prefixedName);
+        };
+    </script>
+    <script src="/api/github-proxy?assetPath=HTML/Balatro/love.min.js"></script>
+    <title>Love.js</title>
+    <style>
+        #canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
         }
-      ]
-    },
-    {
-      "source": "/(.*)\\.wasm$",
-      "headers": [
-        {
-          "key": "Content-Type",
-          "value": "application/wasm"
-        },
-        {
-          "key": "Cross-Origin-Opener-Policy",
-          "value": "same-origin"
-        },
-        {
-          "key": "Cross-Origin-Embedder-Policy",
-          "value": "require-corp"
+        body {
+            width: 100vw;
+            height: 100vh;
+            margin: 0px;
         }
-      ]
-    }
-  ]
-}
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+
+    <script>
+        async function getSource() {
+            // Fetch game.love using the github-proxy
+            const response = await fetch('/api/github-proxy?assetPath=HTML/Balatro/game.love');
+            if (!response.ok) {
+                throw new Error(`Failed to load game.love: ${response.statusText}`);
+            }
+            const arrayBuffer = await response.arrayBuffer();
+            return new Uint8Array(arrayBuffer);
+        }
+    </script>
+
+    <script src="/api/github-proxy?assetPath=HTML/Balatro/module.js"></script>
+
+    <script>
+        (async () => {
+            const d = await getSource();
+            Module = {
+                INITIAL_MEMORY: 2 ** 28,
+                canvas: canvas,
+                printErr: console.error,
+                arguments: ["game.love"]
+            };
+            Module.preRun = [function() {
+                Module.addRunDependency("fp game.love");
+                var ptr = Module.getMemory(d.length);
+                Module['HEAPU8'].set(d, ptr);
+                Module.FS_createDataFile('/', "game.love", d, true, true, true);
+                Module.removeRunDependency("fp game.love")
+            }];
+            Love(Module)
+        })()
+    </script>
+</body>
+</html>
