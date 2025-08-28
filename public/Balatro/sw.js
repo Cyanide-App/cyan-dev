@@ -3,9 +3,7 @@ const urlsToCache = [
   '/',
   '/Balatro/index.html',
   '/Balatro/love.min.js',
-  'https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js',
   '/Balatro/module.js.zip',
-  '/Balatro/game.love'
 ];
 
 self.addEventListener('install', event => {
