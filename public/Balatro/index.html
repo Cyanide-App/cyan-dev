@@ -14,7 +14,7 @@
             return originalDeleteDatabase.call(this, prefixedName);
         };
     </script>
-    <script src="Balatro/love.min.js"></script>
+    <script src="/Balatro/love.min.js"></script>
     <title>Love.js</title>
     <style>
         #canvas {
@@ -41,7 +41,7 @@
         // This script will now fetch the zipped module.js, decompress it, and then execute it.
         (async () => {
             // Fetch the zipped module.js
-            const zipUrl = "Balatro/module.js.zip";
+            const zipUrl = "/Balatro/module.js.zip";
             const zipResponse = await fetch(zipUrl);
             if (!zipResponse.ok) {
                 throw new Error(`Failed to load module.js.zip: ${zipResponse.statusText}`);
