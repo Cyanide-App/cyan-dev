@@ -2,80 +2,139 @@
 <html>
 <head>
     <script>
-        const PREFIX = "Balatro_balatro_";
-        const originalOpen = indexedDB.open;
-        const originalDeleteDatabase = indexedDB.deleteDatabase;
-        indexedDB.open = function(name, version) {
-            const prefixedName = PREFIX + name;
-            return version !== undefined ? originalOpen.call(this, prefixedName, version) : originalOpen.call(this, prefixedName);
+        // --- Communication with Parent Window for IndexedDB Persistence ---
+
+        // Flag to prevent the game from starting until data is loaded
+        let isDataLoaded = false;
+        let startGameFunction = null;
+
+        // 1. Listen for data from the parent on startup
+        window.addEventListener('message', event => {
+            if (event.data && event.data.type === 'loadData') {
+                const dbData = event.data.payload;
+                if (!dbData || Object.keys(dbData).length === 0) {
+                    console.log('No save data from parent, starting fresh.');
+                    isDataLoaded = true;
+                    if (startGameFunction) startGameFunction();
+                    return;
+                }
+
+                const dbName = Object.keys(dbData)[0];
+                const request = indexedDB.open(dbName, 1);
+
+                request.onupgradeneeded = e => {
+                    const db = e.target.result;
+                    const storeData = dbData[dbName];
+                    for (const storeName in storeData) {
+                        if (!db.objectStoreNames.contains(storeName)) {
+                            db.createObjectStore(storeName);
+                        }
+                    }
+                };
+
+                request.onsuccess = e => {
+                    const db = e.target.result;
+                    const storeData = dbData[dbName];
+                    const storeNames = Object.keys(storeData);
+                    if (storeNames.length === 0) {
+                        isDataLoaded = true;
+                        if (startGameFunction) startGameFunction();
+                        return;
+                    }
+
+                    const transaction = db.transaction(storeNames, 'readwrite');
+                    transaction.oncomplete = () => {
+                        console.log('Local IndexedDB populated from parent.');
+                        isDataLoaded = true;
+                        if (startGameFunction) startGameFunction();
+                    };
+                    transaction.onerror = err => console.error('Error populating local IndexedDB:', err);
+
+                    for (const storeName of storeNames) {
+                        const store = transaction.objectStore(storeName);
+                        store.clear();
+                        storeData[storeName].forEach(record => {
+                            store.put(record.value, record.key);
+                        });
+                    }
+                };
+                request.onerror = err => console.error("Error opening local DB for population:", err);
+            }
+        });
+
+        // 2. Intercept transactions to send data to the parent on save
+        const originalTransaction = IDBDatabase.prototype.transaction;
+        IDBDatabase.prototype.transaction = function(...args) {
+            const transaction = originalTransaction.apply(this, args);
+            const dbName = this.name;
+            const mode = args[1];
+
+            if (mode === 'readwrite') {
+                transaction.addEventListener('complete', () => {
+                    console.log('Readwrite transaction completed, sending data to parent.');
+                    const storeNames = Array.from(args[0]);
+                    const finalDbState = { [dbName]: {} };
+
+                    const readTx = this.transaction(storeNames, 'readonly');
+                    let storesCompleted = 0;
+
+                    storeNames.forEach(storeName => {
+                        const store = readTx.objectStore(storeName);
+                        const allRecords = [];
+                        finalDbState[dbName][storeName] = allRecords;
+                        
+                        store.openCursor().onsuccess = event => {
+                            const cursor = event.target.result;
+                            if (cursor) {
+                                allRecords.push({ key: cursor.key, value: cursor.value });
+                                cursor.continue();
+                            } else {
+                                // Done with this store
+                                storesCompleted++;
+                                if (storesCompleted === storeNames.length) {
+                                    // Done with all stores
+                                    window.parent.postMessage({ type: 'saveData', payload: finalDbState }, '*');
+                                }
+                            }
+                        };
+                    });
+                });
+            }
+            return transaction;
         };
-        indexedDB.deleteDatabase = function(name) {
-            const prefixedName = PREFIX + name;
-            return originalDeleteDatabase.call(this, prefixedName);
-        };
+
+        // Tell the parent we are ready
+        window.parent.postMessage({ type: 'iframeReady' }, '*');
+
     </script>
     <script src="/Balatro/love.min.js"></script>
     <title>Love.js</title>
     <style>
-        #canvas {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-        }
-        body {
-            width: 100vw;
-            height: 100vh;
-            margin: 0px;
-        }
+        #canvas { position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; }
+        body { width: 100vw; height: 100vh; margin: 0px; }
     </style>
 </head>
 <body>
     <canvas id="canvas"></canvas>
-
-    <!-- Include JSZip library for decompression -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
-
     <script>
+      // The service worker is not strictly necessary with this approach but can be kept for asset caching
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
-          navigator.serviceWorker.register('/Balatro/sw.js').then(registration => {
-            console.log('SW registered: ', registration);
-          }).catch(registrationError => {
-            console.log('SW registration failed: ', registrationError);
-          });
+          navigator.serviceWorker.register('/Balatro/sw.js').then(r => console.log('SW registered: ', r)).catch(e => console.log('SW registration failed: ', e));
         });
       }
     </script>
-
     <script>
-        // This script will now fetch the zipped module.js, decompress it, and then execute it.
-        (async () => {
-            // Fetch the zipped module.js
+        const startGame = async () => {
             const zipUrl = "/Balatro/module.js.zip";
             const zipResponse = await fetch(zipUrl);
-            if (!zipResponse.ok) {
-                throw new Error(`Failed to load module.js.zip: ${zipResponse.statusText}`);
-            }
             const zipArrayBuffer = await zipResponse.arrayBuffer();
-
-            // Load the zip file using JSZip
             const zip = new JSZip();
             const loadedZip = await zip.loadAsync(zipArrayBuffer);
-
-            // Find and extract module.js from the zip
-            const moduleJsFile = loadedZip.file("module.js"); // Ensure this matches the name inside the zip
-            if (!moduleJsFile) {
-                throw new Error("module.js not found inside the zip archive.");
-            }
+            const moduleJsFile = loadedZip.file("module.js");
             const moduleJsContent = await moduleJsFile.async("text");
-
-            // Execute the extracted module.js content
-            // WARNING: Using eval() can be a security risk if the source is untrusted.
             eval(moduleJsContent);
-
-            // Now that module.js is executed and window.getSource should be defined, proceed as usual.
             const d = await getSource();
             Module = {
                 INITIAL_MEMORY: 2 ** 28,
@@ -91,10 +150,18 @@
                 Module.removeRunDependency("fp game.love")
             }];
             Love(Module)
-        })().catch(e => {
-            alert("Error during game initialization:", e);
-            // Optionally, display an error message to the user here.
-        });
+        };
+
+        // Don't start the game immediately; wait for the data to be loaded.
+        startGameFunction = () => {
+            startGame().catch(e => {
+                alert("Error during game initialization:", e);
+            });
+        };
+
+        if (isDataLoaded) {
+            startGameFunction();
+        }
     </script>
 </body>
 </html>
