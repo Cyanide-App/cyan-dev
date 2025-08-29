@@ -17,11 +17,7 @@ const GamePage = () => {
   useEffect(() => {
     if (game && game.type === 'LOVE') {
       const dbName = `Balatro_Saves`;
-      const request = indexedDB.open(dbName, 1);
-
-      request.onupgradeneeded = event => {
-        // Stores are created dynamically when game saves
-      };
+      const request = indexedDB.open(dbName);
 
       request.onsuccess = event => {
         dbRef.current = event.target.result;
@@ -43,33 +39,39 @@ const GamePage = () => {
           if (!db) return;
 
           const gameDbName = localStorage.getItem('balatro_db_name');
+          // If we have no record of a db name, or the db has no stores, start fresh.
           if (!gameDbName || db.objectStoreNames.length === 0) {
             iframeRef.current.contentWindow.postMessage({ type: 'loadData', payload: {} }, '*');
             return;
           }
           
-          const transaction = db.transaction(db.objectStoreNames, 'readonly');
-          const allData = { [gameDbName]: {} };
-          let storesCount = db.objectStoreNames.length;
-          let storesCompleted = 0;
-          
-          for(const storeName of db.objectStoreNames) {
-              const store = transaction.objectStore(storeName);
-              const allRecords = [];
-              allData[gameDbName][storeName] = allRecords;
+          try {
+            const transaction = db.transaction(db.objectStoreNames, 'readonly');
+            const allData = { [gameDbName]: {} };
+            let storesCount = db.objectStoreNames.length;
+            let storesCompleted = 0;
+            
+            for(const storeName of db.objectStoreNames) {
+                const store = transaction.objectStore(storeName);
+                const allRecords = [];
+                allData[gameDbName][storeName] = allRecords;
 
-              store.openCursor().onsuccess = e => {
-                  const cursor = e.target.result;
-                  if(cursor) {
-                      allRecords.push({ key: cursor.key, value: cursor.value });
-                      cursor.continue();
-                  } else {
-                      storesCompleted++;
-                      if (storesCompleted === storesCount) {
-                          iframeRef.current.contentWindow.postMessage({ type: 'loadData', payload: allData }, '*');
-                      }
-                  }
-              }
+                store.openCursor().onsuccess = e => {
+                    const cursor = e.target.result;
+                    if(cursor) {
+                        allRecords.push({ key: cursor.key, value: cursor.value });
+                        cursor.continue();
+                    } else {
+                        storesCompleted++;
+                        if (storesCompleted === storesCount) {
+                            iframeRef.current.contentWindow.postMessage({ type: 'loadData', payload: allData }, '*');
+                        }
+                    }
+                }
+            }
+          } catch (e) {
+            console.error("Error reading from IndexedDB. Starting fresh.", e);
+            iframeRef.current.contentWindow.postMessage({ type: 'loadData', payload: {} }, '*');
           }
         }
 
