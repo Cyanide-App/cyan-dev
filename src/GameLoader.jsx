@@ -32,21 +32,25 @@ const createGameHtml = (game) => {
           <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
           <style>
             body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; }
-            object, embed { width: 100%; height: 100%; }
+            #ruffle-player { width: 100%; height: 100%; }
           </style>
-          <script>
-            window.RufflePlayer = window.RufflePlayer || {};
-            window.RufflePlayer.config = {
-                // Force scaling to fill the entire area
-                "scale": "exactfit",
-            };
-          </script>
           <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
         </head>
         <body>
-          <object>
-            <embed src="${game.link}" />
-          </object>
+          <div id="ruffle-player"></div>
+          <script>
+            window.RufflePlayer = window.RufflePlayer || {};
+            window.RufflePlayer.config = {
+                "scale": "exactfit",
+            };
+            var ruffle = window.RufflePlayer.newest();
+            var player = ruffle.createPlayer();
+            player.id = "player";
+            player.style.width = "100%";
+            player.style.height = "100%";
+            document.getElementById("ruffle-player").appendChild(player);
+            player.load("${game.link}");
+          </script>
         </body>
         </html>`;
       break;
