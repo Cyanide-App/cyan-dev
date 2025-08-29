@@ -17,13 +17,10 @@ const GamePage = () => {
   useEffect(() => {
     if (game && game.type === 'LOVE') {
       const dbName = `Balatro_Saves`;
-      // Open the database with version 1, which will trigger onupgradeneeded if the DB is new or has a lower version.
       const request = indexedDB.open(dbName, 1);
 
-      // This event handler is only executed when the database is created or a new version is opened.
       request.onupgradeneeded = event => {
         const db = event.target.result;
-        // Create the object store if it doesn't already exist.
         if (!db.objectStoreNames.contains('FILE_DATA')) {
           db.createObjectStore('FILE_DATA');
         }
@@ -55,27 +52,19 @@ const GamePage = () => {
           }
           
           try {
-            const transaction = db.transaction(db.objectStoreNames, 'readonly');
+            const transaction = db.transaction(['FILE_DATA'], 'readonly');
             const allData = { [gameDbName]: {} };
-            let storesCount = db.objectStoreNames.length;
-            let storesCompleted = 0;
-            
-            for(const storeName of db.objectStoreNames) {
-                const store = transaction.objectStore(storeName);
-                const allRecords = [];
-                allData[gameDbName][storeName] = allRecords;
+            const store = transaction.objectStore('FILE_DATA');
+            const allRecords = [];
+            allData[gameDbName]['FILE_DATA'] = allRecords;
 
-                store.openCursor().onsuccess = e => {
-                    const cursor = e.target.result;
-                    if(cursor) {
-                        allRecords.push({ key: cursor.key, value: cursor.value });
-                        cursor.continue();
-                    } else {
-                        storesCompleted++;
-                        if (storesCompleted === storesCount) {
-                            iframeRef.current.contentWindow.postMessage({ type: 'loadData', payload: allData }, '*');
-                        }
-                    }
+            store.openCursor().onsuccess = e => {
+                const cursor = e.target.result;
+                if(cursor) {
+                    allRecords.push({ key: cursor.key, value: cursor.value });
+                    cursor.continue();
+                } else {
+                    iframeRef.current.contentWindow.postMessage({ type: 'loadData', payload: allData }, '*');
                 }
             }
           } catch (e) {
@@ -98,21 +87,18 @@ const GamePage = () => {
       
       const saveDataToDb = (storeData) => {
         const db = dbRef.current;
-        if (!db || !Object.keys(storeData).length) return;
+        if (!db || !storeData || !storeData['FILE_DATA']) return;
 
         try {
-            // The object store is now guaranteed to exist, so we can save directly.
-            const transaction = db.transaction(Object.keys(storeData), 'readwrite');
+            const transaction = db.transaction(['FILE_DATA'], 'readwrite');
             transaction.oncomplete = () => console.log('Parent DB updated successfully.');
             transaction.onerror = err => console.error('Parent DB transaction error:', err);
             
-            for(const storeName in storeData) {
-                const store = transaction.objectStore(storeName);
-                store.clear(); 
-                storeData[storeName].forEach(record => {
-                    store.put(record.value, record.key);
-                });
-            }
+            const store = transaction.objectStore('FILE_DATA');
+            store.clear(); 
+            storeData['FILE_DATA'].forEach(record => {
+                store.put(record.value, record.key);
+            });
         } catch (err) {
             console.error("Failed to create save transaction:", err);
         }
