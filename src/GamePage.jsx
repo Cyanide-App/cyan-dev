@@ -17,7 +17,17 @@ const GamePage = () => {
   useEffect(() => {
     if (game && game.type === 'LOVE') {
       const dbName = `Balatro_Saves`;
-      const request = indexedDB.open(dbName);
+      // Open the database with version 1, which will trigger onupgradeneeded if the DB is new or has a lower version.
+      const request = indexedDB.open(dbName, 1);
+
+      // This event handler is only executed when the database is created or a new version is opened.
+      request.onupgradeneeded = event => {
+        const db = event.target.result;
+        // Create the object store if it doesn't already exist.
+        if (!db.objectStoreNames.contains('FILE_DATA')) {
+          db.createObjectStore('FILE_DATA');
+        }
+      };
 
       request.onsuccess = event => {
         dbRef.current = event.target.result;
@@ -31,8 +41,6 @@ const GamePage = () => {
         if (!iframeRef.current || event.source !== iframeRef.current.contentWindow) {
           return;
         }
-
-        console.log('Parent received message:', event.data);
 
         const { type, payload } = event.data;
 
@@ -77,67 +85,28 @@ const GamePage = () => {
         }
 
         if (type === 'saveData') {
-            console.log('Received saveData request with payload:', payload);
             const db = dbRef.current;
-            if (!db) {
-                console.error("Save failed: DB is not open.");
-                return;
-            }
+            if (!db) return;
 
             const dbNameFromGame = Object.keys(payload)[0];
             localStorage.setItem('balatro_db_name', dbNameFromGame);
 
             const storeData = payload[dbNameFromGame];
-            const storeNames = Object.keys(storeData);
-
-            const currentStoreNames = new Set(db.objectStoreNames);
-            const newStoreNames = storeNames.filter(name => !currentStoreNames.has(name));
-
-            if (newStoreNames.length > 0) {
-                console.log('New object stores detected:', newStoreNames);
-                const currentVersion = db.version;
-                db.close();
-                const reopenRequest = indexedDB.open(dbName, currentVersion + 1);
-
-                reopenRequest.onupgradeneeded = event => {
-                    console.log('Database upgrade needed. Creating stores.');
-                    const upgradeDb = event.target.result;
-                    newStoreNames.forEach(name => {
-                        if (!upgradeDb.objectStoreNames.contains(name)) {
-                            console.log(`Creating store: ${name}`);
-                            upgradeDb.createObjectStore(name);
-                        }
-                    });
-                };
-
-                reopenRequest.onsuccess = event => {
-                    console.log('Database upgrade successful.');
-                    dbRef.current = event.target.result;
-                    saveDataToDb(storeData);
-                }
-                reopenRequest.onerror = e => console.error("Error on DB reopen/upgrade:", e);
-            } else {
-                console.log('No new object stores. Proceeding to save data.');
-                saveDataToDb(storeData);
-            }
+            saveDataToDb(storeData);
         }
       };
       
       const saveDataToDb = (storeData) => {
         const db = dbRef.current;
-        if (!db || !Object.keys(storeData).length) {
-            console.log("saveDataToDb: Aborting, DB not open or no data to save.");
-            return;
-        }
+        if (!db || !Object.keys(storeData).length) return;
 
         try {
-            console.log('Creating readwrite transaction for stores:', Object.keys(storeData));
+            // The object store is now guaranteed to exist, so we can save directly.
             const transaction = db.transaction(Object.keys(storeData), 'readwrite');
             transaction.oncomplete = () => console.log('Parent DB updated successfully.');
             transaction.onerror = err => console.error('Parent DB transaction error:', err);
             
             for(const storeName in storeData) {
-                console.log(`Accessing store: ${storeName} to save data.`);
                 const store = transaction.objectStore(storeName);
                 store.clear(); 
                 storeData[storeName].forEach(record => {
