@@ -520,8 +520,8 @@
       "title": "Balatro",
       "imageSrc": "https://via.placeholder.com/150",
       "genre": "Rougelike",
-      "type": "LOVE",
-      "description": ""
+      "type": "HTML",
+      "description": "/Balatro/index.html"
     }
 
   ]
