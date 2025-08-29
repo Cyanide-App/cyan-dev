@@ -20,8 +20,7 @@ const GamePage = () => {
       const request = indexedDB.open(dbName, 1);
 
       request.onupgradeneeded = event => {
-        const db = event.target.result;
-        // The stores will be created dynamically based on game data
+        // Stores are created dynamically when game saves
       };
 
       request.onsuccess = event => {
@@ -43,44 +42,34 @@ const GamePage = () => {
           const db = dbRef.current;
           if (!db) return;
 
-          if (db.objectStoreNames.length === 0) {
+          const gameDbName = localStorage.getItem('balatro_db_name');
+          if (!gameDbName || db.objectStoreNames.length === 0) {
             iframeRef.current.contentWindow.postMessage({ type: 'loadData', payload: {} }, '*');
             return;
           }
+          
+          const transaction = db.transaction(db.objectStoreNames, 'readonly');
+          const allData = { [gameDbName]: {} };
+          let storesCount = db.objectStoreNames.length;
+          let storesCompleted = 0;
+          
+          for(const storeName of db.objectStoreNames) {
+              const store = transaction.objectStore(storeName);
+              const allRecords = [];
+              allData[gameDbName][storeName] = allRecords;
 
-          try {
-            const transaction = db.transaction(db.objectStoreNames, 'readonly');
-            const allData = {};
-            let storesCount = db.objectStoreNames.length;
-            if (storesCount === 0) {
-                iframeRef.current.contentWindow.postMessage({ type: 'loadData', payload: {} }, '*');
-                return;
-            }
-  
-            let storesCompleted = 0;
-            const dbNameFromGame = Object.keys(payload)[0]; // Assumes game sends its db name
-            allData[dbNameFromGame] = {};
-            
-            for(const storeName of db.objectStoreNames) {
-                const store = transaction.objectStore(storeName);
-                const allRecords = [];
-                allData[dbNameFromGame][storeName] = allRecords;
-  
-                store.openCursor().onsuccess = e => {
-                    const cursor = e.target.result;
-                    if(cursor) {
-                        allRecords.push({ key: cursor.key, value: cursor.value });
-                        cursor.continue();
-                    } else {
-                        storesCompleted++;
-                        if (storesCompleted === storesCount) {
-                            iframeRef.current.contentWindow.postMessage({ type: 'loadData', payload: allData }, '*');
-                        }
-                    }
-                }
-            }
-          } catch (error) {
-            console.error("Error creating transaction:", error);
+              store.openCursor().onsuccess = e => {
+                  const cursor = e.target.result;
+                  if(cursor) {
+                      allRecords.push({ key: cursor.key, value: cursor.value });
+                      cursor.continue();
+                  } else {
+                      storesCompleted++;
+                      if (storesCompleted === storesCount) {
+                          iframeRef.current.contentWindow.postMessage({ type: 'loadData', payload: allData }, '*');
+                      }
+                  }
+              }
           }
         }
 
@@ -89,10 +78,11 @@ const GamePage = () => {
             if (!db) return;
 
             const dbNameFromGame = Object.keys(payload)[0];
+            localStorage.setItem('balatro_db_name', dbNameFromGame); // Remember the db name
+
             const storeData = payload[dbNameFromGame];
             const storeNames = Object.keys(storeData);
 
-            // Dynamically create stores if they don't exist
             const currentStoreNames = new Set(db.objectStoreNames);
             const newStoreNames = storeNames.filter(name => !currentStoreNames.has(name));
 
@@ -102,12 +92,17 @@ const GamePage = () => {
                 const reopenRequest = indexedDB.open(dbName, currentVersion + 1);
                 reopenRequest.onupgradeneeded = event => {
                     const upgradeDb = event.target.result;
-                    newStoreNames.forEach(name => upgradeDb.createObjectStore(name));
+                    newStoreNames.forEach(name => {
+                        if (!upgradeDb.objectStoreNames.contains(name)) {
+                            upgradeDb.createObjectStore(name);
+                        }
+                    });
                 };
                 reopenRequest.onsuccess = event => {
                     dbRef.current = event.target.result;
                     saveDataToDb(storeData);
                 }
+                reopenRequest.onerror = e => console.error("Error on DB reopen/upgrade:", e);
             } else {
                 saveDataToDb(storeData);
             }
@@ -116,17 +111,21 @@ const GamePage = () => {
       
       const saveDataToDb = (storeData) => {
         const db = dbRef.current;
-        if (!db) return;
-        const transaction = db.transaction(Object.keys(storeData), 'readwrite');
-        transaction.oncomplete = () => console.log('Parent DB updated.');
-        transaction.onerror = err => console.error('Parent DB transaction error:', err);
-        
-        for(const storeName in storeData) {
-            const store = transaction.objectStore(storeName);
-            store.clear(); // Clear old data
-            storeData[storeName].forEach(record => {
-                store.put(record.value, record.key);
-            });
+        if (!db || !Object.keys(storeData).length) return;
+        try {
+            const transaction = db.transaction(Object.keys(storeData), 'readwrite');
+            transaction.oncomplete = () => console.log('Parent DB updated.');
+            transaction.onerror = err => console.error('Parent DB transaction error:', err);
+            
+            for(const storeName in storeData) {
+                const store = transaction.objectStore(storeName);
+                store.clear(); // Clear old data
+                storeData[storeName].forEach(record => {
+                    store.put(record.value, record.key);
+                });
+            }
+        } catch (err) {
+            console.error("Failed to create save transaction:", err)
         }
       }
 
