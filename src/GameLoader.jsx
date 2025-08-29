@@ -120,8 +120,8 @@ const createGameHtml = (game) => {
             <script>
               if ('serviceWorker' in navigator) {
                 window.addEventListener('load', () => {
-                  navigator.serviceWorker.register('${origin}/Balatro/sw.js').then(registration => {
-                    console.log('SW registered: ', registration);
+                  navigator.serviceWorker.register('/Balatro/sw.js', { scope: '/' }).then(registration => {
+                    console.log('SW registered with scope: ', registration.scope);
                   }).catch(registrationError => {
                     console.log('SW registration failed: ', registrationError);
                   });
