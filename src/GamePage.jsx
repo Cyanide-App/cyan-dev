@@ -32,6 +32,8 @@ const GamePage = () => {
           return;
         }
 
+        console.log('Parent received message:', event.data);
+
         const { type, payload } = event.data;
 
         if (type === 'iframeReady') {
@@ -39,7 +41,6 @@ const GamePage = () => {
           if (!db) return;
 
           const gameDbName = localStorage.getItem('balatro_db_name');
-          // If we have no record of a db name, or the db has no stores, start fresh.
           if (!gameDbName || db.objectStoreNames.length === 0) {
             iframeRef.current.contentWindow.postMessage({ type: 'loadData', payload: {} }, '*');
             return;
@@ -76,11 +77,15 @@ const GamePage = () => {
         }
 
         if (type === 'saveData') {
+            console.log('Received saveData request with payload:', payload);
             const db = dbRef.current;
-            if (!db) return;
+            if (!db) {
+                console.error("Save failed: DB is not open.");
+                return;
+            }
 
             const dbNameFromGame = Object.keys(payload)[0];
-            localStorage.setItem('balatro_db_name', dbNameFromGame); // Remember the db name
+            localStorage.setItem('balatro_db_name', dbNameFromGame);
 
             const storeData = payload[dbNameFromGame];
             const storeNames = Object.keys(storeData);
@@ -89,23 +94,30 @@ const GamePage = () => {
             const newStoreNames = storeNames.filter(name => !currentStoreNames.has(name));
 
             if (newStoreNames.length > 0) {
+                console.log('New object stores detected:', newStoreNames);
                 const currentVersion = db.version;
                 db.close();
                 const reopenRequest = indexedDB.open(dbName, currentVersion + 1);
+
                 reopenRequest.onupgradeneeded = event => {
+                    console.log('Database upgrade needed. Creating stores.');
                     const upgradeDb = event.target.result;
                     newStoreNames.forEach(name => {
                         if (!upgradeDb.objectStoreNames.contains(name)) {
+                            console.log(`Creating store: ${name}`);
                             upgradeDb.createObjectStore(name);
                         }
                     });
                 };
+
                 reopenRequest.onsuccess = event => {
+                    console.log('Database upgrade successful.');
                     dbRef.current = event.target.result;
                     saveDataToDb(storeData);
                 }
                 reopenRequest.onerror = e => console.error("Error on DB reopen/upgrade:", e);
             } else {
+                console.log('No new object stores. Proceeding to save data.');
                 saveDataToDb(storeData);
             }
         }
@@ -113,21 +125,27 @@ const GamePage = () => {
       
       const saveDataToDb = (storeData) => {
         const db = dbRef.current;
-        if (!db || !Object.keys(storeData).length) return;
+        if (!db || !Object.keys(storeData).length) {
+            console.log("saveDataToDb: Aborting, DB not open or no data to save.");
+            return;
+        }
+
         try {
+            console.log('Creating readwrite transaction for stores:', Object.keys(storeData));
             const transaction = db.transaction(Object.keys(storeData), 'readwrite');
-            transaction.oncomplete = () => console.log('Parent DB updated.');
+            transaction.oncomplete = () => console.log('Parent DB updated successfully.');
             transaction.onerror = err => console.error('Parent DB transaction error:', err);
             
             for(const storeName in storeData) {
+                console.log(`Accessing store: ${storeName} to save data.`);
                 const store = transaction.objectStore(storeName);
-                store.clear(); // Clear old data
+                store.clear(); 
                 storeData[storeName].forEach(record => {
                     store.put(record.value, record.key);
                 });
             }
         } catch (err) {
-            console.error("Failed to create save transaction:", err)
+            console.error("Failed to create save transaction:", err);
         }
       }
 
