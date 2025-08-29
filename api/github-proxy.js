@@ -38,6 +38,8 @@ export default async function (req, res) {
       res.setHeader('Content-Type', 'image/gif');
     } else if (assetPath.endsWith('.svg')) {
       res.setHeader('Content-Type', 'image/svg+xml');
+    } else if (assetPath.endsWith('.swf')) {
+      res.setHeader('Content-Type', 'application/x-shockwave-flash');
     } else if (assetPath.endsWith('.love')) { // Added for .love files
       res.setHeader('Content-Type', 'application/x-love-game'); // Or application/octet-stream
     }
