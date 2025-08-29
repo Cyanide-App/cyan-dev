@@ -9,23 +9,30 @@ const GamePage = () => {
   const game = gamesData.games.find((g) => g.title === decodeURIComponent(title));
   
   const [gameLaunched, setGameLaunched] = useState(false);
-  const [htmlContent, setHtmlContent] = useState(''); // Reintroduce htmlContent state
+  const [htmlContent, setHtmlContent] = useState('');
+  const [blobUrl, setBlobUrl] = useState('');
 
   useEffect(() => {
-    // delete ascii div on page load cuz idk how to use react lol
     const canvases = document.querySelectorAll('canvas');
     canvases.forEach(canvas => { canvas.remove(); });
     
     if (game) {
       if (game.type === 'HTML') {
-        // For HTML type, we directly use game.link in the iframe src
-        setHtmlContent(''); // Clear htmlContent as we're not using srcDoc
+        setHtmlContent('');
       } else {
-        // For other types, generate HTML and use srcDoc
         const generatedHtml = createGameHtml(game);
         setHtmlContent(generatedHtml);
+        const blob = new Blob([generatedHtml], { type: 'text/html' });
+        const url = URL.createObjectURL(blob);
+        setBlobUrl(url);
       }
     }
+
+    return () => {
+      if (blobUrl) {
+        URL.revokeObjectURL(blobUrl);
+      }
+    };
   }, [game]);
 
   if (!game) {
@@ -62,7 +69,7 @@ const GamePage = () => {
           game.type === 'HTML' ? (
             <iframe src={game.link} title={game.title} className="game-iframe" />
           ) : (
-            <iframe srcDoc={htmlContent} title={game.title} className="game-iframe" />
+            <iframe src={blobUrl} title={game.title} className="game-iframe" />
           )
         ) : (
           <div className="launch-screen">
