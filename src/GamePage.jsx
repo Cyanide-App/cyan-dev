@@ -43,35 +43,44 @@ const GamePage = () => {
           const db = dbRef.current;
           if (!db) return;
 
-          const transaction = db.transaction(db.objectStoreNames, 'readonly');
-          const allData = {};
-          let storesCount = db.objectStoreNames.length;
-          if (storesCount === 0) {
-              iframeRef.current.contentWindow.postMessage({ type: 'loadData', payload: {} }, '*');
-              return;
+          if (db.objectStoreNames.length === 0) {
+            iframeRef.current.contentWindow.postMessage({ type: 'loadData', payload: {} }, '*');
+            return;
           }
 
-          let storesCompleted = 0;
-          const dbNameFromGame = Object.keys(payload)[0]; // Assumes game sends its db name
-          allData[dbNameFromGame] = {};
-          
-          for(const storeName of db.objectStoreNames) {
-              const store = transaction.objectStore(storeName);
-              const allRecords = [];
-              allData[dbNameFromGame][storeName] = allRecords;
-
-              store.openCursor().onsuccess = e => {
-                  const cursor = e.target.result;
-                  if(cursor) {
-                      allRecords.push({ key: cursor.key, value: cursor.value });
-                      cursor.continue();
-                  } else {
-                      storesCompleted++;
-                      if (storesCompleted === storesCount) {
-                          iframeRef.current.contentWindow.postMessage({ type: 'loadData', payload: allData }, '*');
-                      }
-                  }
-              }
+          try {
+            const transaction = db.transaction(db.objectStoreNames, 'readonly');
+            const allData = {};
+            let storesCount = db.objectStoreNames.length;
+            if (storesCount === 0) {
+                iframeRef.current.contentWindow.postMessage({ type: 'loadData', payload: {} }, '*');
+                return;
+            }
+  
+            let storesCompleted = 0;
+            const dbNameFromGame = Object.keys(payload)[0]; // Assumes game sends its db name
+            allData[dbNameFromGame] = {};
+            
+            for(const storeName of db.objectStoreNames) {
+                const store = transaction.objectStore(storeName);
+                const allRecords = [];
+                allData[dbNameFromGame][storeName] = allRecords;
+  
+                store.openCursor().onsuccess = e => {
+                    const cursor = e.target.result;
+                    if(cursor) {
+                        allRecords.push({ key: cursor.key, value: cursor.value });
+                        cursor.continue();
+                    } else {
+                        storesCompleted++;
+                        if (storesCompleted === storesCount) {
+                            iframeRef.current.contentWindow.postMessage({ type: 'loadData', payload: allData }, '*');
+                        }
+                    }
+                }
+            }
+          } catch (error) {
+            console.error("Error creating transaction:", error);
           }
         }
 
