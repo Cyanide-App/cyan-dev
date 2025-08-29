@@ -10,29 +10,15 @@ const GamePage = () => {
   
   const [gameLaunched, setGameLaunched] = useState(false);
   const [htmlContent, setHtmlContent] = useState('');
-  const [blobUrl, setBlobUrl] = useState('');
 
   useEffect(() => {
     const canvases = document.querySelectorAll('canvas');
     canvases.forEach(canvas => { canvas.remove(); });
     
-    if (game) {
-      if (game.type === 'HTML') {
-        setHtmlContent('');
-      } else {
-        const generatedHtml = createGameHtml(game);
-        setHtmlContent(generatedHtml);
-        const blob = new Blob([generatedHtml], { type: 'text/html' });
-        const url = URL.createObjectURL(blob);
-        setBlobUrl(url);
-      }
+    if (game && game.type !== 'HTML' && game.title !== 'Balatro') {
+      const generatedHtml = createGameHtml(game);
+      setHtmlContent(generatedHtml);
     }
-
-    return () => {
-      if (blobUrl) {
-        URL.revokeObjectURL(blobUrl);
-      }
-    };
   }, [game]);
 
   if (!game) {
@@ -66,10 +52,12 @@ const GamePage = () => {
 
       <div className="game-content-container">
         {gameLaunched ? (
-          game.type === 'HTML' ? (
+          game.title === 'Balatro' ? (
+            <iframe src="/api/balatro-proxy" title={game.title} className="game-iframe" />
+          ) : game.type === 'HTML' ? (
             <iframe src={game.link} title={game.title} className="game-iframe" />
           ) : (
-            <iframe src={blobUrl} title={game.title} className="game-iframe" />
+            <iframe srcDoc={htmlContent} title={game.title} className="game-iframe" />
           )
         ) : (
           <div className="launch-screen">
