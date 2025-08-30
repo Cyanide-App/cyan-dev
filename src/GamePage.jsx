@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import gamesData from './games.json';
 import './GamePage.css';
@@ -7,6 +7,7 @@ import createGameHtml from './GameLoader';
 const GamePage = () => {
   const { title } = useParams();
   const game = gamesData.games.find((g) => g.title === decodeURIComponent(title));
+  const iframeRef = useRef(null);
   
   const [gameLaunched, setGameLaunched] = useState(false);
   const [htmlContent, setHtmlContent] = useState(''); // Reintroduce htmlContent state
@@ -50,19 +51,36 @@ const GamePage = () => {
     }
   };
 
+  const handleFullscreen = () => {
+    if (iframeRef.current) {
+      if (iframeRef.current.requestFullscreen) {
+        iframeRef.current.requestFullscreen();
+      } else if (iframeRef.current.mozRequestFullScreen) { /* Firefox */
+        iframeRef.current.mozRequestFullScreen();
+      } else if (iframeRef.current.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+        iframeRef.current.webkitRequestFullscreen();
+      } else if (iframeRef.current.msRequestFullscreen) { /* IE/Edge */
+        iframeRef.current.msRequestFullscreen();
+      }
+    }
+  };
+
   return (
     <div className="game-page-container">
       <div className="game-page-header">
         <span>{game.title}</span>
-        <Link to="/" className="back-button">[ Back ]</Link>
+        <div>
+          <button onClick={handleFullscreen} className="fullscreen-button">[ Fullscreen ]</button>
+          <Link to="/" className="back-button">[ Back ]</Link>
+        </div>
       </div>
 
       <div className="game-content-container">
         {gameLaunched ? (
           game.type === 'HTML' ? (
-            <iframe src={game.link} title={game.title} className="game-iframe" />
+            <iframe ref={iframeRef} src={game.link} title={game.title} className="game-iframe" />
           ) : (
-            <iframe srcDoc={htmlContent} title={game.title} className="game-iframe" />
+            <iframe ref={iframeRef} srcDoc={htmlContent} title={game.title} className="game-iframe" />
           )
         ) : (
           <div className="launch-screen">

@@ -1,6 +1,6 @@
 .game-page-container {
     outline: 2px solid rgb(128, 106, 55);
-    padding: 10px;
+    /* padding: 10px; */
     outline-offset: -6px;
     border-radius: 15px;
     box-shadow: rgba(23, 23, 23, 0.25) 0px 25px 50px -12px;
@@ -44,6 +44,23 @@
   background-color: #771136;
   color: #ffffff !important;
   cursor: pointer;
+}
+
+.fullscreen-button {
+    color: #fff;
+    text-decoration: none;
+    box-shadow: rgba(23, 23, 23, 0.25) 0px 25px 50px -12px;
+    margin-right: 10px;
+    background: none;
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
+}
+
+.fullscreen-button:hover {
+  background-color: #771136;
+  color: #ffffff !important;
 }
 
 .game-content-container {
@@ -106,7 +123,7 @@
     background-color: #333;
     /* color: white; */
     /* padding: 10px 20px; */
-    border: 1px solid #00FFD0;
+    border: 1px solid #ffcc41;
     cursor: pointer;
     font-size: 16px;
 }
