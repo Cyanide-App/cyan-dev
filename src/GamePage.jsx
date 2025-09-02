@@ -78,9 +78,9 @@ const GamePage = () => {
       <div className="game-content-container">
         {gameLaunched ? (
           game.type === 'HTML' ? (
-            <iframe ref={iframeRef} src={game.link} title={game.title} className="game-iframe" />
+            <iframe ref={iframeRef} src={game.link} title={game.title} className="game-iframe" allowFullScreen />
           ) : (
-            <iframe ref={iframeRef} srcDoc={htmlContent} title={game.title} className="game-iframe" />
+            <iframe ref={iframeRef} srcDoc={htmlContent} title={game.title} className="game-iframe" allowFullScreen />
           )
         ) : (
           <div className="launch-screen">
