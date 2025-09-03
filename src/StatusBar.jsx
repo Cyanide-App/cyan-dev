@@ -28,7 +28,7 @@ const StatusBar = () => {
       cyλn 2.0 BETA | {formattedDate} | {formattedTime}
       </div>
       <div className="status-right">
-                {/* idk what to put here yet  */}
+        v2.1 (Overhauled Game Page)
       </div>
     </div>
   );

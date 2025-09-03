@@ -10,24 +10,47 @@ const GamePage = () => {
   const iframeRef = useRef(null);
   
   const [gameLaunched, setGameLaunched] = useState(false);
-  const [htmlContent, setHtmlContent] = useState(''); // Reintroduce htmlContent state
+  const [htmlContent, setHtmlContent] = useState('');
+  const [isFullScreen, setIsFullScreen] = useState(false);
+  const [animateControls, setAnimateControls] = useState(false);
 
   useEffect(() => {
-    // delete ascii div on page load cuz idk how to use react lol
     const canvases = document.querySelectorAll('canvas');
     canvases.forEach(canvas => { canvas.remove(); });
     
     if (game) {
       if (game.type === 'HTML') {
-        // For HTML type, we directly use game.link in the iframe src
-        setHtmlContent(''); // Clear htmlContent as we're not using srcDoc
+        setHtmlContent('');
       } else {
-        // For other types, generate HTML and use srcDoc
         const generatedHtml = createGameHtml(game);
         setHtmlContent(generatedHtml);
       }
     }
   }, [game]);
+
+  useEffect(() => {
+    if (gameLaunched) {
+      setIsFullScreen(true);
+    }
+  }, [gameLaunched]);
+
+  useEffect(() => {
+    let timer;
+    if (isFullScreen) {
+      setAnimateControls(true);
+      timer = setTimeout(() => {
+        setAnimateControls(false);
+      }, 4000); // Animation duration is 4s
+    } else {
+      setAnimateControls(false);
+    }
+
+    return () => {
+      if (timer) {
+        clearTimeout(timer);
+      }
+    };
+  }, [isFullScreen]);
 
   if (!game) {
     return <div>Game not found</div>;
@@ -51,26 +74,25 @@ const GamePage = () => {
     }
   };
 
-  const handleFullscreen = () => {
-    if (iframeRef.current) {
-      if (iframeRef.current.requestFullscreen) {
-        iframeRef.current.requestFullscreen();
-      } else if (iframeRef.current.mozRequestFullScreen) { /* Firefox */
-        iframeRef.current.mozRequestFullScreen();
-      } else if (iframeRef.current.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
-        iframeRef.current.webkitRequestFullscreen();
-      } else if (iframeRef.current.msRequestFullscreen) { /* IE/Edge */
-        iframeRef.current.msRequestFullscreen();
-      }
-    }
-  };
-
   return (
-    <div className="game-page-container">
+    <div className={`game-page-container ${isFullScreen ? 'fullscreen' : ''}`}>
+      {isFullScreen && (
+        <div className="fullscreen-controls-container">
+          <div className="arrow"></div>
+          <div className={`fullscreen-controls ${animateControls ? 'animate-initial' : ''}`}>
+            <button onClick={() => setIsFullScreen(false)}>
+              [ Unfullscreen ]
+            </button>
+            <Link to="/">
+              [ Back ]
+            </Link>
+          </div>
+        </div>
+      )}
       <div className="game-page-header">
         <span>{game.title}</span>
         <div>
-          <button onClick={handleFullscreen} className="fullscreen-button">[ Fullscreen ]</button>
+          <button onClick={() => setIsFullScreen(true)} className="fullscreen-button">[ Fullscreen ]</button>
           <Link to="/" className="back-button">[ Back ]</Link>
         </div>
       </div>
@@ -84,17 +106,23 @@ const GamePage = () => {
           )
         ) : (
           <div className="launch-screen">
-             <p className="cdn-loaded-text">CDN Loaded: {game.link}</p>
-            <button className="launch-button-game" onClick={handleLaunchGame}>
-              {'>'} Launch
-            </button>
+            <div className='launch-controls'>
+              <button className="launch-button-game" onClick={handleLaunchGame}>
+                {'>'} Launch
+              </button>
+              <p className="cdn-loaded-text">
+                Game:{game.title} <br></br>
+                Type: {game.type} <br></br>
+                CDN: {game.link}
+              </p>
+            </div>
           </div>
         )}
       </div>
 
       <div className="game-page-footer">
         <span>Genre: {game.genre} | Type: {game.type}</span>
-        {gameLaunched && <button onClick={handleDownloadHtml}>Download HTML</button>}
+        {/* {gameLaunched && <button onClick={handleDownloadHtml}>Download HTML</button>} */}
       </div>
     </div>
   );
