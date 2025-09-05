@@ -122,7 +122,11 @@ const GamePage = () => {
 
       <div className="game-page-footer">
         <span>Genre: {game.genre} | Type: {game.type}</span>
-        {/* {gameLaunched && <button onClick={handleDownloadHtml}>Download HTML</button>} */}
+        <div className="game-status">
+          <span className="status-tag">Status:</span>
+          <span className={`status-text ${game.status[0].toLowerCase()}`}>{game.status[0]}</span>
+          <span className={`status-reason ${game.status[0].toLowerCase()}`}>{game.status[1]}</span>
+        </div>
       </div>
     </div>
   );

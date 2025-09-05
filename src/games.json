@@ -6,7 +6,11 @@
       "genre": "Puzzle",
       "type": "HTML",
       "link": "/api/github-proxy?assetPath=HTML/2048/2048.html",
-      "description": ""
+      "description": "",
+      "status": [
+       "Working",
+        "This game has no issues :D"
+      ]
     },
     {
       "title": "10 Minutes Till Dawn",
@@ -14,7 +18,11 @@
       "genre": "Action-Adventure",
       "type": "HTML",
       "link": "/api/github-proxy?assetPath=HTML/10minutestilldawn/index.html",
-      "description": ""
+      "description": "",
+      "status": [
+        "Broken",
+        "Game does not finish loading "
+      ]
     },
     {
       "title": "Advance Wars",
@@ -23,7 +31,11 @@
       "genre": "Action-Adventure",
       "type": "EMULATOR",
       "link": "https://cdn.jsdelivr.net/gh/vbaemulator/GBA-Roms@main/Advance%20Wars%20(USA)%20(Rev%201).zip",
-      "description": ""
+      "description": "",
+      "status": [
+         "Working",
+        "This game has no issues :D"
+      ]
     },
     {
       "title": "Derek 1",
@@ -31,7 +43,11 @@
       "genre": "Platformer",
       "type": "HTML",
       "link": "/api/github-proxy?assetPath=HTML/derek1/derek1.html",
-      "description": ""
+      "description": "",
+      "status": [
+        "Working",
+        "This game has no issues :D"
+      ]
     },
     {
       "title": "Derek 2",
@@ -39,7 +55,11 @@
       "genre": "Platformer",
       "type": "HTML",
       "link": "/api/github-proxy?assetPath=HTML/derek2/derek2.html",
-      "description": ""
+      "description": "",
+      "status": [
+         "Working",
+        "This game has no issues :D"
+      ]
     },
     {
       "title": "Derek 3",
@@ -47,7 +67,11 @@
       "genre": "Platformer",
       "type": "HTML",
       "link": "/api/github-proxy?assetPath=HTML/derek3/derek3.html",
-      "description": ""
+      "description": "",
+      "status": [
+        "Working",
+        "This game has no issues :D"
+      ]
     },
     {
       "title": "Derek 4",
@@ -55,7 +79,11 @@
       "genre": "Platformer",
       "type": "HTML",
       "link": "/api/github-proxy?assetPath=HTML/derek4/derek4.html",
-      "description": ""
+      "description": "",
+      "status": [
+        "Working",
+        "This game has no issues :D"
+      ]
     },
     {
       "title": "Derek 5",
@@ -63,7 +91,11 @@
       "genre": "Platformer",
       "type": "HTML",
       "link": "/api/github-proxy?assetPath=HTML/derek5/derek5.html",
-      "description": ""
+      "description": "",
+      "status": [
+       "Working",
+        "This game has no issues :D"
+      ]
     },
     {
       "title": "Derek 6",
@@ -71,7 +103,11 @@
       "genre": "Platformer",
       "type": "HTML",
       "link": "/api/github-proxy?assetPath=HTML/derek6/derek6.html",
-      "description": ""
+      "description": "",
+      "status": [
+       "Working",
+        "This game has no issues :D"
+      ]
     },
     {
       "title": "Derek 7",
@@ -79,7 +115,11 @@
       "genre": "Platformer",
       "type": "HTML",
       "link": "/api/github-proxy?assetPath=HTML/derek7/derek7.html",
-      "description": ""
+      "description": "",
+      "status": [
+         "Working",
+        "This game has no issues :D"
+      ]
     },
     {
       "title": "Derek 8",
@@ -87,7 +127,11 @@
       "genre": "Platformer",
       "type": "HTML",
       "link": "/api/github-proxy?assetPath=HTML/derek8/derek8.html",
-      "description": ""
+      "description": "",
+      "status": [
+        "Working",
+        "This game has no issues :D"
+      ]
     },
     {
       "title": "Minecraft",
@@ -95,7 +139,11 @@
       "genre": "Sandbox",
       "type": "HTML",
       "link": "/api/github-proxy?assetPath=HTML/minecraft/minecraft.html",
-      "description": ""
+      "description": "",
+      "status": [
+       "Working",
+        "This game has no issues :D"
+      ]
     },
     {
       "title": "Pokemon Emerald",
@@ -104,7 +152,11 @@
       "genre": "Action-RPG",
       "type": "EMULATOR",
       "link": "https://cdn.jsdelivr.net/gh/vbaemulator/GBA-Roms@main/Pokemon%20Emerald%20%2B.zip",
-      "description": ""
+      "description": "",
+      "status": [
+        "Working",
+        "This game has no issues :D"
+      ]
     },
     {
       "title": "Pokemon Fire Red",
@@ -113,7 +165,11 @@
       "genre": "Action-RPG",
       "type": "EMULATOR",
       "link": "https://cdn.jsdelivr.net/gh/vbaemulator/GBA-Roms@main/Pokemon%20Firered%20251.zip",
-      "description": ""
+      "description": "",
+      "status": [
+        "Working",
+        "This game has no issues :D"
+      ]
     },
     {
       "title": "Pokemon Crystal",
@@ -122,7 +178,11 @@
       "genre": "Action-RPG",
       "type": "EMULATOR",
       "link": "https://cdn.jsdelivr.net/gh/mehransab101/GBC_ROMS@master/Pokemon%20-%20Crystal%20Version%20(UE)%20(V1.1)%20%5BC%5D%5B!%5D.gbc",
-      "description": ""
+      "description": "",
+      "status": [
+        "Working",
+        "This game has no issues :D"
+      ]
     },
     {
       "title": "Pokemon Red",
@@ -131,7 +191,11 @@
       "genre": "Action-RPG",
       "type": "EMULATOR",
       "link": "https://cdn.jsdelivr.net/gh/mehransab101/GBC_ROMS@master/Pokemon%20-%20Red%20Version%20(UE)%5B!%5D.zip",
-      "description": ""
+      "description": "",
+      "status": [
+       "Working",
+        "This game has no issues :D"
+      ]
     },
     {
       "title": "Pokemon Blue",
@@ -140,7 +204,11 @@
       "genre": "Action-RPG",
       "type": "EMULATOR",
       "link": "https://cdn.jsdelivr.net/gh/mehransab101/GBC_ROMS@master/pokemon-blue.gb",
-      "description": ""
+      "description": "",
+      "status": [
+       "Working",
+        "This game has no issues :D"
+      ]
     },
     {
       "title": "Pokemon Gold",
@@ -149,7 +217,11 @@
       "genre": "Action-RPG",
       "type": "EMULATOR",
       "link": "https://cdn.jsdelivr.net/gh/mehransab101/GBC_ROMS@master/Pokemon%20-%20Gold%20Version%20(UE)%20%5BC%5D%5B!%5D.gbc",
-      "description": ""
+      "description": "",
+      "status": [
+        "Working",
+        "This game has no issues :D"
+      ]
     },
     {
       "title": "Pokemon Silver",
@@ -158,7 +230,11 @@
       "genre": "Action-RPG",
       "type": "EMULATOR",
       "link": "https://cdn.jsdelivr.net/gh/mehransab101/GBC_ROMS@master/Pokemon%20-%20Silver%20Version%20(USA%2C%20Europe)%20(SGB%20Enhanced).gbc",
-      "description": ""
+      "description": "",
+      "status": [
+        "Working",
+        "This game has no issues :D"
+      ]
     },
     {
       "title": "Castlevania - Harmony of Dissonance",
@@ -167,7 +243,11 @@
       "genre": "Action-RPG",
       "type": "EMULATOR",
       "link": "https://cdn.jsdelivr.net/gh/vbaemulator/GBA-Roms@main/Castlevania%20-%20Harmony%20of%20Dissonance%20(USA).zip",
-      "description": ""
+      "description": "",
+      "status": [
+        "Working",
+        "This game has no issues :D"
+      ]
     },
     {
       "title": "Jimmy Neutron Boy Genius",
@@ -176,7 +256,11 @@
       "genre": "temp",
       "type": "EMULATOR",
       "link": "https://cdn.jsdelivr.net/gh/vbaemulator/GBA-Roms@main/Adventures%20of%20Jimmy%20Neutron%20Boy%20Genius%20vs.%20Jimmy%20Negatron%2C%20The%20(USA%2C%20Europe).zip",
-      "description": ""
+      "description": "",
+      "status": [
+         "Working",
+        "This game has no issues :D"
+      ]
     },
     {
       "title": "Earthbound",
@@ -185,7 +269,11 @@
       "genre": "temp",
       "type": "EMULATOR",
       "link": "https://cdn.jsdelivr.net/gh/dolchi21-retroarch/snes-roms@master/Earthbound.7z",
-      "description": ""
+      "description": "",
+      "status": [
+         "Working",
+        "This game has no issues :D"
+      ]
     },
     {
       "title": "Papa's Burgeria",
@@ -193,7 +281,11 @@
       "genre": "Strategy",
       "type": "FLASH",
       "link": "/api/github-proxy?assetPath=FLASH/Papa'sBurgeria/papasburgeria.swf",
-      "description": ""
+      "description": "",
+      "status": [
+         "Working",
+        "This game has no issues :D"
+      ]
     },
     {
       "title": "Papa's Freezeria",
@@ -201,7 +293,11 @@
       "genre": "Strategy",
       "type": "FLASH",
       "link": "/api/github-proxy?assetPath=FLASH/Papa'sFreezeria/papasfreezeria.swf",
-      "description": ""
+      "description": "",
+      "status": [
+                       "Working",
+        "This game has no issues :D"
+      ]
     },
     {
       "title": "Papa's Pizzeria",
@@ -209,7 +305,11 @@
       "genre": "Strategy",
       "type": "FLASH",
       "link": "/api/github-proxy?assetPath=FLASH/Papa'sPizzeria/papaspizzeria_v2.swf",
-      "description": ""
+      "description": "",
+      "status": [
+                       "Working",
+        "This game has no issues :D"
+      ]
     },
     {
       "title": "Papa's Sushiria",
@@ -217,7 +317,11 @@
       "genre": "Strategy",
       "type": "FLASH",
       "link": "/api/github-proxy?assetPath=FLASH/Papa'sSushiria/papassushiria.swf",
-      "description": ""
+      "description": "",
+      "status": [
+                         "Working",
+        "This game has no issues :D"
+      ]
     },
     {
       "title": "Duck Life",
@@ -225,7 +329,11 @@
       "genre": "Racing",
       "type": "FLASH",
       "link": "/api/github-proxy?assetPath=FLASH/Duck%20Life/ducklife.swf",
-      "description": ""
+      "description": "",
+      "status": [
+                        "Working",
+        "This game has no issues :D"
+      ]
     },
     {
       "title": "Duck Life 2",
@@ -233,7 +341,11 @@
       "genre": "Racing",
       "type": "FLASH",
       "link": "/api/github-proxy?assetPath=FLASH/Duck%20Life%202/Duck%20Life%202%20-%20World%20Champion.swf",
-      "description": ""
+      "description": "",
+      "status": [
+                        "Working",
+        "This game has no issues :D"
+      ]
     },
     {
       "title": "Duck Life 3",
@@ -241,7 +353,11 @@
       "genre": "Racing",
       "type": "FLASH",
       "link": "/api/github-proxy?assetPath=FLASH/Duck%20Life%203/Duck%20Life%203%20-%20Evolution.swf",
-      "description": ""
+      "description": "",
+      "status": [
+                         "Working",
+        "This game has no issues :D"
+      ]
     },
     {
       "title": "Duck Life 4",
@@ -249,7 +365,11 @@
       "genre": "Racing",
       "type": "FLASH",
       "link": "/api/github-proxy?assetPath=FLASH/Duck%20Life%204/Duck%20Life%204.swf",
-      "description": ""
+      "description": "",
+      "status": [
+                      "Working",
+        "This game has no issues :D"
+      ]
     },
     {
       "title": "Learn To Fly",
@@ -257,7 +377,11 @@
       "genre": "Simulation",
       "type": "FLASH",
       "link": "/api/github-proxy?assetPath=FLASH/Learn%20to%20Fly/learn-to-fly.swf",
-      "description": ""
+      "description": "",
+      "status": [
+                       "Working",
+        "This game has no issues :D"
+      ]
     },
     {
       "title": "Learn to Fly 2",
@@ -265,7 +389,11 @@
       "genre": "Simulation",
       "type": "FLASH",
       "link": "/api/github-proxy?assetPath=FLASH/Learn%202%20Fly/learn-to-fly-2-11967.swf",
-      "description": ""
+      "description": "",
+      "status": [
+                         "Working",
+        "This game has no issues :D"
+      ]
     },
     {
       "title": "Learn To Fly 3",
@@ -273,7 +401,11 @@
       "genre": "Simulation",
       "type": "FLASH",
       "link": "/api/github-proxy?assetPath=FLASH/Learn%20to%20Fly%203/learntofly3.swf",
-      "description": ""
+      "description": "",
+      "status": [
+        "Bugged",
+        "flying is a bit laggy"
+      ]
     },
     {
       "title": "Escaping The Prison",
@@ -281,7 +413,11 @@
       "genre": "Puzzle",
       "type": "FLASH",
       "link": "/api/github-proxy?assetPath=FLASH/Escaping%20The%20Prison/533001_PrisonNG.swf",
-      "description": ""
+      "description": "",
+      "status": [
+                      "Working",
+        "This game has no issues :D"
+      ]
     },
     {
       "title": "Freakbob",
@@ -289,7 +425,11 @@
       "genre": "freaky",
       "type": "FLASH",
       "link": "/api/github-proxy?assetPath=FLASH/Freakbob/sayit.swf",
-      "description": ""
+      "description": "",
+      "status": [
+                      "Working",
+        "This game has no issues :D"
+      ]
     },
     {
       "title": "Happy Wheels",
@@ -297,7 +437,11 @@
       "genre": "Platformer",
       "type": "FLASH",
       "link": "/api/github-proxy?assetPath=FLASH/Happy%20Wheels/547504_hw_demo.swf",
-      "description": ""
+      "description": "",
+      "status": [
+                        "Working",
+        "This game has no issues :D"
+      ]
     },
     {
       "title": "Mutilate A Doll 2",
@@ -305,7 +449,11 @@
       "genre": "Sandbox",
       "type": "FLASH",
       "link": "/api/github-proxy?assetPath=FLASH/Mutilate%20A%20Doll%202/164481_mutilate-a-doll-2_v4.swf",
-      "description": ""
+      "description": "",
+      "status": [
+                      "Working",
+        "This game has no issues :D"
+      ]
     },
     {
       "title": "One Chance",
@@ -313,7 +461,11 @@
       "genre": "Story",
       "type": "FLASH",
       "link": "/api/github-proxy?assetPath=FLASH/One%20Chance/One%20Chance.swf",
-      "description": ""
+      "description": "",
+      "status": [
+                        "Working",
+        "This game has no issues :D"
+      ]
     },
     {
       "title": "QWOP",
@@ -321,7 +473,11 @@
       "genre": "Racing",
       "type": "FLASH",
       "link": "/api/github-proxy?assetPath=FLASH/QWOP/qwop.swf",
-      "description": ""
+      "description": "",
+      "status": [
+                       "Working",
+        "This game has no issues :D"
+      ]
     },
     {
       "title": "Run 2",
@@ -329,7 +485,11 @@
       "genre": "Racing",
       "type": "FLASH",
       "link": "/api/github-proxy?assetPath=FLASH/Run%202/run_2.swf",
-      "description": ""
+      "description": "",
+      "status": [
+                 "Working",
+        "This game has no issues :D"
+      ]
     },
     {
       "title": "Simpsons Home",
@@ -337,7 +497,11 @@
       "genre": "Sandbox",
       "type": "FLASH",
       "link": "/api/github-proxy?assetPath=FLASH/Simpsons%20Home/simphome.swf",
-      "description": ""
+      "description": "",
+      "status": [
+                "Working",
+        "This game has no issues :D"
+      ]
     },
     {
       "title": "Stealing The Diamond",
@@ -345,7 +509,11 @@
       "genre": "Story",
       "type": "FLASH",
       "link": "/api/github-proxy?assetPath=FLASH/Stealing%20The%20Diamond/Stealing_the_Diamond.swf",
-      "description": ""
+      "description": "",
+      "status": [
+                 "Working",
+        "This game has no issues :D"
+      ]
     },
     {
       "title": "Bloons Tower Defense 5",
@@ -353,7 +521,11 @@
       "genre": "Strategy",
       "type": "FLASH",
       "link": "/api/github-proxy?assetPath=FLASH/BTD5/Bloons%20Tower%20Defense%205%20(BTD5).swf",
-      "description": ""
+      "description": "",
+      "status": [
+               "Working",
+        "This game has no issues :D"
+      ]
     },
     {
       "title": "Dig To China",
@@ -361,7 +533,11 @@
       "genre": "Simulation",
       "type": "FLASH",
       "link": "/api/github-proxy?assetPath=FLASH/DIgToChina/Dig%20to%20China%20-%20Unblocked%20Adventures.swf",
-      "description": ""
+      "description": "",
+      "status": [
+        "Bugged",
+        "game frezzes after first level (also laggy on start menu)"
+      ]
     },
     {
       "title": "Fireboy and Watergirl",
@@ -369,7 +545,11 @@
       "genre": "Co-Op",
       "type": "FLASH",
       "link": "https://cdn.jsdelivr.net/gh/gameproxy/swf_storage_1@master/Fireboy%20and%20Watergirl.swf",
-      "description": ""
+      "description": "",
+      "status": [
+                "Working",
+        "This game has no issues :D"
+      ]
     },
     {
       "title": "CSGO Clicker",
@@ -377,7 +557,11 @@
       "genre": "Clicker",
       "type": "HTML",
       "link": "/api/github-proxy?assetPath=HTML/csgo-clicker/index.html",
-      "description": ""
+      "description": "",
+      "status": [
+            "Working",
+        "This game has no issues :D"
+      ]
     },
     {
       "title": "Cell Machine",
@@ -385,7 +569,11 @@
       "genre": "Sandbox",
       "type": "HTML",
       "link": "/api/github-proxy?assetPath=HTML/cell-machine/index.html",
-      "description": ""
+      "description": "",
+      "status": [
+             "Working",
+        "This game has no issues :D"
+      ]
     },
     {
       "title": "Achievement Unlocked",
@@ -393,7 +581,11 @@
       "genre": "Platformer",
       "type": "FLASH",
       "link": "/api/github-proxy?assetPath=HTML/achievementunlocked/achievementunlocked.swf",
-      "description": "there are more achivements in this game than there are games in this site"
+      "description": "there are more achivements in this game than there are games in this site",
+      "status": [
+             "Working",
+        "This game has no issues :D"
+      ]
     },
     {
       "title": "Doodle Jump",
@@ -401,15 +593,23 @@
       "genre": "Platformer",
       "type": "HTML",
       "link": "/api/github-proxy?assetPath=HTML/doodle-jump/index.html",
-      "description": ""
+      "description": "",
+      "status": [
+            "Working",
+        "This game has no issues :D"
+      ]
     },
     {
       "title": "Gimme the Airpod",
       "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/gimme-the-airpod/img/logo.png",
       "genre": "Two-Player",
       "type": "HTML",
-      "link": "/api/github-proxy?assetPath=HTML/gimme-the-airpod/Build/UnityLoader.js",
-      "description": ""
+      "link": "https://github.com/Cyanide-App/cyan-assets/blob/main/HTML/gimme-the-airpod/index.html",
+      "description": "",
+      "status": [
+        "Unkown",
+        "this game has not been tested yet for bugs ¯\\_(ツ)_/¯ "
+      ]
     },
     {
       "title": "Rooftop Snipers",
@@ -417,7 +617,11 @@
       "genre": "Two-Player",
       "type": "HTML",
       "link": "/api/github-proxy?assetPath=HTML/rooftop-snipers/index.html",
-      "description": "360 no scope mlg water bucket hell yeah we are going back to 2010 baby"
+      "description": "360 no scope mlg water bucket hell yeah we are going back to 2010 baby",
+      "status": [
+                "Working",
+        "This game has no issues :D"
+      ]
     },
     {
       "title": "circloO",
@@ -425,7 +629,11 @@
       "genre": "Platformer",
       "type": "HTML",
       "link": "/api/github-proxy?assetPath=HTML/circlo/index.html",
-      "description": "circle, thats it."
+      "description": "circle, thats it.",
+      "status": [
+        "Broken",
+        "game does not run "
+      ]
     },
     {
       "title": "The Heist",
@@ -433,7 +641,11 @@
       "genre": "Action",
       "type": "HTML",
       "link": "/api/github-proxy?assetPath=HTML/theheist/index.html",
-      "description": "u drive car and get away from ops, simple."
+      "description": "u drive car and get away from ops, simple.",
+      "status": [
+                 "Working",
+        "This game has no issues :D"
+      ]
     },
     {
       "title": "Pokemon Unbound",
@@ -442,7 +654,11 @@
       "genre": "Action-Adventure",
       "type": "EMULATOR",
       "link": "/api/github-proxy?assetPath=EMULATORS/Pokemon%20Unbound/POKEMON_UNBOUND.gba",
-      "description": ""
+      "description": "",
+      "status": [
+              "Working",
+        "This game has no issues :D"
+      ]
     },
     {
       "title": "Crazy Cattle 3D",
@@ -450,7 +666,11 @@
       "genre": "Racing",
       "type": "HTML",
       "link": "/api/github-proxy?assetPath=HTML/CC3D/Crazy%20Cattle%203D.html",
-      "description": "this game got a game of the year award 3 times in a row, it be stupid to not incude this game."
+      "description": "this game got a game of the year award 3 times in a row, it be stupid to not incude this game.",
+      "status": [
+                 "Working",
+        "This game has no issues :D"
+      ]
     },
     {
       "title": "Buckshot Roulette",
@@ -458,7 +678,11 @@
       "genre": "Strategy",
       "type": "HTML",
       "link": "/api/github-proxy?assetPath=HTML/Buckshot%20Roulette/Buckshot%20Roulette.html",
-      "description": "suicide but cooler ( jk pls love urself :) )"
+      "description": "suicide but cooler ( jk pls love urself :) )",
+      "status": [
+        "Bugged",
+        "game sometimes frezzes after 3rd round"
+      ]
     },
     {
       "title": "Deltarune",
@@ -466,7 +690,11 @@
       "genre": "RPG",
       "type": "HTML",
       "link": "/api/github-proxy?assetPath=HTML/Deltarune/Deltarune.html",
-      "description": ""
+      "description": "",
+      "status": [
+        "Working",
+        "This game has no issues :D"
+      ]
     },
     {
       "title": "Endoparasitic",
@@ -474,7 +702,11 @@
       "genre": "Horror",
       "type": "HTML",
       "link": "/api/github-proxy?assetPath=HTML/Endoparasitic/Endoparasitic.html",
-      "description": "dawg ur a amputee with one arm, id call it quits bro."
+      "description": "dawg ur a amputee with one arm, id call it quits bro.",
+      "status": [
+        "Working",
+        "This game has no issues :D"
+      ]
     },
     {
       "title": "Half Life",
@@ -482,7 +714,11 @@
       "genre": "Shooter",
       "type": "HTML",
       "link": "/api/github-proxy?assetPath=HTML/Half%20Life/Half%20Life.html",
-      "description": "gooordon freeemannnn...."
+      "description": "gooordon freeemannnn....",
+      "status": [
+        "Broken",
+        "movement does not work"
+      ]
     },
     {
       "title": "Hotline Miami",
@@ -490,7 +726,11 @@
       "genre": "Shooter",
       "type": "HTML",
       "link": "/api/github-proxy?assetPath=HTML/Hotline%20Miami/Hotline%20Miami.html",
-      "description": ""
+      "description": "",
+      "status": [
+        "Broken",
+        "main menu does wierd cycling and frezzes when you start game"
+      ]
     },
     {
       "title": "People Playground",
@@ -498,7 +738,11 @@
       "genre": "Sandbox",
       "type": "HTML",
       "link": "/api/github-proxy?assetPath=HTML/People%20Playground/People%20Playground.html",
-      "description": "human torture game :P"
+      "description": "human torture game :P",
+      "status": [
+         "Working",
+        "This game has no issues :D"
+      ]
     },
     {
       "title": "Ultrakill",
@@ -506,7 +750,11 @@
       "genre": "Shooter",
       "type": "HTML",
       "link": "/api/github-proxy?assetPath=HTML/Ultrakill/ULTRAKILL.html",
-      "description": "Humanity is ded and hell is real D:"
+      "description": "Humanity is ded and hell is real D:",
+      "status": [
+        "Bugged",
+        "funky movement ( press f to fix ) and movement gets even more buggy after 1st level"
+      ]
     },
     {
       "title": "Undertale",
@@ -514,7 +762,11 @@
       "genre": "RPG",
       "type": "HTML",
       "link": "/api/github-proxy?assetPath=HTML/Undertale/Undertale.html",
-      "description": "Game where u dont have to kill people (yawn)"
+      "description": "Game where u dont have to kill people (yawn)",
+      "status": [
+         "Working",
+        "This game has no issues :D"
+      ]
     },
     {
       "title": "Balatro",
@@ -522,8 +774,11 @@
       "genre": "Rougelike",
       "type": "HTML",
       "link": "/Balatro/index.html",
-      "description": "joker poker balala"
+      "description": "joker poker balala",
+      "status": [
+         "Bugged",
+        "Game saving does not work, but you can just unlock everything in the profile menu."
+      ]
     }
-
   ]
 }

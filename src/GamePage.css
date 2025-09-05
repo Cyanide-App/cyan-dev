@@ -99,13 +99,16 @@
     border: none;
 }
 .game-page-footer {
-    text-align: center;
     outline: 2px solid rgb(128, 106, 55);
     padding: 10px;
     outline-offset: -6px;
     border-radius: 15px;
     transition: all 1s ease-out;
     overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9em;
 }
 .launch-screen {
     flex-grow: 1;
@@ -209,4 +212,52 @@
 .fullscreen-controls a:hover {
     background-color: #771136;
     color: #ffffff !important;
+}
+
+.game-status {
+    display: flex;
+    align-items: center;
+}
+
+.status-tag {
+    margin-right: 10px;
+}
+
+.status-text {
+    margin-right: 10px;
+}
+
+.status-reason {
+}
+
+.status-text.working {
+    color: #07ca00;
+}
+
+.status-reason.working {
+    color: #00a600b0;
+}
+
+.status-text.bugged {
+    color: #ff9800;
+}
+
+.status-reason.bugged {
+    color: #ffb84d80;
+}
+
+.status-text.broken {
+    color: #f44336;
+}
+
+.status-reason.broken {
+    color: #e5737381;
+}
+
+.status-text.unknown {
+    color: #9e9e9e;
+}
+
+.status-reason.unknown {
+    color: #bdbdbd7a;
 }

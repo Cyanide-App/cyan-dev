@@ -3,6 +3,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import './GamesList.css';
 import gamesData from './games.json';
 import StatusBar from './StatusBar';
+import Nav from './Nav'
 import ASCII from './ASCII';
 
 const GamesList = () => {
@@ -42,8 +43,10 @@ const GamesList = () => {
         <div ref={asciiBackgroundRef} className="ascii-background">
           <ASCII key={asciiKey} mousePosition={mousePosition} />
         </div>
+        {/* <Nav></Nav> */}
 
         <div className="btop-box">
+
           <div className="btop-table-container">
             <table className="btop-table">
               <thead>
