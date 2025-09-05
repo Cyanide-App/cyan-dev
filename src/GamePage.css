@@ -231,11 +231,11 @@
 }
 
 .status-text.working {
-    color: #07ca00;
+    color: #87ca00;
 }
 
 .status-reason.working {
-    color: #00a600b0;
+    color: #79ca00b7;
 }
 
 .status-text.bugged {
@@ -243,15 +243,15 @@
 }
 
 .status-reason.bugged {
-    color: #ffb84d80;
+    color: #ffb84db7;
 }
 
 .status-text.broken {
-    color: #f44336;
+    color: #ff3f2a;
 }
 
 .status-reason.broken {
-    color: #e5737381;
+    color: #ff4e2aa4;
 }
 
 .status-text.unknown {
