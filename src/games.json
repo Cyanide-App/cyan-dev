@@ -779,6 +779,18 @@
          "Bugged",
         "Game saving does not work, but you can just unlock everything in the profile menu."
       ]
-    }
+    },
+    {
+      "title": "Hollow Night",
+      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/Hollow_Night/hn.webp",
+      "genre": "Metroidvania",
+      "type": "HTML",
+      "link": "/api/github-proxy?assetPath=HTML/Hollow_Night/index.html",
+      "description": "",
+      "status": [
+         "Unkown",
+        "this game has not been tested yet for bugs ¯\\_(ツ)_/¯ "
+      ]
+    },
   ]
 }
