@@ -797,7 +797,7 @@
       "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/Poke_Rouge/pr.png",
       "genre": "Rougelike",
       "type": "HTML",
-      "link": "/api/github-proxy?assetPath=HTML/Poke_Rouge/pokerogue-beta/index.html",
+      "link": "/api/pokerogue-proxy?assetPath=index.html",
       "description": "",
       "status": [
          "Unkown",
