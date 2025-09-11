@@ -46,7 +46,7 @@ const GamesList = () => {
     <>
       <div className="btop-container" onMouseMove={handleMouseMove}>
         <div ref={asciiBackgroundRef} className="ascii-background">
-          <ASCII key={asciiKey} mousePosition={mousePosition} />
+{/*           <ASCII key={asciiKey} mousePosition={mousePosition} /> */}
         </div>
         <Nav 
           activeView={activeView}
