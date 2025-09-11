@@ -38,18 +38,8 @@ const GamesList = () => {
     navigate(`/game/${game.title}`);
   };
 
-  const handleCyanideClick = (e) => {
-    e.preventDefault();
-    setActiveView('games');
-  }
-  const handleSulfurClick = (e) => {
-    e.preventDefault();
-    setActiveView('proxy');
-  };
-
-  const handleFlorideClick = (e) => {
-    e.preventDefault();
-    setActiveView('floride');
+  const handleNavClick = (view) => {
+    setActiveView(view);
   };
 
   return (
@@ -58,7 +48,12 @@ const GamesList = () => {
         <div ref={asciiBackgroundRef} className="ascii-background">
           <ASCII key={asciiKey} mousePosition={mousePosition} />
         </div>
-        <Nav onSulfurClick={handleSulfurClick} onFlorideClick={handleFlorideClick} onCyanideClick={handleCyanideClick}></Nav>
+        <Nav 
+          activeView={activeView}
+          onCyanideClick={() => handleNavClick('games')}
+          onSulfurClick={() => handleNavClick('proxy')}
+          onFlorideClick={() => handleNavClick('floride')}
+        />
 
         <div className="btop-box">
           <div className={`sliding-container ${activeView}`}>
@@ -99,7 +94,7 @@ const GamesList = () => {
               <iframe src="https://sulfur-inky.vercel.app/rx" title="Sulfur Proxy" width="100%" height="100%" style={{ border: 'none' }} />
             </div>
             <div className="floride-page">
-              <a> working on it :)  </a>
+              <h4>working on it :)</h4>
             </div>
           </div>
         </div>
