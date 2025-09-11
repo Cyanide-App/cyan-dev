@@ -14,6 +14,7 @@ const GamesList = () => {
   const location = useLocation();
   const [asciiKey, setAsciiKey] = useState(0);
   const asciiBackgroundRef = useRef(null);
+  const [activeView, setActiveView] = useState('games');
 
   useEffect(() => {
     setGames(gamesData.games);
@@ -37,46 +38,69 @@ const GamesList = () => {
     navigate(`/game/${game.title}`);
   };
 
+  const handleCyanideClick = (e) => {
+    e.preventDefault();
+    setActiveView('games');
+  }
+  const handleSulfurClick = (e) => {
+    e.preventDefault();
+    setActiveView('proxy');
+  };
+
+  const handleFlorideClick = (e) => {
+    e.preventDefault();
+    setActiveView('floride');
+  };
+
   return (
     <>
       <div className="btop-container" onMouseMove={handleMouseMove}>
         <div ref={asciiBackgroundRef} className="ascii-background">
           <ASCII key={asciiKey} mousePosition={mousePosition} />
         </div>
-        {/* <Nav></Nav> */}
+        <Nav onSulfurClick={handleSulfurClick} onFlorideClick={handleFlorideClick} onCyanideClick={handleCyanideClick}></Nav>
 
         <div className="btop-box">
-
-          <div className="btop-table-container">
-            <table className="btop-table">
-              <thead>
-                <tr>
-                  <th>Title:</th>
-                  <th>Genre:</th>
-                  <th>Type:</th>
-                </tr>
-              </thead>
-              <tbody>
-                {games.map((game, index) => (
-                  <tr key={index} onClick={() => handleGameClick(game)}>
-                    <td
-                      onMouseEnter={() => setPreviewData({
-                        src: game.imageSrc,
-                        title: game.title,
-                        description: game.description,
-                        genre: game.genre
-                      })}
-                      onMouseLeave={() => setPreviewData(null)}
-                      className="game-title"
-                    >
-                      {game.title}
-                    </td>
-                    <td className="game-genre">{game.genre}</td>
-                    <td className="game-type">{game.type}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+          <div className={`sliding-container ${activeView}`}>
+            <div className="games-list">
+              <div className="btop-table-container">
+                <table className="btop-table">
+                  <thead>
+                    <tr>
+                      <th>Title:</th>
+                      <th>Genre:</th>
+                      <th>Type:</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {games.map((game, index) => (
+                      <tr key={index} onClick={() => handleGameClick(game)}>
+                        <td
+                          onMouseEnter={() => setPreviewData({
+                            src: game.imageSrc,
+                            title: game.title,
+                            description: game.description,
+                            genre: game.genre
+                          })}
+                          onMouseLeave={() => setPreviewData(null)}
+                          className="game-title"
+                        >
+                          {game.title}
+                        </td>
+                        <td className="game-genre">{game.genre}</td>
+                        <td className="game-type">{game.type}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div className="proxy-page">
+              <iframe src="https://sulfur-inky.vercel.app/rx" title="Sulfur Proxy" width="100%" height="100%" style={{ border: 'none' }} />
+            </div>
+            <div className="floride-page">
+              <a> working on it :)  </a>
+            </div>
           </div>
         </div>
 

@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom';
 import './Nav.css';
 
-const Nav = () => {
+const Nav = ({ onSulfurClick, onFlorideClick, onCyanideClick }) => { 
     return(
-        <nav className='navbar'>
-            <Link to="/" className='nav-cyanide-button'> cyλnide [games] </Link>
-            <Link to="/" className='nav-sulfur-button'> sµlfur [proxy] </Link>
-            <Link to="/" className='nav-floride-button'> ℉loride [chat] </Link>
+        <nav className='navbar'>            
+            <a href="#" onClick={onCyanideClick} className='nav-sulfur-button'> cyλnide [games] </a>
+            <a href="#" onClick={onSulfurClick} className='nav-sulfur-button'> sµlfur [proxy] </a>
+            <a href="#" onClick={onFlorideClick} className='nav-floride-button'> ℉loride [chat] </a>
         </nav>
     );
 };

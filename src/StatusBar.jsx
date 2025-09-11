@@ -28,7 +28,7 @@ const StatusBar = () => {
       cyλn 2.0 BETA | {formattedDate} | {formattedTime}
       </div>
       <div className="status-right">
-        v2.1b (Added Status Modes)
+        v2.2a (Navbar, Proxy)
       </div>
     </div>
   );
