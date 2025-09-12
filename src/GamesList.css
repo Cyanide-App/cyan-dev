@@ -64,6 +64,7 @@ canvas{
   flex-grow: 1;
   scrollbar-width: thin;
   scrollbar-color: #555 #1e1e1e;
+  overflow-y: auto;
 }
 
 .btop-table {
@@ -196,7 +197,8 @@ canvas{
 
 .games-list {
   padding: 10px;
-  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .proxy-page {
@@ -219,4 +221,32 @@ canvas{
   font-size: 2em;
   color: #ffedc7;
   padding: 10px;
+}
+
+.search-bar-container {
+  margin-bottom: 10px;
+}
+
+.search-bar {
+  width: 100%;
+  padding: 8px 15px;
+  background-color: #00000057;
+  border: none;
+  outline: 1px solid rgb(128, 106, 55);
+  border-radius: 7px;
+  color: #ffedc7;
+  font-family: 'Consolas', 'Monaco', 'monospace';
+  font-weight: bold;
+  box-sizing: border-box;
+  transition: outline 0.3s, box-shadow 0.3s;
+}
+
+.search-bar:focus {
+  outline: 1px solid #ffc955;
+  box-shadow: 0 0 8px #ffc95580;
+}
+
+.search-bar::placeholder {
+  color: #ffedc7a1;
+  font-weight: normal;
 }
