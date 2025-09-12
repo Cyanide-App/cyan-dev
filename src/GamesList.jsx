@@ -105,8 +105,8 @@ const GamesList = () => {
               </div>
             </div>
             <div className="proxy-page">
-              <h4>working on it :)</h4>
-              {/* <iframe src="https://sulfur-inky.vercel.app/rx" title="Sulfur Proxy" width="100%" height="100%" style={{ border: 'none' }} /> */}
+              {/* <h4>working on it :)</h4> */}
+              <iframe src="https://sulfur-inky.vercel.app/rx" title="Sulfur Proxy" width="100%" height="100%" style={{ border: 'none' }} />
             </div>
             <div className="floride-page">
               <h4>working on it :)</h4>
