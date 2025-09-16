@@ -1051,7 +1051,7 @@ export default function ASCII() {
                         (K.style.visibility = "hidden"),
                         (V = setTimeout((t) => {
                             (K.style.visibility = "visible"), (z = !0);
-                        }, 100));
+                        }, 1000));
                 }),
                     console.log("Using seed: " + Z.seed);
                 const q = (function (t) {

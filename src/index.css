@@ -1,11 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&display=swap');
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Google Sans Code', 'Consolas', 'Monaco', 'monospace';
+  line-height: 1.5;
+  font-weight: 400;
 
   color-scheme: dark;
-  background-color: #000000;
+  color: #fff7e0;
+  background-color: #1e1e1e;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
 }
