@@ -169,6 +169,7 @@ canvas{
   overflow-wrap: break-word;
 }
 
+
 .sliding-container {
   display: flex;
   width: 300%;
@@ -177,15 +178,15 @@ canvas{
 }
 
 .sliding-container.games {
-  transform: translateX(0%);
+  transform: translateX(66.666%);
 }
 
 .sliding-container.proxy {
-  transform: translateX(-33.333%);
+  transform: translateX(33.333%);
 }
 
 .sliding-container.floride {
-  transform: translateX(-66.666%);
+  transform: translateX(0%);
 }
 
 .games-list, .proxy-page, .floride-page {
@@ -214,14 +215,7 @@ canvas{
     border-radius: 15px;
 }
 
-.floride-page {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 2em;
-  color: #ffedc7;
-  padding: 10px;
-}
+
 
 .search-bar-container {
   margin-bottom: 10px;

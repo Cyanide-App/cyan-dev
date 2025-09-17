@@ -1,0 +1,112 @@
+.floride-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  background-color: #1a1a1a;
+  color: #fff;
+  font-family: 'Consolas', 'Monaco', 'monospace';
+  border-radius: 15px;
+  outline: 2px solid rgb(128, 106, 55);
+  outline-offset: -6px;
+}
+
+.chat-messages {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  margin-bottom: 15px;
+  padding: 10px 15px;
+  border-radius: 20px;
+  line-height: 1.4;
+  max-width: 80%;
+  word-wrap: break-word;
+}
+
+.message-content-wrapper {
+  display: inline; 
+}
+
+.message.user {
+  background-color: #3a3a3a;
+  align-self: flex-end;
+}
+
+.message.assistant {
+  background-color: #2a2a2a;
+  align-self: flex-start;
+}
+
+.chat-input-container {
+  display: flex;
+  padding: 20px;
+  border-top: 1px solid #333;
+}
+
+.chat-input-container input {
+  flex-grow: 1;
+  background-color: #3a3a3a;
+  border: 1px solid #555;
+  color: #fff;
+  padding: 10px;
+  border-radius: 20px;
+  margin-right: 10px;
+  font-family: inherit;
+}
+
+.chat-input-container button {
+  background-color: #ffcc41;
+  color: #1a1a1a;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: bold;
+}
+
+.chat-input-container button:hover {
+  background-color: #ffdd6a;
+}
+
+.chat-input-container button:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+}
+
+.message h1, .message h2, .message h3 {
+  color: #ffcc41;
+  margin-bottom: 10px;
+}
+
+.message em {
+  font-style: italic;
+  color: #ff9800;
+}
+
+.message u {
+  text-decoration: underline;
+}
+
+.typing-indicator {
+  display: inline-block;
+  width: 8px;
+  height: 1em; /* Adjust height to match line height */
+  background-color: #ffcc41;
+  margin-left: 4px;
+  animation: blink-caret 0.75s step-end infinite;
+}
+
+@keyframes blink-caret {
+  from, to {
+    background-color: transparent;
+  }
+  50% {
+    background-color: #ffcc41;
+  }
+}

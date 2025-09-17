@@ -28,7 +28,7 @@ const StatusBar = () => {
       cyλn 2.0 BETA | {formattedDate} | {formattedTime}
       </div>
       <div className="status-right">
-        v2.2b (Search Bar)
+        v2.3 (AI Chat)
       </div>
     </div>
   );

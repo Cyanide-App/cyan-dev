@@ -5,6 +5,7 @@ import gamesData from './games.json';
 import StatusBar from './StatusBar';
 import Nav from './Nav'
 import ASCII from './ASCII';
+import Floride from './Floride';
 
 const GamesList = () => {
   const [games, setGames] = useState([]);
@@ -15,11 +16,13 @@ const GamesList = () => {
   const location = useLocation();
   const [asciiKey, setAsciiKey] = useState(0);
   const asciiBackgroundRef = useRef(null);
-  const [activeView, setActiveView] = useState('games');
+  const [activeView, setActiveView] = useState('games'); 
 
   useEffect(() => {
     setGames(gamesData.games);
   }, []);
+
+
 
   useEffect(() => {
     if (location.pathname === '/') {
@@ -46,6 +49,7 @@ const GamesList = () => {
   const filteredGames = games.filter(game =>
     game.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
+
 
   return (
     <>
@@ -109,7 +113,7 @@ const GamesList = () => {
               <iframe src="https://sulfur-inky.vercel.app/rx" title="Sulfur Proxy" width="100%" height="100%" style={{ border: 'none' }} />
             </div>
             <div className="floride-page">
-              <h4>working on it :)</h4>
+              <Floride />
             </div>
           </div>
         </div>
@@ -119,7 +123,7 @@ const GamesList = () => {
             className="game-preview"
             style={{
               top: `${getPreviewTopPosition()}px`,
-              left: `${mousePosition.x + 15}px`,
+              left: `${mousePosition.x + 15}px`
             }}
           >
             <img src={previewData.src} alt="Game Preview" className="preview-image" />
