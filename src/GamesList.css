@@ -178,15 +178,15 @@ canvas{
 }
 
 .sliding-container.games {
-  transform: translateX(66.666%);
+  transform: translateX(0%);
 }
 
 .sliding-container.proxy {
-  transform: translateX(33.333%);
+  transform: translateX(-33.333%);
 }
 
 .sliding-container.floride {
-  transform: translateX(0%);
+  transform: translateX(-66.666%);
 }
 
 .games-list, .proxy-page, .floride-page {

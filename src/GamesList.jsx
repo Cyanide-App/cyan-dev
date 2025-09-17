@@ -16,10 +16,14 @@ const GamesList = () => {
   const location = useLocation();
   const [asciiKey, setAsciiKey] = useState(0);
   const asciiBackgroundRef = useRef(null);
-  const [activeView, setActiveView] = useState('games'); 
+  const [activeView, setActiveView] = useState('floride'); 
 
   useEffect(() => {
     setGames(gamesData.games);
+    const timer = setTimeout(() => {
+      setActiveView('games');
+    }, 400);
+    return () => clearTimeout(timer);
   }, []);
 
 
@@ -50,6 +54,10 @@ const GamesList = () => {
     game.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+  const initalSlidingContainerStyle = {
+    transform: 'translateX(66.666%)',
+  };
+
 
   return (
     <>
@@ -65,7 +73,7 @@ const GamesList = () => {
         />
 
         <div className="btop-box">
-          <div className={`sliding-container ${activeView}`}>
+          <div className={`sliding-container ${activeView} `}>
             <div className="games-list">
               <div className="search-bar-container">
                 <input
@@ -109,7 +117,6 @@ const GamesList = () => {
               </div>
             </div>
             <div className="proxy-page">
-              {/* <h4>working on it :)</h4> */}
               <iframe src="https://sulfur-inky.vercel.app/rx" title="Sulfur Proxy" width="100%" height="100%" style={{ border: 'none' }} />
             </div>
             <div className="floride-page">
