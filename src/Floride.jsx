@@ -1,6 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+import 'katex/dist/katex.min.css';
 import './Floride.css';
 
 const Floride = () => {
@@ -26,6 +29,14 @@ const Floride = () => {
     setInput('');
     setIsReplying(true);
 
+    const apiMessages = [
+      {
+        role: 'system',
+        content: 'You are a helpful assistant. When you are providing a response with math equations, you must use KaTeX formatting. Use $ for inline math and $$ for block math. For example: Ensure that all mathematical expressions, symbols, and equations are properly formatted using KaTeX syntax. Do not use plain text for math. Always verify that your output renders correctly.'
+      },
+      ...newMessages
+    ];
+
     const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
       method: "POST",
       headers: {
@@ -34,7 +45,7 @@ const Floride = () => {
       },
       body: JSON.stringify({
         "model": "deepseek/deepseek-chat-v3.1:free",
-        "messages": newMessages,
+        "messages": apiMessages,
         "stream": true
       })
     });
@@ -124,7 +135,7 @@ const Floride = () => {
         {messages.map((msg, index) => (
           <div key={index} className={`message ${msg.role}`}>
             <div className="message-content-wrapper"> {/* New wrapper div */}
-              <ReactMarkdown remarkPlugins={[remarkGfm]}>{msg.content}</ReactMarkdown>
+              <ReactMarkdown remarkPlugins={[remarkGfm, remarkMath]} rehypePlugins={[rehypeKatex]}>{msg.content}</ReactMarkdown>
               {isReplying && msg.role === 'assistant' && index === messages.length - 1 && (
                 <span className="typing-indicator"></span>
               )}

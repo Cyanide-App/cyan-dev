@@ -110,3 +110,13 @@
     background-color: #ffcc41;
   }
 }
+.message .katex {
+  font-size: 1.1em;
+  color: #ffcc41;
+}
+
+.message .katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.5em 0;
+}

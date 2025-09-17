@@ -120,7 +120,9 @@ const GamesList = () => {
               <iframe src="https://sulfur-inky.vercel.app/rx" title="Sulfur Proxy" width="100%" height="100%" style={{ border: 'none' }} />
             </div>
             <div className="floride-page">
-              <Floride />
+              <h4>W.I.P</h4> <p>i need to fix the billing for the api</p>
+
+              {/* <Floride /> */}
             </div>
           </div>
         </div>
