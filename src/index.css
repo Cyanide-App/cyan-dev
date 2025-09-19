@@ -1,13 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 
 :root {
-  font-family: 'Google Sans Code', 'Consolas', 'Monaco', 'monospace';
+  font-family: 'JetBrains Mono', 'Consolas', 'Monaco', 'monospace';
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: dark;
   color: #fff7e0;
-  background-color: #1e1e1e;
+  background-color: #000000;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;

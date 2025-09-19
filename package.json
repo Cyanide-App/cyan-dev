@@ -14,11 +14,18 @@
     "@emotion/styled": "^11.14.1",
     "@mui/material": "^7.3.1",
     "@vercel/analytics": "^1.5.0",
+    "adm-zip": "^0.5.16",
+    "katex": "^0.16.22",
     "mui-color-input": "^7.0.0",
+    "node-fetch": "^3.3.2",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+    "react-icons": "^5.5.0",
+    "react-markdown": "^10.1.0",
     "react-router-dom": "^7.8.1",
-    "node-fetch": "^3.3.2" 
+    "rehype-katex": "^7.0.1",
+    "remark-gfm": "^4.0.1",
+    "remark-math": "^6.0.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.33.0",

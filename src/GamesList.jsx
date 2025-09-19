@@ -5,21 +5,30 @@ import gamesData from './games.json';
 import StatusBar from './StatusBar';
 import Nav from './Nav'
 import ASCII from './ASCII';
+import Floride from './Floride';
+import { FaSort, FaSortUp, FaSortDown } from 'react-icons/fa';
 
 const GamesList = () => {
   const [games, setGames] = useState([]);
   const [previewData, setPreviewData] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
+  const [sortOrder, setSortOrder] = useState('asc');
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const navigate = useNavigate();
   const location = useLocation();
   const [asciiKey, setAsciiKey] = useState(0);
   const asciiBackgroundRef = useRef(null);
-  const [activeView, setActiveView] = useState('games');
+  const [activeView, setActiveView] = useState('floride'); 
 
   useEffect(() => {
     setGames(gamesData.games);
+    const timer = setTimeout(() => {
+      setActiveView('games');
+    }, 400);
+    return () => clearTimeout(timer);
   }, []);
+
+
 
   useEffect(() => {
     if (location.pathname === '/') {
@@ -32,7 +41,7 @@ const GamesList = () => {
   };
 
   const getPreviewTopPosition = () => {
-    return mousePosition.y > window.innerHeight * 0.8 ? mousePosition.y - 130 : mousePosition.y + 15; // Adjust 215 based on preview height
+    return mousePosition.y > window.innerHeight * 0.6 ? mousePosition.y - 220 : mousePosition.y + 15; 
   };
 
   const handleGameClick = (game) => {
@@ -43,9 +52,24 @@ const GamesList = () => {
     setActiveView(view);
   };
 
-  const filteredGames = games.filter(game =>
-    game.title.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const handleSort = () => {
+    setSortOrder(prevOrder => (prevOrder === 'asc' ? 'desc' : 'asc'));
+  };
+
+  const sortedAndFilteredGames = games
+    .filter(game => game.title.toLowerCase().includes(searchTerm.toLowerCase()))
+    .sort((a, b) => {
+      if (sortOrder === 'asc') {
+        return a.title.localeCompare(b.title);
+      } else {
+        return b.title.localeCompare(a.title);
+      }
+    });
+
+  const initalSlidingContainerStyle = {
+    transform: 'translateX(66.666%)',
+  };
+
 
   return (
     <>
@@ -61,7 +85,7 @@ const GamesList = () => {
         />
 
         <div className="btop-box">
-          <div className={`sliding-container ${activeView}`}>
+          <div className={`sliding-container ${activeView} `}>
             <div className="games-list">
               <div className="search-bar-container">
                 <input
@@ -76,13 +100,15 @@ const GamesList = () => {
                 <table className="btop-table">
                   <thead>
                     <tr>
-                      <th>Title:</th>
+                      <th onClick={handleSort} style={{ cursor: 'pointer' }}>
+                        Title: {sortOrder === 'asc' ? <FaSortUp /> : <FaSortDown />}
+                      </th>
                       <th>Genre:</th>
                       <th>Type:</th>
                     </tr>
                   </thead>
                   <tbody>
-                    {filteredGames.map((game, index) => (
+                    {sortedAndFilteredGames.map((game, index) => (
                       <tr key={index} onClick={() => handleGameClick(game)}>
                         <td
                           onMouseEnter={() => setPreviewData({
@@ -105,11 +131,12 @@ const GamesList = () => {
               </div>
             </div>
             <div className="proxy-page">
-              {/* <h4>working on it :)</h4> */}
               <iframe src="https://sulfur-inky.vercel.app/rx" title="Sulfur Proxy" width="100%" height="100%" style={{ border: 'none' }} />
             </div>
             <div className="floride-page">
-              <h4>working on it :)</h4>
+              {/* <h1>W.I.P</h1> <p>i need to fix the billing for the api</p> */}
+
+              <Floride />
             </div>
           </div>
         </div>
@@ -119,14 +146,14 @@ const GamesList = () => {
             className="game-preview"
             style={{
               top: `${getPreviewTopPosition()}px`,
-              left: `${mousePosition.x + 15}px`,
+              left: `${mousePosition.x + 15}px`
             }}
           >
             <img src={previewData.src} alt="Game Preview" className="preview-image" />
             <div className="preview-details">
               <p className="preview-title">{previewData.title}</p>
               <p className="preview-genre">{previewData.genre}</p>
-              <p className="preview-description">{previewData.description || 'No description available.'}</p>
+              {/* <p className="preview-description">{previewData.description || 'No description available.'}</p> */}
             </div>
           </div>
         )}
