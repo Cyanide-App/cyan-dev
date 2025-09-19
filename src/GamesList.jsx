@@ -6,11 +6,13 @@ import StatusBar from './StatusBar';
 import Nav from './Nav'
 import ASCII from './ASCII';
 import Floride from './Floride';
+import { FaSort, FaSortUp, FaSortDown } from 'react-icons/fa';
 
 const GamesList = () => {
   const [games, setGames] = useState([]);
   const [previewData, setPreviewData] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
+  const [sortOrder, setSortOrder] = useState('asc');
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const navigate = useNavigate();
   const location = useLocation();
@@ -50,9 +52,19 @@ const GamesList = () => {
     setActiveView(view);
   };
 
-  const filteredGames = games.filter(game =>
-    game.title.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const handleSort = () => {
+    setSortOrder(prevOrder => (prevOrder === 'asc' ? 'desc' : 'asc'));
+  };
+
+  const sortedAndFilteredGames = games
+    .filter(game => game.title.toLowerCase().includes(searchTerm.toLowerCase()))
+    .sort((a, b) => {
+      if (sortOrder === 'asc') {
+        return a.title.localeCompare(b.title);
+      } else {
+        return b.title.localeCompare(a.title);
+      }
+    });
 
   const initalSlidingContainerStyle = {
     transform: 'translateX(66.666%)',
@@ -88,13 +100,15 @@ const GamesList = () => {
                 <table className="btop-table">
                   <thead>
                     <tr>
-                      <th>Title:</th>
+                      <th onClick={handleSort} style={{ cursor: 'pointer' }}>
+                        Title: {sortOrder === 'asc' ? <FaSortUp /> : <FaSortDown />}
+                      </th>
                       <th>Genre:</th>
                       <th>Type:</th>
                     </tr>
                   </thead>
                   <tbody>
-                    {filteredGames.map((game, index) => (
+                    {sortedAndFilteredGames.map((game, index) => (
                       <tr key={index} onClick={() => handleGameClick(game)}>
                         <td
                           onMouseEnter={() => setPreviewData({
@@ -120,9 +134,9 @@ const GamesList = () => {
               <iframe src="https://sulfur-inky.vercel.app/rx" title="Sulfur Proxy" width="100%" height="100%" style={{ border: 'none' }} />
             </div>
             <div className="floride-page">
-              <h1>W.I.P</h1> <p>i need to fix the billing for the api</p>
+              {/* <h1>W.I.P</h1> <p>i need to fix the billing for the api</p> */}
 
-              {/* <Floride /> */}
+              <Floride />
             </div>
           </div>
         </div>

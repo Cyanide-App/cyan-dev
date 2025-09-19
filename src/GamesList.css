@@ -1,7 +1,6 @@
 .btop-container {
     color: #ffedc7;
     background-size: cover;
-    font-family: 'Consolas', 'Monaco', 'monospace';
     font-weight: bold;
     padding: 50px;
     height: 100vh;
@@ -232,7 +231,7 @@ canvas{
   outline: 1px solid rgb(128, 106, 55);
   border-radius: 7px;
   color: #ffedc7;
-  font-family: 'Consolas', 'Monaco', 'monospace';
+  font-family: 'JetBrains Mono', 'Consolas', 'Monaco', 'monospace';
   font-weight: bold;
   box-sizing: border-box;
   transition: outline 0.3s, box-shadow 0.3s;

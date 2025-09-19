@@ -4,7 +4,6 @@
     outline-offset: -6px;
     border-radius: 15px;
     box-shadow: rgba(23, 23, 23, 0.25) 0px 25px 50px -12px;
-    font-family: 'Consolas', 'Monaco', 'monospace';
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -202,7 +201,6 @@
     margin: 4px 0;
     text-align: left;
     width: 100%;
-    font-family: 'Consolas', 'Monaco', 'monospace';
     font-size: 14px;
     text-decoration: none;
     border-radius: 5px;

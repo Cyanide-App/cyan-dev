@@ -29,7 +29,7 @@
     
     padding: 8px 15px;
     border-radius: 7px;
-    font-family: 'Consolas', 'Monaco', 'monospace';
+    font-family: 'JetBrains Mono', 'Consolas', 'Monaco', 'monospace';
     font-weight: bold;
     color: #ffedc7;
     transition: background-color 0.3s, color 0.3s;
