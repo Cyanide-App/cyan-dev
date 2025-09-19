@@ -24,6 +24,11 @@ export default async function (req, res) {
     // Determine and set Content-Type based on file extension
     if (assetPath.endsWith('.html') || assetPath.endsWith('.htm')) {
       res.setHeader('Content-Type', 'text/html; charset=utf-8');
+      const html = await response.text();
+      const dirPath = assetPath.substring(0, assetPath.lastIndexOf('/') + 1);
+      const remoteBaseUrl = `https://raw.githubusercontent.com/${githubRepoOwner}/${githubRepoName}/${githubBranch}/${dirPath}`;
+      const modifiedHtml = html.replace(/<head>/i, `<head>\n    <base href="${remoteBaseUrl}">`);
+      return res.send(modifiedHtml);
     } else if (assetPath.endsWith('.js')) {
       res.setHeader('Content-Type', 'application/javascript; charset=utf-8');
     } else if (assetPath.endsWith('.css')) {

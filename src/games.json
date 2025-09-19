@@ -851,6 +851,18 @@
                        "Working",
         "This game has no issues :D"
       ]
+    },
+    {
+      "title": "BananaSaber",
+      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@tree/main/FLASH/RiddleSchool5",
+      "genre": "Shooter",
+      "type": "HTML",
+      "link": "/api/github-proxy?assetPath=HTML/BananaSaber/index.html",
+      "description": "",
+      "status": [
+                       "Unkown",
+        "this game has not been tested yet for bugs ¯\\_(ツ)_/¯ "
+      ]
     }
   ]
 }
