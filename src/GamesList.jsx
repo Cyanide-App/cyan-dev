@@ -39,7 +39,7 @@ const GamesList = () => {
   };
 
   const getPreviewTopPosition = () => {
-    return mousePosition.y > window.innerHeight * 0.8 ? mousePosition.y - 130 : mousePosition.y + 15; // Adjust 215 based on preview height
+    return mousePosition.y > window.innerHeight * 0.6 ? mousePosition.y - 220 : mousePosition.y + 15; 
   };
 
   const handleGameClick = (game) => {
@@ -139,7 +139,7 @@ const GamesList = () => {
             <div className="preview-details">
               <p className="preview-title">{previewData.title}</p>
               <p className="preview-genre">{previewData.genre}</p>
-              <p className="preview-description">{previewData.description || 'No description available.'}</p>
+              {/* <p className="preview-description">{previewData.description || 'No description available.'}</p> */}
             </div>
           </div>
         )}

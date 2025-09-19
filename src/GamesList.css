@@ -127,8 +127,8 @@ canvas{
   border-radius: 15px; 
   padding: 10px; 
   display: flex; 
-  flex-direction: row; 
-  align-items: flex-start; 
+  flex-direction: column; 
+  align-items: center; 
   box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
     max-width: 350px; 
 }
@@ -136,6 +136,7 @@ canvas{
 .game-preview .preview-image {
   width: 120px; 
   height: 120px; 
+  margin: 10px;
   object-fit: cover;
   border: 1px solid #ffedc7;
   border-radius: 8px; 
