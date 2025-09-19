@@ -7,6 +7,8 @@ import 'katex/dist/katex.min.css';
 import './Floride.css';
 
 async function checkCreditsStatus(apiKey) {
+  // screw this, ill just check if it says: Error: Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day
+  
   try {
     const response = await fetch('https://openrouter.ai/api/v1/key', {
       method: 'GET',

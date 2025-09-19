@@ -420,18 +420,6 @@
       ]
     },
     {
-      "title": "Freakbob",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Freakbob/fb.jpeg",
-      "genre": "freaky",
-      "type": "FLASH",
-      "link": "/api/github-proxy?assetPath=FLASH/Freakbob/sayit.swf",
-      "description": "",
-      "status": [
-                      "Working",
-        "This game has no issues :D"
-      ]
-    },
-    {
       "title": "Happy Wheels",
       "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/Happy%20Wheels/hw.jpeg",
       "genre": "Platformer",
@@ -802,6 +790,66 @@
       "status": [
          "Bugged",
         "game can sometimes freeze when loading"
+      ]
+    },
+    {
+      "title": "Riddle School 1",
+      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/RiddleSchool/riddleschool1.jpg",
+      "genre": "Strategy",
+      "type": "FLASH",
+      "link": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/RiddleSchool/flash.swf",
+      "description": "",
+      "status": [
+                       "Working",
+        "This game has no issues :D"
+      ]
+    },
+    {
+      "title": "Riddle School 2",
+      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/RiddleSchool2/riddleschool2.jpg",
+      "genre": "Puzzle",
+      "type": "FLASH",
+      "link": "/api/github-proxy?assetPath=FLASH/RiddleSchool2/flash.swf",
+      "description": "",
+      "status": [
+                       "Working",
+        "This game has no issues :D"
+      ]
+    },
+    {
+      "title": "Riddle School 3",
+      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/RiddleSchool3/riddleschool3.jpg",
+      "genre": "Puzzle",
+      "type": "FLASH",
+      "link": "/api/github-proxy?assetPath=FLASH/RiddleSchool3/flash.swf",
+      "description": "",
+      "status": [
+                       "Working",
+        "This game has no issues :D"
+      ]
+    },
+    {
+      "title": "Riddle School 4",
+      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/FLASH/RiddleSchool4/riddleschool4.jpg",
+      "genre": "Puzzle",
+      "type": "FLASH",
+      "link": "/api/github-proxy?assetPath=FLASH/RiddleSchool4/flash.swf",
+      "description": "",
+      "status": [
+                       "Working",
+        "This game has no issues :D"
+      ]
+    },
+    {
+      "title": "Riddle School 5",
+      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@tree/main/FLASH/RiddleSchool5",
+      "genre": "Puzzle",
+      "type": "FLASH",
+      "link": "/api/github-proxy?assetPath=FLASH/RiddleSchool5/flash.swf",
+      "description": "",
+      "status": [
+                       "Working",
+        "This game has no issues :D"
       ]
     }
   ]
