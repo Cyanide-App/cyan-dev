@@ -853,11 +853,11 @@
       ]
     },
     {
-      "title": "BananaSaber",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@tree/main/FLASH/RiddleSchool5",
-      "genre": "Shooter",
-      "type": "HTML",
-      "link": "/api/github-proxy?assetPath=HTML/BananaSaber/index.html",
+      "title": "Big Tower Tiny Square",
+      "imageSrc": "",
+      "genre": "Platformer",
+      "type": "ZIP",
+      "link": "/api/github-proxy?assetPath=main/HTML/BTTS/btts.zip",
       "description": "",
       "status": [
                        "Unkown",
