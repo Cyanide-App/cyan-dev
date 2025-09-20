@@ -857,7 +857,7 @@
       "imageSrc": "",
       "genre": "Platformer",
       "type": "ZIP",
-      "link": "/api/github-proxy?assetPath=main/HTML/BTTS/btts.zip",
+      "link": "/api/zip-proxy?zipPath=main/HTML/BTTS/btts.zip",
       "description": "",
       "status": [
                        "Unkown",
