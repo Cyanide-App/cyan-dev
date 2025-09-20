@@ -30,7 +30,7 @@ const StatusBar = () => {
       <div className="status-right">
         v2.3c (Floride UI update, List sorting for Cyanide)
       </div>
-    </div>zip
+    </div>
   );
 };
 
