@@ -22,7 +22,7 @@ export default async function (req, res) {
   const githubRepoName = 'cyan-assets';
   const githubBranch = 'main';
 
-  const rawGithubUrl = `https://cdn.jsdelivr.net/gh/${githubRepoOwner}/${githubRepoName}@${githubBranch}/${zipPath}`;
+  const rawGithubUrl = `https://raw.githubusercontent.com/${githubRepoOwner}/${githubRepoName}/${githubBranch}/${zipPath}`;
 
   // Create a unique directory for extraction based on the zipPath
   const hash = crypto.createHash('md5').update(zipPath).digest('hex');
@@ -41,7 +41,7 @@ export default async function (req, res) {
         }
       });
       if (!response.ok) {
-        throw new Error(`Failed to fetch zip from GitHub: ${response.status} ${response.statusText}`);
+        throw new Error(`Failed to fetch zip from ${rawGithubUrl}: ${response.status} ${response.statusText}`);
       }
 
       const buffer = await response.arrayBuffer();
@@ -50,6 +50,9 @@ export default async function (req, res) {
       const zip = new AdmZip(zipFilePath);
       zip.extractAllTo(extractionDir, /*overwrite*/ true);
       console.log(`Extraction complete for: ${zipPath}`);
+
+      const files = fs.readdirSync(extractionDir);
+      console.log('Extracted files:', files);
     }
 
     let requestedFilePath = path.join(extractionDir, filePath);
