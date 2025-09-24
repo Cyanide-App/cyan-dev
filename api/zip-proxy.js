@@ -22,7 +22,7 @@ export default async function (req, res) {
   const githubRepoName = 'cyan-assets';
   const githubBranch = 'main';
 
-  const rawGithubUrl = `https://raw.githubusercontent.com/${githubRepoOwner}/${githubRepoName}/${githubBranch}/${zipPath}`;
+  const rawGithubUrl = `https://cdn.jsdelivr.net/gh/${githubRepoOwner}/${githubRepoName}@${githubBranch}/${zipPath}`;
 
   // Create a unique directory for extraction based on the zipPath
   const hash = crypto.createHash('md5').update(zipPath).digest('hex');
