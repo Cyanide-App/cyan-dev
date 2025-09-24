@@ -22,23 +22,6 @@ const createGameHtml = (game) => {
         </body>
         </html>`;
       break;
-    case 'ZIP':
-      content = `
-        <!DOCTYPE html>
-        <html>
-        <head>
-          <title>${title}</title>
-          <meta charset="UTF-8">
-          <style>
-            body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; }
-            iframe { width: 100%; height: 100%; border: none; }
-          </style>
-        </head>
-        <body>
-          <iframe src="/api/zip-proxy?zipPath=${game.url}"></iframe>
-        </body>
-        </html>`;
-      break;
 
     case 'FLASH':
       content = `
