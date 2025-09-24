@@ -857,7 +857,7 @@
       "imageSrc": "",
       "genre": "Platformer",
       "type": "ZIP",
-      "link": "/api/zip-proxy?zipPath=HTML/BTTS/btts.zip",
+      "url": "HTML/BTTS/btts.zip",
       "description": "",
       "status": [
                        "Unkown",
