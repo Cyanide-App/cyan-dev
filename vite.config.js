@@ -1,3 +1,10 @@
+
+// Polyfill crypto.getRandomValues for Node.js
+if (typeof globalThis.crypto === 'undefined') {
+  const { webcrypto } = await import('node:crypto');
+  globalThis.crypto = webcrypto;
+}
+
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import path from 'path'
