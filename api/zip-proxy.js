@@ -22,7 +22,7 @@ export default async function (req, res) {
   const githubRepoName = 'cyan-assets';
   const githubBranch = 'main';
 
-  const rawGithubUrl = `https://raw.githubusercontent.com/${githubRepoOwner}/${githubRepoName}/${githubBranch}/${zipPath}`;
+  const rawGithubUrl = `https://cdn.jsdelivr.net/gh/${githubRepoOwner}/${githubRepoName}@${githubBranch}/${zipPath}`;
 
   // Create a unique directory for extraction based on the zipPath
   const hash = crypto.createHash('md5').update(zipPath).digest('hex');
@@ -35,7 +35,11 @@ export default async function (req, res) {
       console.log(`Cache miss. Downloading and extracting zip for: ${zipPath}`);
       mkdirRecursive(extractionDir);
 
-      const response = await fetch(rawGithubUrl);
+      const response = await fetch(rawGithubUrl, {
+        headers: {
+          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'
+        }
+      });
       if (!response.ok) {
         throw new Error(`Failed to fetch zip from GitHub: ${response.status} ${response.statusText}`);
       }
@@ -89,6 +93,6 @@ export default async function (req, res) {
 
   } catch (error) {
     console.error('Error in zip proxy:', error);
-    res.status(500).send('Internal Server Error while processing zip file.');
+    res.status(500).send('Internal Server Error while processing zip file. Details: ' + error.message);
   }
 }
