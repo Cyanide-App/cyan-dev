@@ -89,6 +89,6 @@ export default async function (req, res) {
 
   } catch (error) {
     console.error('Error in zip proxy:', error);
-    res.status(500).send('Internal Server Error while processing zip file.');
+    res.status(500).send('Internal Server Error while processing zip file. Details: ' + error.message);
   }
 }
