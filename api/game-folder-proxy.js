@@ -3,61 +3,58 @@
 import fetch from 'node-fetch';
 import path from 'path';
 
-// Memory cache: { [folderPath]: { [filePath]: Buffer } }
+// Memory cache: { [fullAssetPath]: Buffer }
 const cache = {};
-
-/**
- * Recursively fetch all files in a folder from GitHub
- */
-async function fetchAllFiles(folderPath, branch = 'main', repoOwner = 'Cyanide-App', repoName = 'cyan-assets') {
-  const apiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${folderPath}?ref=${branch}`;
-  const res = await fetch(apiUrl);
-  if (!res.ok) throw new Error(`Failed to list folder: ${folderPath}`);
-  const items = await res.json();
-
-  let files = {};
-
-  for (const item of items) {
-    if (item.type === 'file') {
-      // Download file
-      const fileRes = await fetch(item.download_url);
-      if (!fileRes.ok) throw new Error(`Failed to download file: ${item.download_url}`);
-      const buffer = await fileRes.buffer();
-      // Store under folderPath/fileName
-      const relPath = path.posix.relative(folderPath, item.path);
-      files[relPath] = buffer;
-    } else if (item.type === 'dir') {
-      // Recursively fetch subfolder
-      const subFiles = await fetchAllFiles(item.path, branch, repoOwner, repoName);
-      for (const [subRelPath, buf] of Object.entries(subFiles)) {
-        files[path.posix.join(item.name, subRelPath)] = buf;
-      }
-    }
-  }
-  return files;
-}
+const repoOwner = 'Cyanide-App';
+const repoName = 'cyan-assets';
+const branch = 'main';
 
 /**
  * API handler
  */
 export default async function handler(req, res) {
-  const { folderPath = 'HTML/BTTS', filePath = 'index.html' } = req.query;
+  const { folderPath, filePath } = req.query;
+
+  if (!folderPath || !filePath) {
+    return res.status(400).send('Missing folderPath or filePath query parameter.');
+  }
+
+  const fullAssetPath = path.posix.join(folderPath, filePath);
+
+  let fileBuffer;
 
   // Check cache
-  if (!cache[folderPath]) {
+  if (cache[fullAssetPath]) {
+    fileBuffer = cache[fullAssetPath];
+  } else {
+    // Fetch from GitHub
+    const rawGithubUrl = `https://raw.githubusercontent.com/${repoOwner}/${repoName}/${branch}/${fullAssetPath}`;
+
     try {
-      // Fetch and cache all files in folder
-      cache[folderPath] = await fetchAllFiles(folderPath);
-      console.log('Cached folder:', folderPath);
-    } catch (e) {
-      console.error(e);
-      return res.status(500).send('Failed to cache folder');
+      const response = await fetch(rawGithubUrl);
+
+      if (!response.ok) {
+        console.error(`Failed to fetch from GitHub: ${response.status} ${response.statusText} for ${fullAssetPath}`);
+        return res.status(response.status).send(`Failed to fetch asset from GitHub: ${response.statusText}`);
+      }
+
+      // Use arrayBuffer() and convert to Buffer
+      const arrayBuffer = await response.arrayBuffer();
+      fileBuffer = Buffer.from(arrayBuffer);
+
+      // Cache the file
+      cache[fullAssetPath] = fileBuffer;
+      console.log('Cached file:', fullAssetPath);
+
+    } catch (error) {
+      console.error('Error in game folder proxy:', error);
+      return res.status(500).send('Internal Server Error while proxying GitHub asset.');
     }
   }
 
-  // Serve file from cache
-  const fileBuffer = cache[folderPath][filePath];
-  if (!fileBuffer) return res.status(404).send('File not found in cache');
+  if (!fileBuffer) {
+    return res.status(404).send('File not found');
+  }
 
   // Content-Type
   const ext = path.extname(filePath).toLowerCase();
@@ -83,8 +80,9 @@ export default async function handler(req, res) {
     let html = fileBuffer.toString('utf-8');
     const currentDir = path.posix.dirname(filePath);
 
-    // Rewrite src and href
+    // Rewrite src and href for relative paths
     html = html.replace(/(src|href)=["'](?!http|data:|#|\/\/|\/)([^"']+)["']/gi, (match, attr, url) => {
+      // Resolve relative paths like ../
       const newPath = path.posix.join(currentDir, url);
       return `${attr}="/api/game-folder-proxy?folderPath=${encodeURIComponent(folderPath)}&filePath=${encodeURIComponent(newPath)}"`;
     });
