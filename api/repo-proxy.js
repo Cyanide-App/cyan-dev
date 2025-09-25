@@ -1,0 +1,92 @@
+import fetch from 'node-fetch';
+
+const GITHUB_REPO_OWNER = 'Cyanide-App';
+const GITHUB_REPO_NAME = 'cyan-assets';
+const GITHUB_BRANCH = 'main';
+
+async function listAllFiles(path) {
+    const allFiles = [];
+    const initialPath = path;
+
+    async function fetchDir(currentPath) {
+        const url = `https://api.github.com/repos/${GITHUB_REPO_OWNER}/${GITHUB_REPO_NAME}/contents/${currentPath}?ref=${GITHUB_BRANCH}`;
+        const response = await fetch(url, { headers: { 'User-Agent': 'Cyanide-App' } });
+        if (!response.ok) {
+            throw new Error(`GitHub API request for directory contents failed: ${response.statusText}`);
+        }
+        const contents = await response.json();
+
+        for (const item of contents) {
+            if (item.type === 'file') {
+                allFiles.push(item.path.substring(initialPath.length).replace(/^\//, ''));
+            } else if (item.type === 'dir') {
+                await fetchDir(item.path);
+            }
+        }
+    }
+
+    await fetchDir(path);
+    return allFiles;
+}
+
+
+export default async function (req, res) {
+    const { path: repoPath, file: filePath = 'index.html' } = req.query;
+
+    if (!repoPath) {
+        return res.status(400).send('Missing path query parameter.');
+    }
+
+    try {
+        if (filePath === 'manifest.json') {
+            const files = await listAllFiles(repoPath);
+            const rootFile = files.find(f => f === 'index.html') || files.find(f => f.toLowerCase().endsWith('index.html'));
+            const manifest = {
+                files: files,
+                root: rootFile || 'index.html',
+            };
+            res.setHeader('Content-Type', 'application/json; charset=utf-8');
+            return res.status(200).send(JSON.stringify(manifest, null, 2));
+        }
+
+        const assetPath = `${repoPath}/${filePath}`;
+        const rawGithubUrl = `https://raw.githubusercontent.com/${GITHUB_REPO_OWNER}/${GITHUB_REPO_NAME}/${GITHUB_BRANCH}/${assetPath}`;
+
+        const response = await fetch(rawGithubUrl);
+
+        if (!response.ok) {
+            console.error(`Failed to fetch from GitHub: ${response.status} ${response.statusText} for ${assetPath}`);
+            return res.status(response.status).send(`Failed to fetch asset from GitHub: ${response.statusText}`);
+        }
+
+        const fileExtension = `.${assetPath.split('.').pop()}`;
+        const contentTypes = {
+            '.html': 'text/html; charset=utf-8',
+            '.htm': 'text/html; charset=utf-8',
+            '.js': 'application/javascript; charset=utf-8',
+            '.css': 'text/css; charset=utf-8',
+            '.json': 'application/json; charset=utf-8',
+            '.png': 'image/png',
+            '.jpg': 'image/jpeg',
+            '.jpeg': 'image/jpeg',
+            '.gif': 'image/gif',
+            '.svg': 'image/svg+xml',
+            '.swf': 'application/x-shockwave-flash',
+        };
+        const contentType = contentTypes[fileExtension] || 'application/octet-stream';
+        res.setHeader('Content-Type', contentType);
+
+        if (fileExtension === '.html' || fileExtension === '.htm') {
+            let html = await response.text();
+            const baseUrl = `/api/repo-proxy?path=${encodeURIComponent(repoPath)}&file=`
+            const modifiedHtml = html.replace(/<head>/i, `<head>\n    <base href="${baseUrl}">`);
+            res.send(modifiedHtml);
+        } else {
+            response.body.pipe(res);
+        }
+
+    } catch (error) {
+        console.error('Error in repo proxy:', error);
+        res.status(500).send('Internal Server Error while processing repo request. Details: ' + error.message);
+    }
+}
