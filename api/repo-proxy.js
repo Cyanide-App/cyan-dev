@@ -85,7 +85,7 @@ export default async function (req, res) {
             // Rewrite relative URLs to be absolute to the proxy
             const baseUrl = `/api/repo-proxy?path=${encodeURIComponent(repoPath)}&file=`;
             html = html.replace(/(src|href)=["'](?!(https?:|\/\/|data:|mailto:|#))([^"']*)["']/gi, (match, attr, url) => {
-                if (url.length === 0) return match; // Empty src/href
+                if (!url || url.length === 0) return match; // Empty or undefined url
                 const fullUrl = `${baseUrl}${url}`;
                 return `${attr}="${fullUrl}"`;
             });
