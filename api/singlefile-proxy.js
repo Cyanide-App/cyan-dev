@@ -1,10 +1,13 @@
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
 
 // --- Configuration ---
 // Assuming 'cyan-assets' is a sibling directory to this project ('cyan').
 // e.g., /home/user/cyan and /home/user/cyan-assets
-const assetsRoot = path.resolve(process.cwd(), '../cyan-assets');
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const assetsRoot = path.resolve(__dirname, '../../cyan-assets');
 
 // --- Mime Types for Data URIs ---
 const mimeTypes = {
