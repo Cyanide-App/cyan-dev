@@ -5,6 +5,23 @@ const createGameHtml = (game) => {
   let content = '';
 
   switch (game.type) {
+    case 'HTML':
+      content = `
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <title>${title}</title>
+          <meta charset="UTF-8">
+          <style>
+            body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; }
+            iframe { width: 100%; height: 100%; border: none; }
+          </style>
+        </head>
+        <body>
+          <iframe src="${game.link}" sandbox="allow-scripts allow-same-origin"></iframe>
+        </body>
+        </html>`;
+      break;
     case 'PROXY':
       content = `
         <!DOCTYPE html>
