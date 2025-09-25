@@ -1,4 +1,3 @@
-
 import fs from 'fs';
 import path from 'path';
 
@@ -42,7 +41,8 @@ function getFilesRecursively(dir) {
 }
 
 function escapeRegExp(string) {
-    return string.replace(/[.*+?^${}()|[\]/g, '\$&');
+    // Escape characters with special meaning either inside or outside character sets.
+    return string.replace(/[.*+?^${}()|[\]\\`]/g, '\\$&');
 }
 
 // --- API Handler ---
@@ -82,8 +82,8 @@ export default async function handler(req, res) {
 
     // Create a map of relative paths to their absolute paths
     const fileMap = new Map(
-        allFiles.map(absPath => [path.relative(targetDir, absPath).replace(/\\/g, '/'), absPath])
-    );
+        allFiles.map(absPath => [path.relative(targetDir, 
+            absPath).replace(/\\/g, '/'), absPath])    );
 
     // Inline CSS
     htmlContent = htmlContent.replace(/<link[^>]+href="([^"]+\.css)"[^>]*>/g, (match, cssPath) => {
