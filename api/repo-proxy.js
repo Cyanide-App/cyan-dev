@@ -4,29 +4,23 @@ const GITHUB_REPO_OWNER = 'Cyanide-App';
 const GITHUB_REPO_NAME = 'cyan-assets';
 const GITHUB_BRANCH = 'main';
 
-async function listAllFiles(path) {
-    const allFiles = [];
-    const initialPath = path;
+async function listAllFiles(repoPath) {
+    const url = `https://api.github.com/repos/${GITHUB_REPO_OWNER}/${GITHUB_REPO_NAME}/git/trees/${GITHUB_BRANCH}?recursive=1`;
+    const response = await fetch(url, { headers: { 'User-Agent': 'Cyanide-App' } });
+    if (!response.ok) {
+        throw new Error(`GitHub API request for git tree failed: ${response.statusText}`);
+    }
+    const data = await response.json();
 
-    async function fetchDir(currentPath) {
-        const url = `https://api.github.com/repos/${GITHUB_REPO_OWNER}/${GITHUB_REPO_NAME}/contents/${currentPath}?ref=${GITHUB_BRANCH}`;
-        const response = await fetch(url, { headers: { 'User-Agent': 'Cyanide-App' } });
-        if (!response.ok) {
-            throw new Error(`GitHub API request for directory contents failed: ${response.statusText}`);
-        }
-        const contents = await response.json();
-
-        for (const item of contents) {
-            if (item.type === 'file') {
-                allFiles.push(item.path.substring(initialPath.length).replace(/^\//, ''));
-            } else if (item.type === 'dir') {
-                await fetchDir(item.path);
-            }
-        }
+    if (data.truncated) {
+        console.warn("GitHub API response was truncated. File list may be incomplete.");
     }
 
-    await fetchDir(path);
-    return allFiles;
+    const files = data.tree
+        .filter(item => item.type === 'blob' && item.path.startsWith(repoPath + '/'))
+        .map(item => item.path.substring(repoPath.length + 1));
+    
+    return files;
 }
 
 
