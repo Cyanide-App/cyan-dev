@@ -78,9 +78,19 @@ export default async function (req, res) {
 
         if (fileExtension === '.html' || fileExtension === '.htm') {
             let html = await response.text();
-            const baseUrl = `/api/repo-proxy?path=${encodeURIComponent(repoPath)}&file=`
-            const modifiedHtml = html.replace(/<head>/i, `<head>\n    <base href="${baseUrl}">`);
-            res.send(modifiedHtml);
+
+            // Fix root-relative paths by making them relative, so they can be rewritten.
+            html = html.replace(/(src|href)=["']\//gi, '$1="');
+
+            // Rewrite relative URLs to be absolute to the proxy
+            const baseUrl = `/api/repo-proxy?path=${encodeURIComponent(repoPath)}&file=`;
+            html = html.replace(/(src|href)=["'](?!(https?:|\/\/|data:|mailto:|#))([^"']*)["']/gi, (match, attr, url) => {
+                if (url.length === 0) return match; // Empty src/href
+                const fullUrl = `${baseUrl}${url}`;
+                return `${attr}="${fullUrl}"`;
+            });
+
+            res.send(html);
         } else {
             response.body.pipe(res);
         }
