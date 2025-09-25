@@ -854,13 +854,13 @@
     },
     {
       "title": "Big Tower Tiny Square",
-      "imageSrc": "",
+      "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/BTTS/btts.png",
       "genre": "Platformer",
-      "type": "ZIP",
-      "url": "HTML/BTTS/btts.zip",
+      "type": "HTML",
+      "link": "/api/singlefile-proxy?folder=HTML/BTTS",
       "description": "",
       "status": [
-                       "Unkown",
+        "Unkown",
         "this game has not been tested yet for bugs ¯\\_(ツ)_/¯ "
       ]
     }
