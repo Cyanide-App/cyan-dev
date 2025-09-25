@@ -14,7 +14,7 @@ export default async function (req, res) {
   const rawGithubUrl = `https://raw.githubusercontent.com/${githubRepoOwner}/${githubRepoName}/${githubBranch}/${assetPath}`;
 
   try {
-    const response = await fetch(rawGithubUrl);
+    const response = await upd(rawGithubUrl);
 
     if (!response.ok) {
       console.error(`Failed to fetch from GitHub: ${response.status} ${response.statusText} for ${assetPath}`);

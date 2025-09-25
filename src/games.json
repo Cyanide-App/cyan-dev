@@ -857,7 +857,7 @@
       "imageSrc": "https://cdn.jsdelivr.net/gh/Cyanide-App/cyan-assets@main/HTML/BTTS/btts.png",
       "genre": "Platformer",
       "type": "HTML",
-      "link": "/api/load-game?folderPath=HTML/BTTS",
+      "link": "/api/github-folder-proxy?owner=Cyanide-App&repo=cyan-assets&path=HTML/BTTS",
       "description": "",
       "status": [
         "Unkown",
