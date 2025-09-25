@@ -100,7 +100,7 @@ const GamePage = () => {
       <div className="game-content-container">
         {gameLaunched ? (
           game.type === 'HTML' ? (
-            <iframe ref={iframeRef} src={game.link} title={game.title} className="game-iframe" allowFullScreen />
+            <iframe ref={iframeRef} src={game.link.startsWith('public/') ? game.link.substring('public'.length) : game.link} title={game.title} className="game-iframe" allowFullScreen />
           ) : game.type === 'ZIP' ? (
             <iframe ref={iframeRef} src={`/api/zip-proxy?zipPath=${game.url}`} title={game.title} className="game-iframe" allowFullScreen />
           ) : (
